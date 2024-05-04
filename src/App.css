@@ -1,38 +1,125 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.iphone-frame {
+  width: 430px;
+  height: 932px;
+  background: #ffffff;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden; /* Ensures nothing outside this container is visible */
 }
 
-.App-link {
-  color: #61dafb;
+.sidebar-button, .myinfo-button {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  border-style: none;
+  cursor: pointer;
+  position: absolute;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sidebar-button {
+  margin-top: -180%;
+  margin-right: 80%;
+}
+
+.myinfo-button {
+  margin-top: -180%;
+  margin-left: 80%;
+}
+
+.background{
+  width: 349px;
+  height: 301;
+  margin-top: -80%;
+}
+
+.main-text {
+  color: #5A776D;
+  font-family: Pretendard;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.32px;
+  position: absolute;
+  margin-top: -80%;
+  text-align: right;
+}
+
+.btn-list {
+  position: absolute;
+  top: 55%; /* Adjust this value as needed to position the buttons */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-list b {
+  margin: 0 15px;
+  color: #DADADA;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn-list b.active {
+  color: #6EA693;
+}
+
+.div-box1 {
+  width: 200px;
+  height: 320px;
+  border-radius: 40px;
+  background: #6EA693;
+  margin: 0 10px; /* 박스 사이의 간격 */
+  flex-shrink: 0; /* 박스 크기가 축소되지 않도록 설정 */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex; /* Flexbox를 사용하여 자식 요소들을 가로로 정렬합니다. */
+  flex-wrap: nowrap; /* 모든 자식 요소들을 한 줄에 표시합니다. */
+  overflow-x: auto; /* 필요한 경우 가로 스크롤을 허용합니다. */
+
+}
+
+.div-box1.active {
+  margin-top: 120%;
+  position: absolute;
+  transform: scale(1.1);
+  background: #B2E0D0;
+  z-index: 10;
+}
+
+.div-box1:not(.active) {
+  margin-top: 120%;
+  position: absolute;
+  transform: scale(0.9);
+  opacity: 0.5; /* 비활성 박스를 덜 눈에 띄게 만듭니다. */
+}
+
+.div-box2 {
+  width: 200px;
+  height: 320px;
+  border-radius: 40px;
+  background: #6EA693;
+  margin: 0 10px; /* 박스 사이의 간격 */
+  flex-shrink: 0; /* 박스 크기가 축소되지 않도록 설정 */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  display: flex; /* Flexbox를 사용하여 자식 요소들을 가로로 정렬합니다. */
+  flex-wrap: nowrap; /* 모든 자식 요소들을 한 줄에 표시합니다. */
+  overflow-x: auto; /* 필요한 경우 가로 스크롤을 허용합니다. */
+
+}
+
+.div-box2.active {
+  margin-top: 150%;
+  position: absolute;
+  transform: scale(1.1);
+  background: #B2E0D0;
+  z-index: 10;
+}
+
+.div-box2:not(.active) {
+  transform: scale(0.9);
+  opacity: 0.5; /* 비활성 박스를 덜 눈에 띄게 만듭니다. */
 }
