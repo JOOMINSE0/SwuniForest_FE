@@ -123,3 +123,50 @@
   transform: scale(0.9);
   opacity: 0.5; 
 } */
+
+
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bareun_hipi";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_hipi.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* body {
+  text-align: center;
+  background-color: rgb(197, 198, 197);
+  font-family: "Jua", sans-serif;
+} */
+
+.container {
+  width: 500px;
+  background-color: #fff;
+  margin: 0 auto;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.iphone-frame::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.iphone-frame::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.iphone-frame::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+
+.iphone-frame::-webkit-scrollbar-thumb:hover {
+  background: transparent;
+}
