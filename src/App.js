@@ -10,7 +10,6 @@ import Preguestbook from './pages/Guestbook/preGuestbook.js';
 import Postguestbook from './pages/Guestbook/postGuestbook.js';
 import VisitorRanking from './pages/VisitorRanking/visitorRanking.js';
 import Lineup from './pages/Lineup/lineup.js';
-
 import Stamp from './pages/Stamp/stamp.js';
 import StampList from './pages/Stamp/stamp_list.js';
 import StampDetail1 from './pages/Stamp/stamp_detail_1';
@@ -44,7 +43,6 @@ function App() {
       <Route path="/postGuestbook" element={<Postguestbook />} /> {/*방명록업로드*/}
       <Route path="/visitorRanking" element={<VisitorRanking />} /> {/*방문율랭킹*/}
       <Route path="/lineup" element={<Lineup />} /> {/*라인업*/}
-
       <Route path="/stamp" element={<Stamp />} /> {/*도장판메인*/}
       <Route path="/stamp_list" element={<StampList />} /> {/*도장판리스트*/}
       <Route path="/stamp_detail_1" element={<StampDetail1 />} /> {/*도장판_사회과학*/}
