@@ -1,38 +1,52 @@
 import React, { useState } from 'react';
-import { ReactComponent as Sidebar } from './assets/Sidebar.svg';
-import { ReactComponent as Myinfo } from './assets/Myinfo.svg';
-import Background from './assets/Background.png'
 import './App.css';
+import { Routes, Route } from "react-router-dom";
+import Stamp from './pages/Stamp/stamp.js';
+import StampList from './pages/Stamp/stamp_list.js';
+import Main from './pages/Main/main.js';
+import StampDetail1 from './pages/Stamp/stamp_detail_1';
+import StampDetail2 from './pages/Stamp/stamp_detail_2';
+import StampDetail3 from './pages/Stamp/stamp_detail_3';
+import StampDetail4 from './pages/Stamp/stamp_detail_4';
+import StampDetail5 from './pages/Stamp/stamp_detail_5';
+import StampDetail6 from './pages/Stamp/stamp_detail_6';
+import LostBoard from './pages/LostNoticeBoard/lost_board.js';
+import LostList from './pages/LostNoticeBoard/lost_list.js';
+import LostWrite from './pages/LostNoticeBoard/lost_write.js';
+import Booth from './pages/Booth/booth.js';
+import StampSuccess1 from './pages/Stamp/stamp_success_1.js';
+import StampSuccess2 from './pages/Stamp/stamp_success_2.js';
+import StampSuccess3 from './pages/Stamp/stamp_success_3.js';
+import StampSuccess4 from './pages/Stamp/stamp_success_4.js';
+import StampSuccess5 from './pages/Stamp/stamp_success_5.js';
+import StampSuccess6 from './pages/Stamp/stamp_success_6.js';
 
 function App() {
-  const [activeBox, setActiveBox] = useState('');
-
-  const handleBoxClick = (boxName) => {
-    setActiveBox(boxName);
-  };
 
   return (
-    <div className="iphone-frame">
-      <button className="sidebar-button"><Sidebar/></button>
-      <button className="myinfo-button"><Myinfo/></button>
-      <img className='background' src={Background} alt='이미지'/>
+    <Routes>
+      <Route path="/" element={<Main />} />
+      <Route path="/stamp" element={<Stamp />} /> {/*도장판메인*/}
+      <Route path="/stamp_list" element={<StampList />} /> {/*도장판리스트*/}
+      <Route path="/stamp_detail_1" element={<StampDetail1 />} /> {/*도장판_사회과학*/}
+      <Route path="/stamp_detail_2" element={<StampDetail2 />} /> {/*도장판_아트앤디자인*/}
+      <Route path="/stamp_detail_3" element={<StampDetail3 />} /> {/*도장판_미래산업융합*/}
+      <Route path="/stamp_detail_4" element={<StampDetail4 />} /> {/*도장판_인문대학*/}
+      <Route path="/stamp_detail_5" element={<StampDetail5 />} /> {/*도장판_자율전공*/}
+      <Route path="/stamp_detail_6" element={<StampDetail6 />} /> {/*도장판_과학기술융합*/}
+      <Route path="/stamp_success_1" element={<StampSuccess1 />} /> {/*도장판_사회과학_절반*/}
+      <Route path="/stamp_success_2" element={<StampSuccess2 />} /> {/*도장판_아트앤디자인_절반*/}
+      <Route path="/stamp_success_3" element={<StampSuccess3 />} /> {/*도장판_미래산업융합_절반*/}
+      <Route path="/stamp_success_4" element={<StampSuccess4 />} /> {/*도장판_인문대학_절반*/}
+      <Route path="/stamp_success_5" element={<StampSuccess5 />} /> {/*도장판_자율전공_절반*/}
+      <Route path="/stamp_success_6" element={<StampSuccess6 />} /> {/*도장판_과학기술융합_절반*/}
+      <Route path="/lost_board" element={<LostBoard />} /> {/*분실물게시판메인*/}
+      <Route path="/lost_list" element={<LostList />} /> {/*분실물게시판리스트*/}
+      <Route path="/lost_write" element={<LostWrite />} /> {/*분실물게시판작성*/}
+      <Route path="/booth" element={<Booth />} /> {/*부스배치도*/}
+      <Route path="*" element={<div>없는 페이지</div>} />
+    </Routes>
 
-      {/* <div className="main-text">
-        <p>고양이 스탬프를 모아봐요</p>
-      </div> */}
-
-      <div className='btn-list'>
-        <b onClick={() => handleBoxClick('학과부스')} type="button" className={activeBox === '학과부스' ? 'active' : ''}>학과부스</b> 
-        <b onClick={() => handleBoxClick('푸드트럭')} type="button" className={activeBox === '푸드트럭' ? 'active' : ''}>푸드트럭</b> 
-        <b onClick={() => handleBoxClick('포토부스')} type="button" className={activeBox === '포토부스' ? 'active' : ''}>포토부스</b> 
-        <b onClick={() => handleBoxClick('플리마켓')} type="button" className={activeBox === '플리마켓' ? 'active' : ''}>플리마켓</b> 
-      </div>
-
-      {/* <div className={`div-box1 ${activeBox === '학과부스' ? 'active' : ''}`} id="학과부스"></div>
-      <div className={`div-box2 ${activeBox === '푸드트럭' ? 'active' : ''}`} id="푸드트럭"></div>
-      <div className={`div-box3 ${activeBox === '포토부스' ? 'active' : ''}`} id="포토부스"></div>
-      <div className={`div-box4 ${activeBox === '플리마켓' ? 'active' : ''}`} id="플리마켓"></div> */}
-    </div>
   );
 }
 

@@ -1,0 +1,98 @@
+/* x 버튼 */
+.close-btn {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.stamp-btn {
+    background-color: #B2E0D0;
+    color: #fff;
+    border-radius: 20px;
+    width: 340px;
+    height: 60px;
+    border: none;
+    font-size: 18px;
+}
+
+/* 고양이 뱃지 리스트 */
+.cat-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.cat-list-1,
+.cat-list-2,
+.cat-list-3 {
+    display: flex;
+    width: 70%;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.cat-list-1 {
+    margin-left: 300px;
+}
+
+.cat-list-3 {
+    margin-left: 250px;
+}
+
+.cat-list img {
+    margin: 0 10px;
+    width: 80px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
+.back-circle-1,
+.back-circle-2 {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.back-circle-1 {
+    width: 280px;
+    height: 280px;
+    background-color: rgba(178, 224, 208, 0.42);
+    top: 200px;
+    left: 140px;
+    z-index: 0;
+}
+
+.back-circle-2 {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(178, 224, 208, 0.72);
+    top: 110px;
+    left: 80px;
+}
+
+/* 글 */
+.text {
+    text-align: center;
+    padding: 20px;
+}
+
+.text p {
+    margin: 0;
+    padding: 5px;
+
+}
+
+.text-1 {
+    color: #5A776D;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.text-2 {
+    color: #B6B6B6;
+    font-size: 14px;
+}

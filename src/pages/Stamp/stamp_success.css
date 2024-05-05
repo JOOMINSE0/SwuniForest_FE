@@ -1,0 +1,20 @@
+.text {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+
+
+.cat-image {
+    width: 442px;
+    height: 442px;
+    margin-bottom: 20px;
+}
+
+.cat-name {
+    font-size: 33px;
+    font-weight: 700;
+}
