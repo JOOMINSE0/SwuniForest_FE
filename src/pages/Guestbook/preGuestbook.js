@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./lineup.css";
+import "./preGuestbook.css"
 
-function Lineup(){
+function PreGuestbook(){
 
     let navigate = useNavigate();
 
@@ -11,8 +11,7 @@ return(
 
 
     </div>
-
 )
 }
 
-export default Lineup;
+export default PreGuestbook;

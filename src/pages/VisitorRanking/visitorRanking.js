@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./lineup.css";
+import "./visitorRanking.css";
 
-function Lineup(){
+function VisitorRanking(){
 
     let navigate = useNavigate();
 
@@ -15,4 +15,4 @@ return(
 )
 }
 
-export default Lineup;
+export default VisitorRanking;

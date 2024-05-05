@@ -1,0 +1,47 @@
+.stId{
+    color: #575757;
+    font-family: Pretendard;
+    margin-right: 80%;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 187.5% */
+}
+
+.stPw{
+    color: #575757;
+    margin-top: 60px;
+    font-family: Pretendard;
+    margin-right: 70%;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 187.5% */
+}
+
+.input{
+    width: 360px;
+    height: 50px;
+    border-style: none;
+}
+
+.L2signupBtn{
+    border-radius: 10px;
+    border: 0.8px solid #898A8D;
+    width: 106px;
+    height: 29px;
+    flex-shrink: 0;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.confirmButton{
+    border-radius: 20px;
+    background: #B2E0D0;
+    width: 340px;
+    height: 60px;
+    flex-shrink: 0;
+    border-style: none;
+    margin-top: 20%;
+    cursor: pointer;
+}

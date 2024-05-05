@@ -1,0 +1,75 @@
+.iphone-frame {
+    width: 430px;
+    height: 932px;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: hidden; 
+  }
+  
+  .sidebar-button, .myinfo-button {
+    background-color: #ffffff;
+    border-color: #ffffff;
+    border-style: none;
+    cursor: pointer;
+    position: absolute;
+  }
+  
+  .sidebar-button {
+    margin-top: -180%;
+    margin-right: 80%;
+  }
+  
+  .myinfo-button {
+    margin-top: -180%;
+    margin-left: 80%;
+  }
+  
+  .background{
+    width: 349px;
+    height: 301;
+    margin-top: -80%;
+  }
+  
+  .main-text {
+    color: #5A776D;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: -0.32px;
+    position: absolute;
+    margin-top: -80%;
+    text-align: right;
+  }
+  
+  .btn-list {
+    position: absolute;
+    top: 55%; 
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .btn-list b {
+    margin: 0 15px;
+    color: #DADADA;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .btn-list b.active {
+    color: #6EA693;
+  }
+  
+ .box1 {
+    border-radius: 40px;
+    background: #B2E0D0;
+  }
+  

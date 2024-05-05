@@ -1,9 +1,18 @@
 import React, { useState } from 'react';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
+import Main from './pages/Main/main.js';
+import Login1 from './pages/Login/login1.js';
+import Login2 from './pages/Login/login2.js';
+import Signup1 from './pages/Signup/signup1.js';
+import Signup2 from './pages/Signup/signup2.js';
+import Preguestbook from './pages/Guestbook/preGuestbook.js';
+import Postguestbook from './pages/Guestbook/postGuestbook.js';
+import VisitorRanking from './pages/VisitorRanking/visitorRanking.js';
+import Lineup from './pages/Lineup/lineup.js';
+
 import Stamp from './pages/Stamp/stamp.js';
 import StampList from './pages/Stamp/stamp_list.js';
-import Main from './pages/Main/main.js';
 import StampDetail1 from './pages/Stamp/stamp_detail_1';
 import StampDetail2 from './pages/Stamp/stamp_detail_2';
 import StampDetail3 from './pages/Stamp/stamp_detail_3';
@@ -25,7 +34,17 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Main />} />
+      <Route path="/" element={<Main />} /> {/*메인페이지*/}
+      <Route path="/login1" element={<Login1 />} /> {/*로그인1*/}
+      <Route path="/login2" element={<Login2 />} /> {/*로그인2*/}
+      <Route path="/signup1" element={<Signup1 />} /> {/*회원가입1*/}
+      <Route path="/signup2" element={<Signup2 />} /> {/*회원가입2*/}
+      <Route path="/preGuestbook" element={<Preguestbook />} /> {/*로그인전방명록*/}
+      <Route path="/postGuestbook" element={<Postguestbook />} /> {/*로그인후방명록*/}
+      <Route path="/postGuestbook" element={<Postguestbook />} /> {/*방명록업로드*/}
+      <Route path="/visitorRanking" element={<VisitorRanking />} /> {/*방문율랭킹*/}
+      <Route path="/lineup" element={<Lineup />} /> {/*라인업*/}
+
       <Route path="/stamp" element={<Stamp />} /> {/*도장판메인*/}
       <Route path="/stamp_list" element={<StampList />} /> {/*도장판리스트*/}
       <Route path="/stamp_detail_1" element={<StampDetail1 />} /> {/*도장판_사회과학*/}

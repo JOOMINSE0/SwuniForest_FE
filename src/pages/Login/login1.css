@@ -1,0 +1,36 @@
+.login1Img{
+    width: 400px;
+    height: 453px;
+    margin-left: 25%;
+    margin-top: 90px;
+}
+
+.login-title{
+    font-weight: bold;
+    margin-top: -190%;
+    position: absolute;
+    font-size: 20px;
+    color: #575757;
+}
+
+.login1-text{
+    color: #5A776D;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.login1Btn{
+    width: 200px;
+    height: 60px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    background: #B2E0D0;
+    border-style: none;
+    margin-top:60px;
+    cursor:pointer;
+}
+ 

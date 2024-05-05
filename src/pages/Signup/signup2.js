@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import "./lineup.css";
+import "./signup2.css";
 
-function Lineup(){
+function Signup2(){
 
     let navigate = useNavigate();
 
@@ -15,4 +15,4 @@ return(
 )
 }
 
-export default Lineup;
+export default Signup2;
