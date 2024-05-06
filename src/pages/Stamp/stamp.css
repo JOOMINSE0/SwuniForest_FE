@@ -1,11 +1,12 @@
 /* x 버튼 */
 .close-btn {
     position: absolute;
-    top: 30px;
-    right: 20px;
+    top: 2px;
+    right: 5px;
     width: 24px;
     height: 24px;
     cursor: pointer;
+    padding: 20px;
 }
 
 .stamp-btn {
@@ -83,6 +84,7 @@
 .text p {
     margin: 0;
     padding: 5px;
+    text-align: center;
 
 }
 

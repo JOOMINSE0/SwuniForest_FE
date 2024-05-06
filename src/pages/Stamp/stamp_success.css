@@ -6,8 +6,6 @@
     text-align: left;
 }
 
-
-
 .cat-image {
     width: 442px;
     height: 442px;
@@ -17,4 +15,5 @@
 .cat-name {
     font-size: 33px;
     font-weight: 700;
+    margin-left: 1px;
 }

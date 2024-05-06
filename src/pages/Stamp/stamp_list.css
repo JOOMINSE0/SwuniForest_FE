@@ -1,25 +1,50 @@
-.stamp-btn {
-    background-color: #B2E0D0;
-    color: #fff;
-    border-radius: 20px;
-    width: 340px;
-    height: 60px;
-    border: none;
-    font-size: 18px;
-    margin: 20px auto;
-}
-
-.iphone-frame {
-    width: 375px;
-    margin: 0 auto;
-    background-color: white;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    position: relative;
+.stamp-title {
     text-align: center;
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #575757;
 }
 
+.close-btn {
+    align-self: flex-end;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.description {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: #B6B6B6;
+}
+
+.certification {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.certification input {
+    border: 1px solid #949292;
+    border-radius: 20px;
+    width: 260px;
+    height: 30px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+.certification button {
+    background-color: #B2E0D0;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    padding: 5px 25px;
+    cursor: pointer;
+}
 
 .cat-items {
     display: flex;
@@ -36,11 +61,12 @@
     align-items: center;
     justify-content: center;
     width: 160px;
-    height: 180px;
+    height: 200px;
     background-color: #fff;
     border-radius: 10px;
     border: 1px solid #949292;
     text-align: center;
+    cursor: pointer;
 }
 
 .cat-item img {
@@ -74,48 +100,8 @@
     font-size: 12px;
 }
 
-.stamp-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-    position: relative;
-    font-size: 20px;
-    color: #575757;
-}
-
-.certification {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 30px;
-}
-
-.certification input {
-    border: 1px solid #949292;
-    border-radius: 20px;
-    width: 260px;
-    height: 30px;
-    margin-right: 10px;
-    box-sizing: border-box;
-}
-
-.certification button {
-    background-color: #B2E0D0;
-    color: white;
-    border-radius: 20px;
-    border: none;
-    padding: 5px 25px;
-    cursor: pointer;
-}
-
-p {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 12px;
-    color: #B6B6B6;
-}
-
-.college-name {
-    text-align: center;
-    color: #949292;
+.cat-item p {
+    margin-top: 7px;
     font-size: 14px;
+    color: #949292;
 }
