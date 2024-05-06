@@ -36,7 +36,7 @@ return(
     >회원가입하기</div></button>
 
 
-    <button onClick={()=>{navigate('/')}} className="confirmButton">
+    <button onClick={()=>{navigate('/')}} className="confirmButton1">
         <b style={{fontSize:"20px", color:"#ffffff"}}>확인</b></button>
     </div>
 

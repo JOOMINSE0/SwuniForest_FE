@@ -1,0 +1,74 @@
+.iphone-frame {
+    width: 430px;
+    height: 932px;
+    background: #ffffff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    overflow: scroll; 
+  }
+
+.intro-box{
+    border-radius: 20px;
+    border: 1px solid #A8A8A8;
+    width: 365px;
+    height: 80px;
+    flex-shrink: 0;
+    margin-top: -150%;
+    position: absolute;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+
+.confirmButton2{
+    border-radius: 20px;
+    background: #B2E0D0;
+    width: 340px;
+    height: 60px;
+    flex-shrink: 0;
+    border-style: none;
+    margin-top: 20%;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: -80%;
+}
+
+.label-mobile{
+    margin-left: -55%;
+}
+
+.label-name{
+    margin-left: -80%;
+}
+
+.label-major{
+    margin-left: -80%;
+    margin-top: 15px;
+}
+
+.label-stid{
+    margin-left: -80%;
+    margin-top: 15px;
+}
+
+.label-pw{
+    margin-left: -73%;
+    margin-top: 15px;
+}
+
+.label-pwcheck{
+    margin-left: -65%;
+    margin-top: 15px;
+}
+
+
+.input2{
+    border-style: none;
+    width: 330px;
+    height: 40px;
+}

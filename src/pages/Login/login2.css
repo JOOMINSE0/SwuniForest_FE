@@ -16,7 +16,7 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 30px; /* 187.5% */
+    line-height: 30px; 
 }
 
 .input{
@@ -35,7 +35,7 @@
     cursor: pointer;
 }
 
-.confirmButton{
+.confirmButton1{
     border-radius: 20px;
     background: #B2E0D0;
     width: 340px;
