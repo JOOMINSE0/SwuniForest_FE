@@ -1,11 +1,12 @@
 import React from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import './stamp_success.css';
 import './stamp.css';
 
 function StampSuccess1() {
     let navigate = useNavigate();
-
+    const location = useLocation();
+    const score = location.state.score;
     return (
         <div className="iphone-frame">
             <img
@@ -22,7 +23,7 @@ function StampSuccess1() {
 
             </div>
             <img src="../../../img/cat_1.png" alt="고양이 1" className="cat-image" />
-            <button className="stamp-btn" onClick={() => navigate("/stamp_detail_1")}>
+            <button className="stamp-btn" onClick={() => navigate("/stamp_detail_1", { state: { score: score } })}>
                 만나러 가기
             </button>
         </div>

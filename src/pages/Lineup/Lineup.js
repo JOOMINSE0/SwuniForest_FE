@@ -1,18 +1,18 @@
 import { useNavigate } from "react-router-dom";
-import "./lineup.css";
+import "./Lineup.css";
 
-function Lineup(){
+function Lineup() {
 
     let navigate = useNavigate();
 
-return(
-    <div className="iphone-frame">
+    return (
+        <div className="iphone-frame">
 
 
 
-    </div>
+        </div>
 
-)
+    )
 }
 
 export default Lineup;
