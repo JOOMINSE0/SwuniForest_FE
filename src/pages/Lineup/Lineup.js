@@ -1,9 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import "./lineup.css";
+import "./Lineup.css";
 
-function Lineup(){
+function Lineup() {
 
     let navigate = useNavigate();
+
 
 return(
     <div className="iphone-frame">
@@ -16,14 +17,13 @@ return(
         style={{marginTop:"9%"}}
         onClick={() => navigate(-1)}
       />
-
+   
       <div className="month">May</div>
 
       <div>
         <p>wed</p>
         <b>24</b>
       </div>
-
 
       <div>
       <p>Thu</p>
@@ -41,14 +41,8 @@ return(
       
     </div>
 
-
-
-
-
-
-
-    </div>
 )
+
 }
 
 export default Lineup;

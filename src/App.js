@@ -13,7 +13,7 @@ import Signup2 from './pages/Signup/signup2.js';
 import Preguestbook from './pages/Guestbook/preGuestbook.js';
 import Postguestbook from './pages/Guestbook/postGuestbook.js';
 import VisitorRanking from './pages/VisitorRanking/visitorRanking.js';
-import Lineup from './pages/Lineup/lineup.js';
+import Lineup from './pages/Lineup/Lineup.js';
 import Stamp from './pages/Stamp/stamp.js';
 import StampList from './pages/Stamp/stamp_list.js';
 import StampDetail1 from './pages/Stamp/stamp_detail_1';

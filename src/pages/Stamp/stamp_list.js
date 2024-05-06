@@ -15,41 +15,44 @@ function StampList() {
 
   return (
     <div className="iphone-frame">
-      <p className="stamp-title">
-        도장판
-      </p>
+      <p className="stamp-title">도장판</p>
       <img
         src="../../../img/close.png"
         alt="취소버튼"
         className="close-btn"
         onClick={() => navigate(-1)}
       />
-      <p>부스 체험 후 학과별 인증번호를 입력하면 고양이 스템프를 드려요.</p>
+      <p className="description">부스 체험 후 학과별 인증번호를 입력하면 고양이 스템프를 드려요.</p>
       <div className="certification">
-        <input />
+        <input placeholder="인증번호를 입력하세요" />
         <button>확인</button>
       </div>
       <div className="cat-items">
         {
-          catStamps.map((stamp, index) => (
-            <div key={index}>
-              <div className="cat-item" onClick={() => {
-                const isHalfOrMore = stamp.score >= (stamp.total / 2);
-                navigate(isHalfOrMore ? `/stamp_success_${index + 1}` : `/stamp_detail_${index + 1}`);
-              }}>
-
+          catStamps.map((stamp, index) => {
+            const isMajority = stamp.score >= stamp.total / 2;
+            const route = isMajority ? `/stamp_success_${index + 1}` : `/stamp_detail_${index + 1}`;
+            return (
+              <div
+                className="cat-item"
+                key={index}
+                onClick={() => navigate(route, { state: { score: stamp.score } })}
+              >
                 <div className="back-circle"></div>
-                <img src={stamp.score >= stamp.total / 2 ? stamp.img1 : stamp.img2} alt={`고양이 ${index + 1}`} />
+                <img
+                  src={isMajority ? stamp.img1 : stamp.img2}
+                  alt={`고양이 ${index + 1}`}
+                />
                 <div className="score">
                   <span>{stamp.score}</span> / {stamp.total}
                 </div>
+                <p>{stamp.college}</p>
               </div>
-              <p className="college-name">{stamp.college}</p>
-            </div>
-          ))
+            );
+          })
         }
       </div>
-    </div >
+    </div>
   );
 }
 
