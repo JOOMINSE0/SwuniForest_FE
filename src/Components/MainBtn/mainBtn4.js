@@ -1,21 +1,19 @@
+import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
 import { ReactComponent as Sidebar } from '../../assets/Sidebar.svg';
 import { ReactComponent as Myinfo } from '../../assets/Myinfo.svg';
-import "./main.css";
-import { useNavigate } from "react-router-dom";
+import "./mainBtn4.css";
 
-
-function Main() {
-  const [activeBox, setActiveBox] = useState('');
-  let navigate = useNavigate();
-
-  const handleBoxClick = (boxName) => {
-    setActiveBox(boxName);
-  };
-   
-  return (
+function MainBtn4(){
+    const [activeBox, setActiveBox] = useState('');
+    let navigate = useNavigate();
   
-    <div className="iphone-frame1">
+    const handleBoxClick = (boxName) => {
+      setActiveBox(boxName);
+    };
+
+return(
+<div className="iphone-frame1">
       <button className='StampBtn' onClick={()=>navigate('/stamp')} style={{cursor: "pointer"}}>
         <img style={{ width: "55px", height: "55px" }} 
       src='../../../img/StampBtn.png'></img></button>
@@ -27,35 +25,24 @@ function Main() {
       <img className='background' src="../../../img/Background.png" alt="배경"
       style={{ width: "349px", height: "355px" }}/>
 
-      {/* <div className='btn-list'>
-        <b onClick={() => handleBoxClick('학과부스')} type="button" className={activeBox === '학과부스' ? 'active' : ''}>
-          <b onClick={()=>navigate('/mainBtn1')}>학과부스</b></b> 
-        <b onClick={() => handleBoxClick('푸드트럭')} type="button" className={activeBox === '푸드트럭' ? 'active' : ''}>
-          <b onClick={()=>navigate('/mainBtn2')}>푸드트럭</b></b> 
-        <b onClick={() => handleBoxClick('포토부스')} type="button" className={activeBox === '포토부스' ? 'active' : ''}>
-          <b onClick={()=>navigate('/mainBtn3')}>포토부스</b></b> 
-        <b onClick={() => handleBoxClick('플리마켓')} type="button" className={activeBox === '플리마켓' ? 'active' : ''}>
-        <b onClick={()=>navigate('/mainBtn4')}>플리마켓</b></b> 
-      </div> */}
-
-      <div className='btn-list'>
+    <div className='btn-list'>
         <b onClick={()=>navigate('/mainBtn1')}>학과부스</b>
           <b onClick={()=>navigate('/mainBtn2')}>푸드트럭</b>
           <b onClick={()=>navigate('/mainBtn3')}>포토부스</b>
         <b onClick={()=>navigate('/mainBtn4')}>플리마켓</b>
       </div>
       
-      <button className='box1'>
+      <button className='Btn4box1'>
         <b style={{color:"#ffffff", marginTop:"20%",marginLeft:"-30%", position:"absolute"}}>학과부스</b>
       </button>
-      <button className='box2'>
+      <button className='Btn4box2'>
         <b style={{color:"#ffffff", marginTop:"20%",marginLeft:"-30%", position:"absolute"}}>푸드트럭</b>
         </button>
-      <button className='box3'>
+      <button className='Btn4box3'>
         <b style={{color:"#ffffff", marginTop:"20%",marginLeft:"-30%", position:"absolute"}}>포토부스</b>
         </button>
-      <button className='box4'>
-        <b style={{color:"#ffffff", marginTop:"20%",marginLeft:"-30%", position:"absolute"}}>플리마켓</b>
+      <button className='Btn4box4'>
+        <b style={{fontSize:"24px", color:"#5A776D", marginTop:"20%",marginLeft:"-30%", position:"absolute"}}>플리마켓</b>
         </button>
       
       <div className='madeby'>
@@ -65,7 +52,8 @@ function Main() {
       </div>
 
 </div>
-  );
+
+)
 }
 
-export default Main;
+export default MainBtn4;

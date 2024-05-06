@@ -9,7 +9,7 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  overflow: hidden; 
+  overflow: scroll; 
 }
 
 .sidebar-button, .myinfo-button {
