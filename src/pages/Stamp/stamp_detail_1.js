@@ -14,7 +14,7 @@ function StampDetail1() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/stamp')}
             />
             <p className="stamp-title">도장판</p>
 
@@ -72,13 +72,25 @@ function StampDetail1() {
                     <div className="circle">
                         <img src="../../../img/cat_1.png" alt="고양이 1" className="cat-stamp" />
                     </div>
-                    <p>문헌정보학과</p>
+                    <p>행정학과</p>
                 </div>
                 <div className="department">
                     <div className="circle">
                         <img src="../../../img/cat_1.png" alt="고양이 1" className="cat-stamp" />
                     </div>
-                    <p>문헌정보학과</p>
+                    <p>언론영상학부</p>
+                </div>
+                <div className="department">
+                    <div className="circle">
+                        <img src="../../../img/cat_1.png" alt="고양이 1" className="cat-stamp" />
+                    </div>
+                    <p>교육심리학과</p>
+                </div>
+                <div className="department">
+                    <div className="circle">
+                        <img src="../../../img/cat_1.png" alt="고양이 1" className="cat-stamp" />
+                    </div>
+                    <p>스포츠운동과학과</p>
                 </div>
             </div>
         </div>
