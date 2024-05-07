@@ -15,7 +15,7 @@ function StampDetail3() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/stamp')}
             />
             <p className="stamp-title">도장판</p>
 
@@ -59,7 +59,7 @@ function StampDetail3() {
                     <div className="circle">
                         <img src={passed ? "../../../img/cat_3.png" : "../../../img/cat_3_line.png"}
                             alt="고양이 3" className="cat-stamp" />                    </div>
-                    <p>데이터사이언스학과</p>
+                    <p>패션산업학과</p>
                 </div>
                 <div className="department">
                     <div className="circle">
@@ -71,13 +71,19 @@ function StampDetail3() {
                     <div className="circle">
                         <img src={passed ? "../../../img/cat_3.png" : "../../../img/cat_3_line.png"}
                             alt="고양이 3" className="cat-stamp" />                    </div>
-                    <p>산업디자인학과</p>
+                    <p>정보보호학부</p>
                 </div>
                 <div className="department">
                     <div className="circle">
                         <img src={passed ? "../../../img/cat_3.png" : "../../../img/cat_3_line.png"}
                             alt="고양이 3" className="cat-stamp" />                    </div>
-                    <p>산업디자인학과</p>
+                    <p>소프트웨어융합학과</p>
+                </div>
+                <div className="department">
+                    <div className="circle">
+                        <img src={passed ? "../../../img/cat_3.png" : "../../../img/cat_3_line.png"}
+                            alt="고양이 3" className="cat-stamp" />                    </div>
+                    <p>데이터사이언스학과</p>
                 </div>
                 <div className="department">
                     <div className="circle">

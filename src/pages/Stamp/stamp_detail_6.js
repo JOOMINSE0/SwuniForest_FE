@@ -14,7 +14,7 @@ function StampDetail6() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/stamp')}
             />
             <p className="stamp-title">도장판</p>
 
@@ -53,6 +53,16 @@ function StampDetail6() {
                 <div className="department">
                     <div className="circle">
                     </div>
+                    <p>화학과</p>
+                </div>
+                <div className="department">
+                    <div className="circle">
+                    </div>
+                    <p>생명환경공학과</p>
+                </div>
+                <div className="department">
+                    <div className="circle">
+                    </div>
                     <p>바이오헬스융합학과</p>
                 </div>
                 <div className="department">
@@ -63,7 +73,12 @@ function StampDetail6() {
                 <div className="department">
                     <div className="circle">
                     </div>
-                    <p>화학과</p>
+                    <p>식품공학과</p>
+                </div>
+                <div className="department">
+                    <div className="circle">
+                    </div>
+                    <p>식품영양학과</p>
                 </div>
             </div>
         </div>
