@@ -8,6 +8,7 @@ function Lineup() {
     const [selectedDay, setSelectedDay] = useState(null);
     let navigate = useNavigate();
 
+
     const handleDayClick = (day) => {
         setSelectedDay(day);
     }
@@ -72,8 +73,7 @@ function Lineup() {
                         <b style={{color: '#5A776D', fontSize: '24px', marginTop: '0px'}}>{day.split(' ')[1]}</b>
                     </button>
                 ))}
-            </div>
-                       {selectedDay && renderContent()}
+            </div>                        {selectedDay && renderContent()}
         </div>
     );
 }
