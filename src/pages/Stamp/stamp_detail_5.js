@@ -14,7 +14,7 @@ function StampDetail5() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/stamp')}
             />
             <p className="stamp-title">도장판</p>
 

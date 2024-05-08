@@ -13,7 +13,7 @@ function StampSuccess5() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/stamp')}
             />
             <div className='text'>
 

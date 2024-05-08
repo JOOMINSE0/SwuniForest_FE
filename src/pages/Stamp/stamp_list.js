@@ -20,7 +20,7 @@ function StampList() {
         src="../../../img/close.png"
         alt="취소버튼"
         className="close-btn"
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/stamp')}
       />
       <p className="description">부스 체험 후 학과별 인증번호를 입력하면 고양이 스템프를 드려요.</p>
       <div className="certification">

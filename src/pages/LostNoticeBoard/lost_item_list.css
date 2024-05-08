@@ -1,0 +1,152 @@
+/* 검색창 */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border: 1px solid #EBEBEB;
+    border-radius: 20px;
+    width: 60%;
+    margin: 0px -120px 20px 0px
+}
+
+.lost-input {
+    border: none;
+    outline: none;
+    flex: 1;
+    border-radius: 5px 0 0 5px;
+    border-radius: 20px;
+    height: 36.84px;
+    width: 273px;
+}
+
+.search {
+    padding: 10px;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.line {
+    width: 370px;
+}
+
+/* 그리드, 리스트 형식 */
+.lost-item-name-list,
+.lost-item-name-grid {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #575757;
+    z-index: 2;
+    margin-left: 5px;
+}
+
+.lost-item-place-list-1,
+.lost-item-place-list-2,
+.lost-item-place-grid-1,
+.lost-item-place-grid-2 {
+    font-size: 11px;
+    color: #B6B6B6;
+    z-index: 2;
+    margin-left: 5px;
+}
+
+.lost-item-time {
+    font-size: 12px;
+    color: #B6B6B6;
+    z-index: 2;
+    margin-left: 5px;
+}
+
+/* 그리드 레이아웃 */
+.lost-item-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    overflow-y: scroll;
+    height: 500px;
+}
+
+.lost-grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+    padding: 11px;
+    border-radius: 40px;
+    width: 150px;
+    height: 250px;
+    margin-left: 22px;
+    border: 1px solid #E8E8E8;
+}
+
+.lost-item-img-grid {
+    width: 120px;
+    height: 120px;
+    border-radius: 40px;
+    margin-bottom: 5px;
+    object-fit: cover;
+}
+
+/* 리스트 레이아웃 */
+.lost-item-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    border: none;
+    overflow-y: scroll;
+    height: 500px;
+    width: 390px;
+}
+
+.lost-list-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 40px;
+    border: 1px solid #E8E8E8;
+    width: 355px;
+}
+
+.lost-item-img-list {
+    width: 120px;
+    height: 120px;
+    border-radius: 40px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/*아이콘 모양*/
+.icon-list {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+    margin: -25px 0px 10px 270px
+}
+
+.grid-show,
+.list-show {
+    cursor: pointer;
+    border: 1px solid #EBEBEB;
+    border-radius: 15px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.grid-show.active,
+.list-show.active {
+    background-color: #F3F3F3;
+}
+
+/* 최신순, 오래된순 */
+.sort-select {
+    border: none;
+    margin: 20px 280px 0px 0px
+}
