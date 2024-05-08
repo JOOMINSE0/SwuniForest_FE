@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { ReactComponent as Gallery } from '../../assets/Gallery.svg';
 import "./signup2.css";
 
@@ -28,6 +28,20 @@ function Signup2() {
       }
     };
 
+    const [imagePreview, setImagePreview] = useState(null);
+    const fileInputRef = useRef(null);
+
+    const handleAttachClick = () => {
+      fileInputRef.current.click();
+    };
+  
+    const handleFileChange = (event) => {
+      const file = event.target.files[0];
+      if (file) {
+        setImagePreview(URL.createObjectURL(file));
+      }
+    };
+
   return (
     <div className="iphone-frame">
       <p className="login-title">회원가입</p>
@@ -43,11 +57,21 @@ function Signup2() {
         <pr>회원가입을 위해 서울여자대학교 도서관 앱 내<br/>‘모바일 열람증’ 캡쳐본을 첨부해주세요.</pr>
       </div>
 
-      <label style={{marginTop:"60%"}} className="label-mobile">모바일 열람증 첨부</label>
-      <Gallery style={{marginTop:"-5%",marginLeft:"80%", width:"25px", height:"25px"}}/>
-      <div style={{width: "360px", height: "0.6px", background: "#E3E3E3", marginTop:"10%", marginBottom:"15%"}}></div>
+      <label style={{marginTop:"30%"}} className="label-mobile">모바일 열람증 첨부</label>
+      <input
+        ref={fileInputRef}
+        type="file"
+        style={{ display: 'none' }} 
+        onChange={handleFileChange}
+      />
+      <button style={{marginTop:"-5%",marginLeft:"80%", width:"25px", height:"25px", borderStyle:"none", backgroundColor:"#ffffff", cursor:"pointer"}} onClick={handleAttachClick}>
+        <Gallery style={{marginTop:"-5%",marginLeft:"-50%", width:"25px", height:"25px"}}/></button>
+      {imagePreview && (
+        <img src={imagePreview} alt="Preview" style={{ width: '30%', marginTop: '10%', marginLeft:"-0%" }} />
+      )}
+      <div style={{width: "360px", height: "0.6px", background: "#E3E3E3", marginTop:"5%", marginBottom:"15%"}}></div>
 
-      <p>이름, 학과, 학번이 올바르게 기입되었는지<br/> 다시 한번 확인해주세요</p>
+      <p style={{color:'#898A8D'}}>이름, 학과, 학번이 올바르게 기입되었는지<br/> 다시 한번 확인해주세요</p>
       
       <label className="label-name">이름</label>
       <input style={{height:"50px"}} className="input2"></input>

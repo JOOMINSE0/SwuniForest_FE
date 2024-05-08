@@ -7,3 +7,21 @@
     font-weight: 600;
     line-height: 30px;
 }
+
+.day-box{
+    width: 96px;
+    height: 64px;
+    border-radius: 40px;
+    border: 1px solid #DFF2EB;
+    background: #ffffff;
+}
+
+.content{
+    width: 321px;
+    height: 104px;
+    border-radius: 30px;
+    background: #B2E0D0;
+    position: absolute;
+    margin-top: -80%;
+
+}

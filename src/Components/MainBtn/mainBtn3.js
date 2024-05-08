@@ -47,7 +47,7 @@ return(
       
       <div className='madeby'>
 
-        <p style={{color:"#ffffff",position:"absolute", marginTop:"89%", zIndex:"1",
+      <p style={{color:"#ffffff",position:"absolute", marginTop:"95%", zIndex:"1",
       fontSize:"15px", marginLeft:"-35px"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
       </div>
 
