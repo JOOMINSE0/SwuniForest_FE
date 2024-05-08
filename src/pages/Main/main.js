@@ -16,8 +16,8 @@ function Main() {
   return (
   
     <div className="iphone-frame1">
-      <button className='StampBtn' onClick={()=>navigate('/stamp')} style={{cursor: "pointer"}}>
-        <img style={{ width: "55px", height: "55px" }} 
+      <button className='StampBtn' onClick={()=>navigate('/stamp')}>
+        <img style={{ width: "55px", height: "55px",cursor: "pointer" }} 
       src='../../../img/StampBtn.png'></img></button>
 
       <button className="sidebar-button"><Sidebar/></button>
@@ -26,17 +26,6 @@ function Main() {
 
       <img className='background' src="../../../img/Background.png" alt="배경"
       style={{ width: "349px", height: "355px" }}/>
-
-      {/* <div className='btn-list'>
-        <b onClick={() => handleBoxClick('학과부스')} type="button" className={activeBox === '학과부스' ? 'active' : ''}>
-          <b onClick={()=>navigate('/mainBtn1')}>학과부스</b></b> 
-        <b onClick={() => handleBoxClick('푸드트럭')} type="button" className={activeBox === '푸드트럭' ? 'active' : ''}>
-          <b onClick={()=>navigate('/mainBtn2')}>푸드트럭</b></b> 
-        <b onClick={() => handleBoxClick('포토부스')} type="button" className={activeBox === '포토부스' ? 'active' : ''}>
-          <b onClick={()=>navigate('/mainBtn3')}>포토부스</b></b> 
-        <b onClick={() => handleBoxClick('플리마켓')} type="button" className={activeBox === '플리마켓' ? 'active' : ''}>
-        <b onClick={()=>navigate('/mainBtn4')}>플리마켓</b></b> 
-      </div> */}
 
       <div className='btn-list'>
         <b onClick={()=>navigate('/mainBtn1')}>학과부스</b>
@@ -60,7 +49,7 @@ function Main() {
       
       <div className='madeby'>
 
-        <p style={{color:"#ffffff",position:"absolute", marginTop:"89%", zIndex:"1",
+        <p style={{color:"#ffffff",position:"absolute", marginTop:"95%", zIndex:"1",
       fontSize:"15px", marginLeft:"-35px"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
       </div>
 

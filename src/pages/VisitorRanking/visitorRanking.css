@@ -1,0 +1,80 @@
+.first {
+    width: 380px;
+    height: 51px;
+    border-radius: 20px;
+    background: #6EA693;
+    margin-bottom: 10px;
+    color: #ffffff;
+    padding-left: 20px; 
+    padding-top: 15px; 
+    box-sizing: border-box;
+}
+
+.second{
+    width: 380px;
+    height: 51px;
+    border-radius: 20px;
+    background: #6EA693;
+    margin-bottom: 10px;
+    color: #ffffff;
+    padding-left: 20px; 
+    padding-top: 15px; 
+    box-sizing: border-box;
+}
+
+.third{
+    width: 380px;
+    height: 51px;
+    border-radius: 20px;
+    background: #6EA693;
+    margin-bottom: 10px;
+    color: #ffffff;
+    padding-left: 20px; 
+    padding-top: 15px; 
+    box-sizing: border-box;
+}
+
+.fourth{
+    width: 380px;
+    height: 51px;
+    border-radius: 20px;
+    border: 1px solid #8D8D8D; 
+    margin-bottom: 10px;
+    padding-left: 20px; 
+    padding-top: 15px; 
+    box-sizing: border-box;
+}
+
+.fifth{
+    width: 380px;
+    height: 51px;
+    border-radius: 20px;
+    border: 1px solid #8D8D8D; 
+    padding-left: 20px; 
+    padding-top: 15px; 
+    box-sizing: border-box;
+}
+
+.one{
+    width: 98px;
+    height: 78px;
+    border-radius: 20px;
+    background: #B2E0D0;
+}
+
+.two{
+    width: 98px;
+    height: 101px;
+    border-radius: 20px;
+    background: #B2E0D0;
+}
+
+
+.three{
+    width: 98px;
+    height: 58px;
+    border-radius: 20px;
+    background: #B2E0D0;
+}
+
+
