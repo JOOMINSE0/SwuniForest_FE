@@ -14,7 +14,7 @@ import Preguestbook from './pages/Guestbook/preGuestbook.js';
 import Postguestbook from './pages/Guestbook/postGuestbook.js';
 import VisitorRanking from './pages/VisitorRanking/visitorRanking.js';
 import UploadBoard from './pages/UploadBoard/uploadboard.js';
-import Lineup from './pages/Lineup/lineup.js';
+import Lineup from './pages/Lineup/Lineup.js';
 import Stamp from './pages/Stamp/stamp.js';
 import StampList from './pages/Stamp/stamp_list.js';
 import StampDetail1 from './pages/Stamp/stamp_detail_1';
@@ -39,10 +39,10 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Main />} /> {/*메인페이지*/}
-      <Route path='/mainBtn1' element={<MainBtn1/>} /> {/*mainBtn1Component*/}
-      <Route path='/mainBtn2' element={<MainBtn2/>} /> {/*mainBtn2Component*/}
-      <Route path='/mainBtn3' element={<MainBtn3/>} /> {/*mainBtn3Component*/}
-      <Route path='/mainBtn4' element={<MainBtn4/>} /> {/*mainBtn4Component*/}
+      <Route path='/mainBtn1' element={<MainBtn1 />} /> {/*mainBtn1Component*/}
+      <Route path='/mainBtn2' element={<MainBtn2 />} /> {/*mainBtn2Component*/}
+      <Route path='/mainBtn3' element={<MainBtn3 />} /> {/*mainBtn3Component*/}
+      <Route path='/mainBtn4' element={<MainBtn4 />} /> {/*mainBtn4Component*/}
       <Route path="/login1" element={<Login1 />} /> {/*로그인1*/}
       <Route path="/login2" element={<Login2 />} /> {/*로그인2*/}
       <Route path="/signup1" element={<Signup1 />} /> {/*회원가입1*/}
