@@ -1,31 +1,36 @@
 import React, { useState } from 'react';
-import { ReactComponent as Sidebar } from '../../assets/Sidebar.svg';
-import { ReactComponent as Myinfo } from '../../assets/Myinfo.svg';
-import "./main.css";
 import { useNavigate } from "react-router-dom";
-
+import { ReactComponent as SidebarIcon } from '../../assets/Sidebar.svg';
+import { ReactComponent as Myinfo } from '../../assets/Myinfo.svg';
+import Sidebar from '../../Components/Sidebar/sidebar.js'; 
+import "./main.css";
 
 function Main() {
   const [activeBox, setActiveBox] = useState('');
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false);
   let navigate = useNavigate();
 
   const handleBoxClick = (boxName) => {
     setActiveBox(boxName);
   };
-   
-  return (
-  
-    <div className="iphone-frame1">
-      <button className='StampBtn' onClick={()=>navigate('/stamp')}>
-        <img style={{ width: "55px", height: "55px",cursor: "pointer" }} 
-      src='../../../img/StampBtn.png'></img></button>
 
-      <button className="sidebar-button"><Sidebar/></button>
-      <button onClick={() => navigate('/login1')}
-       className="myinfo-button"><Myinfo/></button>
+  const toggleSidebar = () => {
+    setIsSidebarVisible(!isSidebarVisible);
+  };
+
+  return (
+    <div className="iphone-frame1">
+      <button className='StampBtn' onClick={() => navigate('/stamp')}>
+        <img style={{ width: "55px", height: "55px", cursor: "pointer" }} src='../../../img/StampBtn.png' alt="Stamp Button"></img>
+      </button>
+
+      <button className="sidebar-button" onClick={toggleSidebar}><SidebarIcon/></button>
+      {isSidebarVisible && <Sidebar style={{zIndex:"10"}} onToggle={toggleSidebar} />} {/* 조건부 렌더링 */}
+
+      <button onClick={() => navigate('/login1')} className="myinfo-button"><Myinfo/></button>
 
       <img className='background' src="../../../img/Background.png" alt="배경"
-      style={{ width: "349px", height: "355px" }}/>
+      style={{ width: "349px", height: "355px", position:"absolute" }}/>
 
       <div className='btn-list'>
         <b onClick={()=>navigate('/mainBtn1')}>학과부스</b>
@@ -47,10 +52,12 @@ function Main() {
         <b style={{color:"#ffffff", marginTop:"20%",marginLeft:"-30%", position:"absolute"}}>플리마켓</b>
         </button>
       
-      <div className='madeby'>
 
-        <p style={{color:"#ffffff",position:"absolute", marginTop:"95%", zIndex:"1",
-      fontSize:"15px", marginLeft:"-35px"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
+      <div className='visitor-layout'>
+        <div>접속자 수 • 128명</div>
+      </div>
+        <div className='madeby'>
+        <p>서울여자대학교 멋쟁이사자처럼 12TH</p>
       </div>
 
 </div>
