@@ -64,7 +64,7 @@ function LostBoard() {
 
                 <div className="line" style={{ width: "300px" }}></div>
                 <button className="lost-more-btn" onClick={() => navigate("/lost_list")}>
-                    분실물 더 찾아보기 <span className="more-indicator">></span>
+                    분실물 더 찾아보기 <span className="more-indicator"></span>
                 </button>
             </div>
             <button className="lost-write-btn" onClick={() => navigate("/lost_write")}>글쓰기</button>
