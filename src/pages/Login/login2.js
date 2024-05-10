@@ -22,11 +22,12 @@ function Login2() {
       });
       console.log('로그인 성공')
 
-      //토큰 저장
+      //token, role 저장
       sessionStorage.setItem('token', response.data.token);
       sessionStorage.setItem('role', response.data.role);
-
+      //role에 따라서 메인 페이지로 갈지(user), 인증번호 부스관리자 페이지로 갈지 결정(admin)
       navigate('/');
+
     } catch (error) {
       if (error.response && error.response.status === 500) {
         const errorMessage = error.response.data.message;

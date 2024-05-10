@@ -11,11 +11,12 @@
     z-index: 10;
 }
 
-/* p{
+.sidebar-text {
     margin-top: -30%;
     color: #ffffff;
     font-size: 12px;
-} */
+}
+
 .x {
     width: 40px;
 

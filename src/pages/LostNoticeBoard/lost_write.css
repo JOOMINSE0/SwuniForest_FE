@@ -42,7 +42,7 @@
     z-index: 3;
 }
 
-.lost-content {
+.content {
     display: flex;
     flex-direction: column;
     align-items: center;

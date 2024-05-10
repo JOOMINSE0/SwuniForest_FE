@@ -21,7 +21,10 @@ function LostWrite() {
     const handleUpload = () => {
         fileInputRef.current.click();
     };
-
+    const handleRemoveImage = () => {
+        setSelectedFile(null);
+        setPreview(null);
+    };
     const handleSubmit = async () => {
         if (!selectedFile || !itemTitle || !findPoint || !putPoint) {
             alert('모든 필드를 채워주세요.');
@@ -81,6 +84,7 @@ function LostWrite() {
                     {!preview && (
                         <button className="upload-btn" onClick={handleUpload}>사진 첨부</button>
                     )}
+
                 </div>
 
                 <div className="lost-input-1">

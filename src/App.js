@@ -34,6 +34,7 @@ import StampSuccess3 from './pages/Stamp/stamp_success_3.js';
 import StampSuccess4 from './pages/Stamp/stamp_success_4.js';
 import StampSuccess5 from './pages/Stamp/stamp_success_5.js';
 import StampSuccess6 from './pages/Stamp/stamp_success_6.js';
+import StampAdmin from './pages/Stamp/stamp_admin.js';
 
 function App() {
 
@@ -68,6 +69,7 @@ function App() {
       <Route path="/stamp_success_4" element={<StampSuccess4 />} /> {/*도장판_인문대학_절반*/}
       <Route path="/stamp_success_5" element={<StampSuccess5 />} /> {/*도장판_자율전공_절반*/}
       <Route path="/stamp_success_6" element={<StampSuccess6 />} /> {/*도장판_과학기술융합_절반*/}
+      <Route path="/stamp_admin" element={<StampAdmin />} /> {/*도장판_관리자*/}
       <Route path="/lost_board" element={<LostBoard />} /> {/*분실물게시판메인*/}
       <Route path="/lost_list" element={<LostList />} /> {/*분실물게시판리스트*/}
       <Route path="/lost_write" element={<LostWrite />} /> {/*분실물게시판작성*/}

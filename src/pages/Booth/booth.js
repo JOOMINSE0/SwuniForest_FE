@@ -1,14 +1,20 @@
-import { useNavigate } from "react-router-dom";
-import { useState } from "react";
-
+import { useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 import './booth.css';
 
 function Booth() {
-
     let navigate = useNavigate();
-    const [selectedCategory, setSelectedCategory] = useState("학과부스");
+    const location = useLocation();
+    const [selectedCategory, setSelectedCategory] = useState(location.state?.selectedCategory || "학과부스");
 
-    const categories = ["학과부스", "푸드트럭", "플리마켓", "포토부스"];
+    useEffect(() => {
+        if (location.state?.selectedCategory) {
+            setSelectedCategory(location.state.selectedCategory);
+        }
+    }, [location.state?.selectedCategory]);
+
+    const categories = ["학과부스", "푸드트럭", "포토부스", "플리마켓"];
+
     return (
         <div className="iphone-frame">
             <img
@@ -36,9 +42,9 @@ function Booth() {
             </div>
 
             <div className="booth-map">
-
-
+                {/* Add booth map content here */}
             </div>
+
             <div className="all-booth-location">
                 <div className="booth-layout">
                     <div className="booth-1">
@@ -51,6 +57,7 @@ function Booth() {
                     <button className="booth-location">제1과학관</button>
                 </div>
             </div>
+
             <div className="booth-places">
                 <div className="place">
                     <button>1 2 3 4</button>
@@ -66,8 +73,6 @@ function Booth() {
                 </div>
             </div>
         </div>
-
-
     )
 }
 
