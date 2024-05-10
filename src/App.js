@@ -34,17 +34,18 @@ import StampSuccess3 from './pages/Stamp/stamp_success_3.js';
 import StampSuccess4 from './pages/Stamp/stamp_success_4.js';
 import StampSuccess5 from './pages/Stamp/stamp_success_5.js';
 import StampSuccess6 from './pages/Stamp/stamp_success_6.js';
+import StampAdmin from './pages/Stamp/stamp_admin.js';
 
 function App() {
 
   return (
     <Routes>
       <Route path="/" element={<Main />} /> {/*메인페이지*/}
-      <Route path='/mainBtn1' element={<MainBtn1/>} /> {/*mainBtn1Component*/}
-      <Route path='/mainBtn2' element={<MainBtn2/>} /> {/*mainBtn2Component*/}
-      <Route path='/mainBtn3' element={<MainBtn3/>} /> {/*mainBtn3Component*/}
-      <Route path='/mainBtn4' element={<MainBtn4/>} /> {/*mainBtn4Component*/}
-      <Route path='/sidebar' element={<Sidebar/>} /> {/*sidebarComponent*/}
+      <Route path='/mainBtn1' element={<MainBtn1 />} /> {/*mainBtn1Component*/}
+      <Route path='/mainBtn2' element={<MainBtn2 />} /> {/*mainBtn2Component*/}
+      <Route path='/mainBtn3' element={<MainBtn3 />} /> {/*mainBtn3Component*/}
+      <Route path='/mainBtn4' element={<MainBtn4 />} /> {/*mainBtn4Component*/}
+      <Route path='/sidebar' element={<Sidebar />} /> {/*sidebarComponent*/}
       <Route path="/login1" element={<Login1 />} /> {/*로그인1*/}
       <Route path="/login2" element={<Login2 />} /> {/*로그인2*/}
       <Route path="/signup1" element={<Signup1 />} /> {/*회원가입1*/}
@@ -68,12 +69,13 @@ function App() {
       <Route path="/stamp_success_4" element={<StampSuccess4 />} /> {/*도장판_인문대학_절반*/}
       <Route path="/stamp_success_5" element={<StampSuccess5 />} /> {/*도장판_자율전공_절반*/}
       <Route path="/stamp_success_6" element={<StampSuccess6 />} /> {/*도장판_과학기술융합_절반*/}
+      <Route path="/stamp_admin" element={<StampAdmin />} /> {/*도장판_관리자*/}
       <Route path="/lost_board" element={<LostBoard />} /> {/*분실물게시판메인*/}
       <Route path="/lost_list" element={<LostList />} /> {/*분실물게시판리스트*/}
       <Route path="/lost_write" element={<LostWrite />} /> {/*분실물게시판작성*/}
       <Route path="/booth" element={<Booth />} /> {/*부스배치도*/}
       <Route path="*" element={<div>없는 페이지</div>} />
-    </Routes>
+    </Routes >
 
   );
 }

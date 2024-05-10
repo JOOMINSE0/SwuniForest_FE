@@ -7,20 +7,22 @@
     height: 543px;
     border-radius: 40px;
     background: #6EA693;
-    margin-left:-75%;
+    margin-left: -75%;
     z-index: 10;
 }
-p{
+
+.sidebar-text {
     margin-top: -30%;
     color: #ffffff;
     font-size: 12px;
 }
-.x{
+
+.x {
     width: 40px;
 
 }
 
-.xBtn{
+.xBtn {
     background-color: transparent;
     border-style: none;
     margin-left: -73%;

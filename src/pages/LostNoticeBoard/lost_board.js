@@ -1,8 +1,31 @@
 import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 import './lost_board.css';
 
 function LostBoard() {
-    let navigate = useNavigate();
+    const navigate = useNavigate();
+    const [lostItems, setLostItems] = useState([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('https://5a86-114-70-38-149.ngrok-free.app/api/lostitem/');
+
+                if (Array.isArray(response.data)) {
+                    setLostItems(response.data);
+                } else {
+                    console.error('Unexpected response data format:', response.data);
+                    alert('데이터를 불러오는 중 오류가 발생했습니다.');
+                }
+            } catch (error) {
+                console.error('Error fetching data:', error);
+                alert('데이터를 불러오는 중 오류가 발생했습니다.');
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <div className="iphone-frame">
@@ -11,7 +34,8 @@ function LostBoard() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate(-1)} />
+                onClick={() => navigate('/')}
+            />
             <p className="lost-text-1">
                 <span style={{ color: "#B2E0D0" }}>잃어버린 물건</span>은<br />없으신가요?
             </p>
@@ -21,45 +45,17 @@ function LostBoard() {
             <div className='back-circle-1'></div>
             <div className="lost-item-list" style={{ border: "0.4px solid #B6B6B6", width: "350px", height: "400px" }}>
                 <div className="scroll">
-                    <div className="lost-item">
-                        <img src="../../../img/lost-item.png" alt="분실물사진" className="lost-item-img" />
-                        <div className="lost-item-details">
-                            <p className="lost-item-name">
-                                <span className="green-dot">•</span>갈색 반지갑
-                            </p>
-                            <p className="lost-item-place">학생누리관 1층 로비 학사지원실</p>
+                    {lostItems.map((item, index) => (
+                        <div className="lost-item" key={index}>
+                            <img src={item.fileName} alt="분실물사진" className="lost-item-img" />
+                            <div className="lost-item-details">
+                                <p className="lost-item-name">
+                                    <span className="green-dot">•</span>{item.itemTitle}
+                                </p>
+                                <p className="lost-item-place">{item.findPoint} → {item.putPoint}</p>
+                            </div>
                         </div>
-                    </div>
-
-                    <div className="lost-item">
-                        <img src="../../../img/lost-item.png" alt="분실물사진" className="lost-item-img" />
-                        <div className="lost-item-details">
-                            <p className="lost-item-name">
-                                <span className="green-dot">•</span>C타입 충전기
-                            </p>
-                            <p className="lost-item-place">도서관 4층 열람실 → 도서관 1층 데스크</p>
-                        </div>
-                    </div>
-
-                    <div className="lost-item">
-                        <img src="../../../img/lost-item.png" alt="분실물사진" className="lost-item-img" />
-                        <div className="lost-item-details">
-                            <p className="lost-item-name">
-                                <span className="green-dot">•</span>C타입 충전기
-                            </p>
-                            <p className="lost-item-place">도서관 4층 열람실 → 도서관 1층 데스크</p>
-                        </div>
-                    </div>
-
-                    <div className="lost-item">
-                        <img src="../../../img/lost-item.png" alt="분실물사진" className="lost-item-img" />
-                        <div className="lost-item-details">
-                            <p className="lost-item-name">
-                                <span className="green-dot">• </span> C타입 충전기
-                            </p>
-                            <p className="lost-item-place">도서관 4층 열람실 → 도서관 1층 데스크</p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
                 <div className="line" style={{ width: "300px" }}></div>
@@ -68,7 +64,7 @@ function LostBoard() {
                 </button>
             </div>
             <button className="lost-write-btn" onClick={() => navigate("/lost_write")}>글쓰기</button>
-        </div >
+        </div>
     );
 }
 
