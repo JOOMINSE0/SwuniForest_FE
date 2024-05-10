@@ -43,7 +43,7 @@ function LostList() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate(-1)}
+                onClick={() => navigate('/')}
             />
             <div className="search-container">
                 <input className="lost-input" />

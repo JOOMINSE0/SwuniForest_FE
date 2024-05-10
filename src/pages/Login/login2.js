@@ -22,7 +22,7 @@ function Login2() {
       });
       console.log('로그인 성공')
 
-      //세션, 토큰 저장
+      //토큰 저장
       sessionStorage.setItem('token', response.data.token);
       sessionStorage.setItem('role', response.data.role);
 
@@ -50,7 +50,7 @@ function Login2() {
         alt="취소버튼"
         className="close-btn"
         style={{ marginTop: "9%" }}
-        onClick={() => navigate(-1)}
+        onClick={() => navigate('/')}
       />
       <div style={{ marginTop: "260px" }}>
         <p className="stId">학번</p>
