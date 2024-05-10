@@ -27,30 +27,36 @@ function Lineup() {
                 return (
                     <>
                         <div className="content">
+
                             <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>가수</div>
-                            <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
+                            <Locate style={{ marginTop: "10%", marginLeft: "-15%" }} />
                             <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
                         </div>
                     </>
                 );
             case 'Thu 23':
                 return (
                     <div className="content">
+
                         <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>아이돌</div>
-                        <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
+                        <Locate style={{ marginTop: "10%", marginLeft: "-15%" }} />
                         <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
-                    </div>
+
+                    </div >
                 );
             case 'Fri 24':
                 return (
                     <div className="content">
+
                         <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>발라드</div>
-                        <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
+                        <Locate style={{ marginTop: "10%", marginLeft: "-15%" }} />
                         <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
-                    </div>
+
+                    </div >
                 );
             default:
-                return null;  // Optionally handle the case where no day is selected.
+                return null;
         }
     };
 
@@ -73,7 +79,8 @@ function Lineup() {
                         <b style={{ color: '#5A776D', fontSize: '24px', marginTop: '0px' }}>{day.split(' ')[1]}</b>
                     </button>
                 ))}
-            </div>                        {selectedDay && renderContent()}
+            </div>
+            {selectedDay && renderContent()}
         </div>
     );
 }

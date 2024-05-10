@@ -3,9 +3,9 @@ import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Main from './pages/Main/main.js';
 import MainBtn1 from './Components/MainBtn/mainBtn1.js';
-import MainBtn2 from './Components/MainBtn/mainBtn2.js'
-import MainBtn3 from './Components/MainBtn/mainBtn3.js'
-import MainBtn4 from './Components/MainBtn/mainBtn4.js'
+import MainBtn2 from './Components/MainBtn/mainBtn2.js';
+import MainBtn3 from './Components/MainBtn/mainBtn3.js';
+import MainBtn4 from './Components/MainBtn/mainBtn4.js';
 import Login1 from './pages/Login/login1.js';
 import Login2 from './pages/Login/login2.js';
 import Signup1 from './pages/Signup/signup1.js';
@@ -14,6 +14,7 @@ import Preguestbook from './pages/Guestbook/preGuestbook.js';
 import Postguestbook from './pages/Guestbook/postGuestbook.js';
 import VisitorRanking from './pages/VisitorRanking/visitorRanking.js';
 import UploadBoard from './pages/UploadBoard/uploadboard.js';
+import Sidebar from './Components/Sidebar/sidebar.js';
 import Lineup from './pages/Lineup/Lineup.js';
 import Stamp from './pages/Stamp/stamp.js';
 import StampList from './pages/Stamp/stamp_list.js';
@@ -43,13 +44,13 @@ function App() {
       <Route path='/mainBtn2' element={<MainBtn2 />} /> {/*mainBtn2Component*/}
       <Route path='/mainBtn3' element={<MainBtn3 />} /> {/*mainBtn3Component*/}
       <Route path='/mainBtn4' element={<MainBtn4 />} /> {/*mainBtn4Component*/}
+      <Route path='/sidebar' element={<Sidebar />} /> {/*sidebarComponent*/}
       <Route path="/login1" element={<Login1 />} /> {/*로그인1*/}
       <Route path="/login2" element={<Login2 />} /> {/*로그인2*/}
       <Route path="/signup1" element={<Signup1 />} /> {/*회원가입1*/}
       <Route path="/signup2" element={<Signup2 />} /> {/*회원가입2*/}
       <Route path="/preGuestbook" element={<Preguestbook />} /> {/*로그인전방명록*/}
       <Route path="/postGuestbook" element={<Postguestbook />} /> {/*로그인후방명록*/}
-      <Route path="/postGuestbook" element={<Postguestbook />} /> {/*방명록업로드*/}
       <Route path="/visitorRanking" element={<VisitorRanking />} /> {/*방문율랭킹*/}
       <Route path="/uploadboard" element={<UploadBoard />}></Route> {/*방명록 업로드*/}
       <Route path="/lineup" element={<Lineup />} /> {/*라인업*/}
@@ -72,7 +73,7 @@ function App() {
       <Route path="/lost_write" element={<LostWrite />} /> {/*분실물게시판작성*/}
       <Route path="/booth" element={<Booth />} /> {/*부스배치도*/}
       <Route path="*" element={<div>없는 페이지</div>} />
-    </Routes>
+    </Routes >
 
   );
 }

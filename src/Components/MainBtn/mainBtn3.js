@@ -45,10 +45,11 @@ return(
         <b style={{color:"#ffffff", marginTop:"20%",marginLeft:"-30%", position:"absolute"}}>플리마켓</b>
         </button>
       
-      <div className='madeby'>
-
-      <p style={{color:"#ffffff",position:"absolute", marginTop:"95%", zIndex:"1",
-      fontSize:"15px", marginLeft:"-35px"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
+        <div className='visitor-layout'>
+        <div>접속자 수 • 128명</div>
+      </div>
+        <div className='madeby'>
+        <p>서울여자대학교 멋쟁이사자처럼 12TH</p>
       </div>
 
 </div>

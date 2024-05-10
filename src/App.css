@@ -9,12 +9,13 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  overflow: scroll; 
+  overflow: scroll;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   border-radius: 40px;
 }
 
-.sidebar-button, .myinfo-button {
+.sidebar-button,
+.myinfo-button {
   background-color: #ffffff;
   border-color: #ffffff;
   border-style: none;
@@ -32,7 +33,7 @@
   margin-left: 80%;
 }
 
-.background{
+.background {
   width: 349px;
   height: 301;
   margin-top: -80%;
@@ -52,7 +53,7 @@
 
 .btn-list {
   position: absolute;
-  top: 55%; 
+  top: 55%;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -129,16 +130,14 @@
 
 @font-face {
   font-family: "BMJUA";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Bareun_hipi";
-  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_hipi.woff")
-    format("woff");
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/naverfont_01@1.0/Bareun_hipi.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }

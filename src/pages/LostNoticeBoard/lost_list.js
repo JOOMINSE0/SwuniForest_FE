@@ -1,13 +1,40 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './lost_board.css';
 import './lost_item_list.css';
 import LostItemGrid from "../../Components/LostItemGrid";
 import LostItemList from "../../Components/LostItemList";
+import axios from 'axios';
 
 function LostList() {
     const [viewMode, setViewMode] = useState("grid");
+    const [itemTitle, setItemTitle] = useState('');
+    const [fileName, setFilename] = useState('');
+    const [findPoint, setfindPoint] = useState('');
+    const [putPoint, setPutpoint] = useState('');
+    const [createdAt, setCreateat] = useState('');
+
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get('https://5a86-114-70-38-149.ngrok-free.app/api/lostitem');
+                console.log(response);
+                console.log(response);
+
+            } catch (error) {
+                if (error.response && error.response.status === 500) {
+                    alert("이미 존재하는 회원입니다.");
+                } else {
+                    console.error('Error:', error);
+                    alert('서버와의 통신 중 오류가 발생했습니다.');
+                }
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <div className="iphone-frame">
@@ -26,8 +53,6 @@ function LostList() {
                     className="search"
                 />
             </div>
-
-
             <div className="line"></div>
             <select className="sort-select">
                 <option>최신순</option>

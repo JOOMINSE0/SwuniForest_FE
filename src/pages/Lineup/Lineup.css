@@ -1,4 +1,4 @@
-.month{
+.month {
     color: #5A776D;
     text-align: center;
     font-family: Pretendard;
@@ -8,7 +8,7 @@
     line-height: 30px;
 }
 
-.day-box{
+.day-box {
     width: 96px;
     height: 64px;
     border-radius: 40px;
@@ -16,7 +16,7 @@
     background: #ffffff;
 }
 
-.content{
+.content {
     width: 321px;
     height: 104px;
     border-radius: 30px;
