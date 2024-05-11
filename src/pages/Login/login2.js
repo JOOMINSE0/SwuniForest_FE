@@ -7,6 +7,7 @@ function Login2() {
   const navigate = useNavigate();
   const [studentNum, setStudentNum] = useState('');
   const [password, setPassword] = useState('');
+  const fetchURL = "https://eeb7-221-140-29-184.ngrok-free.app/"
 
   const handleLoginClick = async () => {
     const data = {
@@ -15,18 +16,24 @@ function Login2() {
     };
 
     try {
-      const response = await axios.post('https://8731-114-70-38-149.ngrok-free.app/login', data, {
+      const response = await axios.post(fetchURL + 'api/login', data, {
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         }
       });
+      // token, role 저장
+      const token = response.data.token;
+      const role = response.data.role;
+      sessionStorage.setItem('token', token);
+      sessionStorage.setItem('role', role);
       console.log('로그인 성공')
 
-      //token, role 저장
-      sessionStorage.setItem('token', response.data.token);
-      sessionStorage.setItem('role', response.data.role);
-      //role에 따라서 메인 페이지로 갈지(user), 인증번호 부스관리자 페이지로 갈지 결정(admin)
-      navigate('/');
+      // role에 따라서 페이지 이동 결정
+      if (role === 'ROLE_MANAGER') {
+        navigate('/stamp_admin');
+      } else {
+        navigate('/');
+      }
 
     } catch (error) {
       if (error.response && error.response.status === 500) {
