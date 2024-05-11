@@ -18,7 +18,7 @@ function Signup2() {
   };
 
   const [isChecked, setIsChecked] = useState(false);
-
+  const fetchURL = "https://db30-221-140-29-184.ngrok-free.app/"
   // 체크박스 상태 변경 함수
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
@@ -44,7 +44,7 @@ function Signup2() {
     };
 
     try {
-      const response = await axios.post('https://8731-114-70-38-149.ngrok-free.app/signup', JSON.stringify(data), {
+      const response = await axios.post(fetchURL + 'api/signup', JSON.stringify(data), {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -128,12 +128,41 @@ function Signup2() {
         className="input2"
       >
         <option value="">학과를 선택하세요</option>
-        <option value="Economics">경제학과</option>
-        <option value="Business">경영학과</option>
-        <option value="Software">소프트웨어융합학과</option>
-        <option value="Cybersecurity">정보보호학과</option>
-        <option value="DigitalMedia">디지털미디어학과</option>
-        <option value="DataSience">데이터사이언스학과</option>
+        <option value="자율전공학부">자율전공학부</option>
+        <option value="글로벌ICT인문융합부">글로벌ICT인문융합부</option>
+        <option value="국어국문학과">국어국문학과</option>
+        <option value="영어영문학과">영어영문학과</option>
+        <option value="중어중문학과">중어중문학과</option>
+        <option value="일어일문학과">일어일문학과</option>
+        <option value="사학과">사학과</option>
+        <option value="기독교학과">기독교학과</option>
+        <option value="경제학과">경제학과</option>
+        <option value="문헌정보학과">문헌정보학과</option>
+        <option value="사회복지학과">사회복지학과</option>
+        <option value="아동학과">아동학과</option>
+        <option value="행정학과">행정학과</option>
+        <option value="언론영상학부">언론영상학부</option>
+        <option value="교육심리학과">교육심리학과</option>
+        <option value="스포츠운동과학과">스포츠운동과학과</option>
+        <option value="수학과">수학과</option>
+        <option value="화학과">화학과</option>
+        <option value="생명환경공학과">생명환경공학과</option>
+        <option value="바이오헬스융합학과">바이오헬스융합학과</option>
+        <option value="원예생명조경학과">원예생명조경학과</option>
+        <option value="식품공학과">식품공학과</option>
+        <option value="식품영양학과">식품영양학과</option>
+        <option value="경영학과">경영학과</option>
+        <option value="패션산업학과">패션산업학과</option>
+        <option value="디지털미디어학과">디지털미디어학과</option>
+        <option value="정보보호학부">정보보호학부</option>
+        <option value="소프트웨어융합학과">소프트웨어융합학과</option>
+        <option value="데이터사이언스학과">데이터사이언스학과</option>
+        <option value="산업디자인학과">산업디자인학과</option>
+        <option value="현대미술전공">현대미술전공</option>
+        <option value="공예전공">공예전공</option>
+        <option value="시각디자인전공">시각디자인전공</option>
+        <option value="첨단미디어디자인전공">첨단미디어디자인전공</option>
+
       </select>
       <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginBottom: "10px" }}></div>
 

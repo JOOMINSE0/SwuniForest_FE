@@ -6,18 +6,20 @@ import './lost_board.css';
 function LostBoard() {
     const navigate = useNavigate();
     const [lostItems, setLostItems] = useState([]);
+    const fetchURL = "https://db30-221-140-29-184.ngrok-free.app/"
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://5a86-114-70-38-149.ngrok-free.app/api/lostitem/');
+                const response = await axios.get(fetchURL + 'api/lostitem/', {
+                    headers: {
+                        'Content-Type': `application/json`,
+                        'ngrok-skip-browser-warning': '69420',
+                    }
+                });
 
-                if (Array.isArray(response.data)) {
-                    setLostItems(response.data);
-                } else {
-                    console.error('Unexpected response data format:', response.data);
-                    alert('데이터를 불러오는 중 오류가 발생했습니다.');
-                }
+                setLostItems(response.data);
+
             } catch (error) {
                 console.error('Error fetching data:', error);
                 alert('데이터를 불러오는 중 오류가 발생했습니다.');

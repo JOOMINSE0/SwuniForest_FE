@@ -15,11 +15,12 @@ function LostList() {
     const [createdAt, setCreateat] = useState('');
 
     const navigate = useNavigate();
+    const fetchURL = "https://db30-221-140-29-184.ngrok-free.app/"
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://5a86-114-70-38-149.ngrok-free.app/api/lostitem');
+                const response = await axios.get(fetchURL + 'api/lostitem/',);
                 console.log(response);
                 console.log(response);
 
