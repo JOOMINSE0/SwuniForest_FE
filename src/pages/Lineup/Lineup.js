@@ -26,34 +26,86 @@ function Lineup() {
             case 'Wed 22':
                 return (
                     <>
-                        <div className="content">
+                        <div className="content1">
 
                             <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>가수</div>
-                            <Locate style={{ marginTop: "10%", marginLeft: "-15%" }} />
+                            <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                             <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                            <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
+                            <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                        <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
+                        <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
                         </div>
                     </>
                 );
             case 'Thu 23':
                 return (
-                    <div className="content">
+                    <>
+                        <div className="content1">
 
-                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>아이돌</div>
-                        <Locate style={{ marginTop: "10%", marginLeft: "-15%" }} />
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>가수</div>
+                            <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
+                            <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                            <Locate style={{ marginTop: "10%",marginLeft: "5%" }} />
+                            <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                        <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
                         <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
-                    </div >
+                        </div>
+                    </>
                 );
             case 'Fri 24':
                 return (
-                    <div className="content">
+                    <>
+                        <div className="content1">
 
-                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>발라드</div>
-                        <Locate style={{ marginTop: "10%", marginLeft: "-15%" }} />
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>가수</div>
+                            <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
+                            <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                            <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
+                            <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                        <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                         <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
-                    </div >
+                        </div>
+                    </>
                 );
             default:
                 return null;
@@ -70,7 +122,7 @@ function Lineup() {
                 style={{ marginTop: "9%" }}
                 onClick={() => navigate(-1)}
             />
-            <Line style={{ marginLeft: "-85%", marginTop: "40%" }} />
+            <Line style={{ marginLeft: "-85%", marginTop: "40%", position:"absolute" }} />
             <div style={{ display: 'flex', alignItems: 'center', position: "absolute", marginTop: "-140%" }}>
                 <div className="month" style={{ marginRight: '20px', fontWeight: 'bold', fontSize: '24px' }}>May</div>
                 {['Wed 22', 'Thu 23', 'Fri 24'].map((day, index) => (

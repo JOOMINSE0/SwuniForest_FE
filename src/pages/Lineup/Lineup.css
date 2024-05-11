@@ -16,12 +16,22 @@
     background: #ffffff;
 }
 
-.content {
+.content1 {
     width: 321px;
     height: 104px;
     border-radius: 30px;
     background: #B2E0D0;
-    position: absolute;
-    margin-top: -80%;
+    position: relative;
+    margin-top: 30%;
+
+}
+
+.content2 {
+    width: 321px;
+    height: 104px;
+    border-radius: 30px;
+    background: #B2E0D0;
+    position: relative;
+    margin-top: 15%;
 
 }

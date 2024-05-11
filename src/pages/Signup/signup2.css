@@ -18,8 +18,8 @@
     width: 365px;
     height: 80px;
     flex-shrink: 0;
-    margin-top: -150%;
-    position: absolute;
+    margin-top: 30%;
+    position: relative;
     display: flex; 
     align-items: center; 
     justify-content: center;
@@ -44,26 +44,31 @@
 
 .label-name{
     margin-left: -80%;
+    position:"relative"
 }
 
 .label-major{
     margin-left: -80%;
     margin-top: 15px;
+    position:"relative"
 }
 
 .label-stid{
     margin-left: -80%;
     margin-top: 15px;
+    position:"relative"
 }
 
 .label-pw{
     margin-left: -73%;
     margin-top: 15px;
+    position:"relative"
 }
 
 .label-pwcheck{
     margin-left: -65%;
     margin-top: 15px;
+    position:"relative"
 }
 
 
@@ -71,4 +76,5 @@
     border-style: none;
     width: 330px;
     height: 40px;
+    position:"relative"
 }
