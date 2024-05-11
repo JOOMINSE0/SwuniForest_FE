@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
-import { ReactComponent as Sidebar } from '../../assets/Sidebar.svg';
+import { ReactComponent as SidebarIcon } from '../../assets/Sidebar.svg';
 import { ReactComponent as Myinfo } from '../../assets/Myinfo.svg';
 import "./mainBtn1.css";
+import Sidebar from '../Sidebar/sidebar.js';
 
 function MainBtn1() {
   const [activeBox, setActiveBox] = useState('');
@@ -28,12 +29,13 @@ function MainBtn1() {
         <img style={{ width: "55px", height: "55px" }}
           src='../../../img/StampBtn.png'></img></button>
 
-      <button className="sidebar-button"><Sidebar /></button>
+      <button className="sidebar-button" onClick={toggleSidebar}><SidebarIcon /></button>
+            {isSidebarVisible && <Sidebar style={{ zIndex: "10" }} onToggle={toggleSidebar} />} {/* 조건부 렌더링 */}
       <button onClick={() => navigate('/login1')}
         className="myinfo-button"><Myinfo /></button>
 
-      <img className='background' src="../../../img/Background.png" alt="배경"
-        style={{ width: "349px", height: "355px" }} />
+        <img className='background' src="../../../img/Background.png" alt="배경"
+                style={{ width: "349px", height: "355px", position: "absolute" }} />
 
       <div className='btn-list'>
         <b onClick={() => navigate('/mainBtn1')}>학과부스</b>

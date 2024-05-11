@@ -146,15 +146,16 @@
   width: 147px;
   height: 30px;
   border-radius: 5px;
-  border: 0.4px solid #FFF;
+  box-sizing: border-box;
+  border: 0.4px solid #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  color: #FFF;
-  position: fixed;
-  bottom: 23px;
-  left: 15px;
+  background-color: #ffffff1a;
+  color: #ffffff;
+  position: absolute;
+  bottom: 3%;
+  left: 6%;
   z-index: 5;
 }
 
@@ -163,9 +164,9 @@
   font-size: 15px;
   display: flex;
   align-items: center;
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
+  position: absolute;
+  bottom: 2%;
+  right: 5%;
   z-index: 5;
 
 }

@@ -101,7 +101,7 @@ function UploadBoard() {
                         value={guestContent}
                         onChange={(e) => setGuestContent(e.target.value)}
                     />
-                    <div className="line-div"></div>
+                    <div style={{width:"300px", height:"0.6px", background:"#fff", marginLeft:"30px"}}></div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
                     <div style={{ color: "#ffffff", marginLeft: "5%", fontWeight: 'bolder' }}>익명여부</div>
