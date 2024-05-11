@@ -23,28 +23,31 @@ return(
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        gap: '10px'
+        gap: '10px',
+        position:"absolute",
+        marginTop:"-120%"
     }} 
     className="divform1"
 >   
 
-    {/* <div className="one-text">데이터사이언스학과</div> */}
+    <div className="one-text">데이터사이언스학과</div>
     <div className="one" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"5%"}}>
+    <img style={{width:"35px", height:"39px"}} src="../../../img/2.png"></img>
+    </div>
+
+    <div className="two-text">경영학과</div>
+    <div className="two" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+    
         <img style={{width:"35px", height:"39px"}} src="../../../img/1.png"></img>
     </div>
 
-    {/* <div className="two-text">경영학과</div> */}
-    <div className="two" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-        <img style={{width:"35px", height:"39px"}} src="../../../img/2.png"></img>
-    </div>
-
-    {/* <div className="three-text">패션산업학과</div> */}
+    <div className="three-text">패션산업학과</div>
     <div className="three" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"10%"}}>
         <img style={{width:"35px", height:"39px"}} src="../../../img/3.png"></img>
     </div>
 </div>
 
-        <p>학과별 방문율 등수</p>
+        <p style={{color:"#7E7F82"}}>학과별 방문율 등수</p>
         
             <div className="first">1등
             <div className="vertical1"> </div>
