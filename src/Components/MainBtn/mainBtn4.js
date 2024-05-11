@@ -1,14 +1,35 @@
 import { useNavigate } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ReactComponent as SidebarIcon } from '../../assets/Sidebar.svg';
 import { ReactComponent as Myinfo } from '../../assets/Myinfo.svg';
 import "./mainBtn4.css";
+import axios from 'axios';
 import Sidebar from '../Sidebar/sidebar.js';
 
 function MainBtn4() {
   const [activeBox, setActiveBox] = useState('');
   const [isSidebarVisible, setIsSidebarVisible] = useState(false);
+  const [totalVisitCount, setTotalVisitCount] = useState(0);  // 접속자 수 카운트
   let navigate = useNavigate();
+  const [error, setError] = useState('');
+
+  useEffect(() => {
+      axios.get('https://1b2e-121-161-171-137.ngrok-free.app/', {
+          headers: {
+              'Content-Type': 'application/json',
+              'ngrok-skip-browser-warning': '69420',
+          }
+      })
+      .then(response => {
+          setTotalVisitCount(response.data.totalVisitCount);
+          console.log(response.data.totalVisitCount);
+      })
+      .catch(error => {
+          console.error('접속자 수 에러:', error);
+          setError('접속자 수를 불러오는데 실패했습니다.');
+      });
+  }, []);
+  
 
   const handleBoxClick = (boxName) => {
     setActiveBox(boxName);
@@ -56,9 +77,10 @@ function MainBtn4() {
         <b style={{ fontSize: "24px", color: "#5A776D", marginTop: "20%", marginLeft: "-30%", position: "absolute" }}>플리마켓</b>
       </button>
 
-      <div className='visitor-layout'>
-        <div>접속자 수 • 128명</div>
-      </div>
+      {error && <div className="error-message">{error}</div>}
+            <div className='visitor-layout'>
+                <div>접속자 수 • {totalVisitCount}명</div>
+            </div>
       <div className='madeby'>
         <p>서울여자대학교 멋쟁이사자처럼 12TH</p>
       </div>
