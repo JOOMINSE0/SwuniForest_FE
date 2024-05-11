@@ -18,13 +18,12 @@ function Signup2() {
   };
 
   const [isChecked, setIsChecked] = useState(false);
-  const fetchURL = "https://eeb7-221-140-29-184.ngrok-free.app/"
-  // 체크박스 상태 변경 함수
+  const fetchURL = "https://db30-221-140-29-184.ngrok-free.app/"
+
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
 
-  // 확인 버튼 클릭 이벤트 핸들러
   const handleConfirmClick = async () => {
     if (!isChecked) {
       alert('개인정보 수집 이용에 동의해주세요.');
@@ -37,14 +36,14 @@ function Signup2() {
     }
 
     const data = {
-      studentNum: studentNum,
-      username: username,
-      major: major,
-      password: password
+      studentNum,
+      username,
+      major,
+      password
     };
 
     try {
-      const response = await axios.post(fetchURL + 'api/signup', JSON.stringify(data), {
+      const response = await axios.post(fetchURL + 'api/signup', data, {
         headers: {
           'Content-Type': 'application/json'
         }
@@ -56,12 +55,8 @@ function Signup2() {
         navigate('/login1');
       }
     } catch (error) {
-      if (error.response && error.response.status === 500) {
-        alert("이미 존재하는 회원입니다.");
-      } else {
-        console.error('Error:', error);
-        alert('서버와의 통신 중 오류가 발생했습니다.');
-      }
+      console.error('Error:', error);
+      alert('서버와의 통신 중 오류가 발생했습니다.');
     }
   };
 
@@ -76,6 +71,30 @@ function Signup2() {
     const file = event.target.files[0];
     if (file) {
       setImagePreview(URL.createObjectURL(file));
+      handleOCRSubmit(file);
+    }
+  };
+
+  const handleOCRSubmit = async (file) => {
+    const formData = new FormData();
+    formData.append('imageFile', file);
+  
+    try {
+      const ocrResponse = await axios.post(fetchURL + 'api/naverOcrPost', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+  
+      if (ocrResponse.status === 200) {
+        console.log("OCR 결과:", ocrResponse.data);
+        // OCR 처리 후의 로직
+      } else {
+        throw new Error('OCR 처리 실패');
+      }
+    } catch (error) {
+      console.error('OCR 요청 실패:', error);
+      alert('OCR 처리 중 오류가 발생했습니다. 다시 시도해 주세요.');
     }
   };
 
@@ -94,7 +113,7 @@ function Signup2() {
         <p>회원가입을 위해 서울여자대학교 도서관 앱 내<br />‘모바일 열람증’ 캡쳐본을 첨부해주세요.</p>
       </div>
 
-      <label style={{ marginTop: "30%" }} className="label-mobile">모바일 열람증 첨부</label>
+      <label style={{ position:"relative", marginTop:"5%" }} className="label-mobile">모바일 열람증 첨부</label>
       <input
         ref={fileInputRef}
         type="file"
@@ -105,11 +124,11 @@ function Signup2() {
         <Gallery style={{ marginTop: "-5%", marginLeft: "-50%", width: "25px", height: "25px" }} />
       </button>
       {imagePreview && (
-        <img src={imagePreview} alt="Preview" style={{ width: '30%', marginTop: '10%', marginLeft: "-0%" }} />
+        <img src={imagePreview} alt="Preview" style={{ width: '30%', marginTop: '10%', marginLeft: "-0%", position:"relative" }} />
       )}
       <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginTop: "5%", marginBottom: "15%" }}></div>
 
-      <p style={{ color: '#898A8D' }}>이름, 학과, 학번이 올바르게 기입되었는지<br /> 다시 한번 확인해주세요</p>
+      <p style={{ color: '#898A8D', position:"relative" }}>이름, 학과, 학번이 올바르게 기입되었는지<br /> 다시 한번 확인해주세요</p>
 
       <label className="label-name">이름</label>
       <input

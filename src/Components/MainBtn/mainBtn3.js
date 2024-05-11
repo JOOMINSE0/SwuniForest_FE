@@ -14,7 +14,7 @@ function MainBtn3() {
   const [error, setError] = useState('');
 
   useEffect(() => {
-      axios.get('https://eeb7-221-140-29-184.ngrok-free.app/', {
+      axios.get('https://db30-221-140-29-184.ngrok-free.app/', {
           headers: {
               'Content-Type': 'application/json',
               'ngrok-skip-browser-warning': '69420',
