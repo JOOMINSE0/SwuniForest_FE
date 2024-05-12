@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import './stamp_list.css';
@@ -6,51 +6,6 @@ import './stamp_list.css';
 function StampList() {
   const navigate = useNavigate();
   const [inputCode, setInputCode] = useState('');
-  const [catStamps, setCatStamps] = useState([
-    { score: 0, total: 8, college: "사회과학대학", img1: "../../../img/cat_1.png", img2: "../../../img/cat_1_line.png" },
-    { score: 0, total: 4, college: "아트앤디자인스쿨", img1: "../../../img/cat_2.png", img2: "../../../img/cat_2_line.png" },
-    { score: 0, total: 7, college: "미래산업융합대학", img1: "../../../img/cat_3.png", img2: "../../../img/cat_3_line.png" },
-    { score: 0, total: 7, college: "인문대학", img1: "../../../img/cat_4.png", img2: "../../../img/cat_4_line.png" },
-    { score: 0, total: 1, college: "자율전공학부", img1: "../../../img/cat_5.png", img2: "../../../img/cat_5_line.png" },
-    { score: 0, total: 7, college: "과학기술융합대학", img1: "../../../img/cat_6.png", img2: "../../../img/cat_6_line.png" },
-  ]);
-
-  const departmentMapping = {
-    "Department1": "사회과학대학",
-    "Department2": "사회과학대학",
-    "Department3": "사회과학대학",
-    "Department4": "사회과학대학",
-    "Department5": "사회과학대학",
-    "Department6": "사회과학대학",
-    "Department7": "사회과학대학",
-    "Department8": "사회과학대학",
-    "Department9": "아트앤디자인스쿨",
-    "Department10": "아트앤디자인스쿨",
-    "Department11": "아트앤디자인스쿨",
-    "Department12": "아트앤디자인스쿨",
-    "Department13": "미래산업융합대학",
-    "Department14": "미래산업융합대학",
-    "Department15": "미래산업융합대학",
-    "Department16": "미래산업융합대학",
-    "Department17": "미래산업융합대학",
-    "Department18": "미래산업융합대학",
-    "Department19": "미래산업융합대학",
-    "Department20": "인문대학",
-    "Department21": "인문대학",
-    "Department22": "인문대학",
-    "Department23": "인문대학",
-    "Department24": "인문대학",
-    "Department25": "인문대학",
-    "Department26": "인문대학",
-    "Department27": "자율전공학부",
-    "Department28": "과학기술융합대학",
-    "Department29": "과학기술융합대학",
-    "Department30": "과학기술융합대학",
-    "Department31": "과학기술융합대학",
-    "Department32": "과학기술융합대학",
-    "Department33": "과학기술융합대학",
-    "Department34": "과학기술융합대학"
-  };
   const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
 
   const handleCodeSubmit = async () => {
@@ -66,30 +21,41 @@ function StampList() {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json',
-          'ngrok-skip-browser-warning': '69420',
         }
       });
 
-      if (response.data.success) {
-        const departmentName = departmentMapping[response.data.department];
-        setCatStamps(prevStamps => {
-          return prevStamps.map(stamp => {
-            if (stamp.college === departmentName) {
-              return { ...stamp, score: stamp.score + 1 };
-            }
-            return stamp;
-          });
-        });
-        alert("스템프 처리 성공");
-      } else {
-        alert("스탬프 처리 실패");
-      }
+      console.log('Response:', response.data);
     } catch (error) {
       console.error('Error submitting code:', error);
       alert('코드를 제출하는 중 오류가 발생했습니다.');
     }
   };
 
+  const [catStamps, setCatStamps] = useState([
+    { score: 0, total: 8, college: "사회과학대학", img1: "../../../img/cat_1.png", img2: "../../../img/cat_1_line.png" },
+    { score: 0, total: 4, college: "아트앤디자인스쿨", img1: "../../../img/cat_2.png", img2: "../../../img/cat_2_line.png" },
+    { score: 0, total: 7, college: "미래산업융합대학", img1: "../../../img/cat_3.png", img2: "../../../img/cat_3_line.png" },
+    { score: 0, total: 7, college: "인문대학", img1: "../../../img/cat_4.png", img2: "../../../img/cat_4_line.png" },
+    { score: 0, total: 1, college: "자율전공학부", img1: "../../../img/cat_5.png", img2: "../../../img/cat_5_line.png" },
+    { score: 0, total: 7, college: "과학기술융합대학", img1: "../../../img/cat_6.png", img2: "../../../img/cat_6_line.png" },
+  ]);
+  useEffect(() => {
+    const score1 = parseInt(sessionStorage.getItem('score1'), 10) || 0;
+    const score2 = parseInt(sessionStorage.getItem('score2'), 10) || 0;
+    const score3 = parseInt(sessionStorage.getItem('score3'), 10) || 0;
+    const score4 = parseInt(sessionStorage.getItem('score4'), 10) || 0;
+    const score5 = parseInt(sessionStorage.getItem('score5'), 10) || 0;
+    const score6 = parseInt(sessionStorage.getItem('score6'), 10) || 0;
+
+    setCatStamps([
+      { score: score1, total: 8, college: "사회과학대학", img1: "../../../img/cat_1.png", img2: "../../../img/cat_1_line.png" },
+      { score: score2, total: 4, college: "아트앤디자인스쿨", img1: "../../../img/cat_2.png", img2: "../../../img/cat_2_line.png" },
+      { score: score3, total: 7, college: "미래산업융합대학", img1: "../../../img/cat_3.png", img2: "../../../img/cat_3_line.png" },
+      { score: score4, total: 7, college: "인문대학", img1: "../../../img/cat_4.png", img2: "../../../img/cat_4_line.png" },
+      { score: score5, total: 1, college: "자율전공학부", img1: "../../../img/cat_5.png", img2: "../../../img/cat_5_line.png" },
+      { score: score6, total: 7, college: "과학기술융합대학", img1: "../../../img/cat_6.png", img2: "../../../img/cat_6_line.png" },
+    ]);
+  }, []);
   return (
     <div className="iphone-frame">
       <p className="stamp-title">도장판</p>

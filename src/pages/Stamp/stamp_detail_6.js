@@ -1,13 +1,68 @@
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import './stamp_detail.css';
 import './stamp.css';
 
 function StampDetail6() {
     let navigate = useNavigate();
     const location = useLocation();
-    const score = location.state.score;
+    const [score, setScore] = useState(location.state.score);
     const total = 7;
+    const [departments, setDepartments] = useState([
+        { name: "수학과", checked: false },
+        { name: "화학과", checked: false },
+        { name: "생명환경공학과", checked: false },
+        { name: "바이오헬스융합학과", checked: false },
+        { name: "원예생명조경학과", checked: false },
+        { name: "식품공학과", checked: false },
+        { name: "식품영양학과", checked: false }
+    ]);
+
+    const fetchStampStatus = async () => {
+        const token = sessionStorage.getItem('token');
+        const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            navigate('/login1');
+            return;
+        }
+
+        try {
+            const response = await axios.get(`${fetchURL}api/stamp/all`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': '69420',
+
+                }
+            });
+
+            console.log('Stamp Status:', response.data);
+
+            const updatedDepartments = departments.map((dept, index) => {
+                const depKey = `dep${index + 28}Checked`;
+                return { ...dept, checked: response.data[depKey] };
+            });
+
+            setDepartments(updatedDepartments);
+
+            const newScore = updatedDepartments.filter(dept => dept.checked).length;
+            setScore(newScore);
+            sessionStorage.setItem('score6', newScore);
+
+        } catch (error) {
+            console.error('Error fetching stamp status:', error);
+            alert('스탬프 상태를 가져오는 중 오류가 발생했습니다.');
+        }
+    };
+
+    useEffect(() => {
+        fetchStampStatus();
+    }, []);
+
     const passed = score >= total / 2;
+
     return (
         <div className="iphone-frame">
             <img
@@ -45,41 +100,16 @@ function StampDetail6() {
             </div>
 
             <div className="departments">
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>수학과</p>
-                </div>
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>화학과</p>
-                </div>
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>생명환경공학과</p>
-                </div>
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>바이오헬스융합학과</p>
-                </div>
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>원예생명조경학과</p>
-                </div>
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>식품공학과</p>
-                </div>
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>식품영양학과</p>
-                </div>
+                {
+                    departments.map((dept, index) => (
+                        <div className="department" key={index}>
+                            <div className="circle">
+                                {dept.checked && <img src="../../../img/cat_6.png" alt="고양이 6" className="cat-stamp" />}
+                            </div>
+                            <p>{dept.name}</p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );

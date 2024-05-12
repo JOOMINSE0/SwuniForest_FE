@@ -7,6 +7,7 @@ function Login2() {
   const navigate = useNavigate();
   const [studentNum, setStudentNum] = useState('');
   const [password, setPassword] = useState('');
+
   const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
 
   const handleLoginClick = async () => {
@@ -37,13 +38,7 @@ function Login2() {
 
     } catch (error) {
       if (error.response && error.response.status === 500) {
-        const errorMessage = error.response.data.message;
-        if (errorMessage.includes('존재하지 않는 회원')) {
-          alert("존재하지 않는 회원입니다.");
-        } else if (errorMessage.includes('비밀번호가 일치하지 않습니다')) {
-          alert("비밀번호가 일치하지 않습니다.");
-        }
-      } else {
+
         console.error('Error:', error);
         alert('로그인 중 오류가 발생했습니다.');
       }
