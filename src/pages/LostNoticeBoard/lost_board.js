@@ -6,7 +6,7 @@ import './lost_board.css';
 function LostBoard() {
     const navigate = useNavigate();
     const [lostItems, setLostItems] = useState([]);
-    const fetchURL = "https://db30-221-140-29-184.ngrok-free.app/"
+    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/"
 
     useEffect(() => {
         const fetchData = async () => {

@@ -8,7 +8,45 @@ function StampAdmin() {
     const [department, setDepartment] = useState('');
     const [code, setCode] = useState('');
     const [expirationTime, setExpirationTime] = useState('');
-    const fetchURL = "https://db30-221-140-29-184.ngrok-free.app/"
+    const [progress, setProgress] = useState(100); // Initialize progress at 100%
+    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+
+    const departmentMapping = {
+        "Department1": "경제학과",
+        "Department2": "문헌정보학과",
+        "Department3": "사회복지학과",
+        "Department4": "아동학과",
+        "Department5": "행정학과",
+        "Department6": "언론영상학부",
+        "Department7": "교육심리학과",
+        "Department8": "스포츠운동과학과",
+        "Department9": "현대미술전공",
+        "Department10": "공예전공",
+        "Department11": "시각디자인전공",
+        "Department12": "첨단미디어디자인전공",
+        "Department13": "경영학과",
+        "Department14": "패션산업학과",
+        "Department15": "디지털미디어학과",
+        "Department16": "정보보호학부",
+        "Department17": "소프트웨어융합학과",
+        "Department18": "데이터사이언스학과",
+        "Department19": "산업디자인학과",
+        "Department20": "글로벌ICT인문융합학부",
+        "Department21": "국어국문학과",
+        "Department22": "영어영문학과",
+        "Department23": "중어중문학과",
+        "Department24": "일어일문학과",
+        "Department25": "사학과",
+        "Department26": "기독교학과",
+        "Department27": "자율전공학부",
+        "Department28": "수학과",
+        "Department29": "화학과",
+        "Department30": "생명환경공학과",
+        "Department31": "바이오헬스융합학과",
+        "Department32": "원예생명조경학과",
+        "Department33": "식품공학과",
+        "Department34": "식품영양학과"
+    };
 
     useEffect(() => {
         const fetchCodeData = async () => {
@@ -31,14 +69,50 @@ function StampAdmin() {
                 setDepartment(department);
                 setCode(code);
                 setExpirationTime(expirationTime);
+
+                const startTime = Date.now();
+                localStorage.setItem('startTime', startTime);
+                localStorage.setItem('expirationTime', expirationTime);
             } catch (error) {
-                console.error('Esrror fetching code data:', error);
+                console.error('Error fetching code data:', error);
                 alert('데이터를 가져오는 중 오류가 발생했습니다.');
             }
         };
 
+        const initializeProgress = () => {
+            const startTime = localStorage.getItem('startTime');
+            if (startTime) {
+                const elapsedTime = Math.floor((Date.now() - parseInt(startTime)) / 1000);
+                const remainingTime = 300 - elapsedTime;
+                if (remainingTime > 0) {
+                    setProgress((remainingTime / 300) * 100);
+                } else {
+                    setProgress(0);
+                }
+            }
+        };
+
         fetchCodeData();
+        initializeProgress();
+
+        const interval = setInterval(() => {
+            const startTime = localStorage.getItem('startTime');
+            if (startTime) {
+                const elapsedTime = Math.floor((Date.now() - parseInt(startTime)) / 1000);
+                const remainingTime = 300 - elapsedTime;
+                if (remainingTime > 0) {
+                    setProgress((remainingTime / 300) * 100);
+                } else {
+                    setProgress(0);
+                    clearInterval(interval);
+                }
+            }
+        }, 1000);
+
+        return () => clearInterval(interval);
     }, [navigate]);
+
+    const departmentName = departmentMapping[department] || '학과 정보 없음';
 
     return (
         <div className="iphone-frame">
@@ -53,11 +127,11 @@ function StampAdmin() {
             </div>
 
             <div className="stamp-content">
-                <p className="stamp-department">{department}</p>
+                <p className="stamp-department">{departmentName}</p>
                 <div className="code-box">
                     <p className="code">{code}</p>
                     <div className="progress-bar">
-                        <div className="progress"></div>
+                        <div className="progress" style={{ width: `${progress}%` }}></div>
                     </div>
                     <p className="valid-time">유효시간 {expirationTime}</p>
                 </div>
