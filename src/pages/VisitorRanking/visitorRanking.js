@@ -6,7 +6,7 @@ function VisitorRanking(){
 
 return(
     <div className="iphone-frame">
-    <p className="login-title">방명문율 랭킹</p>
+    <p className="login-title">방문율 랭킹</p>
         <img
             src="../../../img/back.png"
             alt="Back button"

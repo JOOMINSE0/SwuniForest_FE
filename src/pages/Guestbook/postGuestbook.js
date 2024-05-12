@@ -17,14 +17,14 @@ return(
         onClick={() => navigate(-1)}
       />
 
-        {/* <div className="divform1">
+        <div className="divform1">
         <img src="../../../img/Circle.png"
         style={{width:"106px", position:"relative", marginTop:"15px", marginLeft:"10px"}}></img>
-        <b style={{marginTop:"35px", marginLeft:"75px", color:"#9D9FA4", position:"absolute", fontSize:"14px"}}>{username}의 학과</b>
-          <b style={{marginTop:"60px", marginLeft:"40px", color:"#898A8D", position:"absolute", fontSize:"16px"}}>{major}<span style={{color:"#9D9FA4"}}>의</span>방문율</b>
-          <p style={{marginTop:"-43px", marginLeft:"50%", fontSize:"24px", color:"#898A8D", position:"absolute"}}>{visitRate}%</p>
-          <p style={{marginTop:"-43px", marginLeft:"70%", fontSize:"24px", color:"#898A8D", position:"absolute"}}>{rank}위</p>
-        </div> */}
+        <b style={{marginTop:"35px", marginLeft:"75px", color:"#9D9FA4", position:"absolute", fontSize:"14px"}}>전수민의 학과</b>
+          <b style={{marginTop:"60px", marginLeft:"40px", color:"#898A8D", position:"absolute", fontSize:"16px"}}>소프트웨어융합학과<span style={{color:"#9D9FA4"}}>의</span>방문율</b>
+          <p style={{marginTop:"-43px", marginLeft:"50%", fontSize:"24px", color:"#898A8D", position:"absolute"}}>23%</p>
+          <p style={{marginTop:"-43px", marginLeft:"70%", fontSize:"24px", color:"#898A8D", position:"absolute"}}>1위</p>
+        </div>
 
         <a onClick={()=>{navigate('/visitorRanking')}}
         className="rankingcheck">
