@@ -1,91 +1,96 @@
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from 'axios';
 import "./visitorRanking.css";
 
-function VisitorRanking(){
+function VisitorRanking() {
     let navigate = useNavigate();
+    const [rankingData, setRankingData] = useState([]);
+    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
 
-return(
-    <div className="iphone-frame">
-    <p className="login-title">방문율 랭킹</p>
-        <img
-            src="../../../img/back.png"
-            alt="Back button"
-            className="close-btn"
-            style={{ marginTop: "9%", marginRight: "80%", width: "14px" }}
-            onClick={() => navigate(-1)}
-        />
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await axios.get(fetchURL + 'api/visit', {
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'ngrok-skip-browser-warning': '69420',
+                    }
+                });
+                setRankingData(response.data);
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        };
 
-<div 
-    style={{
-        width: '380px', 
-        height: '169px', 
-        marginTop:"-10%", 
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: '10px',
-        position:"absolute",
-        marginTop:"-120%"
-    }} 
-    className="divform1"
->   
+        fetchData();
+    }, []);
 
-    <div className="one-text">데이터사이언스학과</div>
-    <div className="one" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"13%"}}>
-    <img style={{width:"35px", height:"39px"}} src="../../../img/2.png"></img>
+    return (
+        <div className="iphone-frame">
+            <p className="login-title">방문율 랭킹</p>
+            <img
+                src="../../../img/back.png"
+                alt="Back button"
+                className="close-btn"
+                style={{ marginTop: "9%", marginRight: "80%", width: "14px" }}
+                onClick={() => navigate(-1)}
+            />
+
+            <div
+                style={{
+                    width: '380px',
+                    height: '169px',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                    gap: '10px',
+                    position: "relative",
+                    marginTop: "5%"
+                }}
+                className="divform1"
+            >
+            {rankingData.slice(0, 3).map((item, index) => (
+                <div key={index} className={`rank-${index + 1}`} style={{ display: 'flex', flexDirection: 'column'}}>
+                    <div style={{fontSize: "13px", textAlign:"center", color:"#7E7F82"}} className={`rank-text-${index + 1}`}>{item.major}</div>
+                    
+                    <div className={index === 0 ? "one" : index === 1 ? "two" : "three"}>
+                        <div className={`rank-icon-${index + 1}`} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                            <img style={{ width: "35px", height: "39px"}} 
+                                src={`../../../img/${index === 0 ? 2 : index === 1 ? 1 : index + 1}.png`} 
+                                alt={`${index + 1} rank icon`} />
+                        </div>
+                    </div>
+                </div>
+            ))}
+
+
+            </div>
+
+            <p style={{ color: "#7E7F82", marginTop: "20px" }}>학과별 방문율 등수</p>
+
+            {rankingData.slice(0, 5).map((item, index) => (
+    <div key={index} className={`rank-item rank-${index + 1}`}>
+        {index < 3 ? (
+            <div className="first">
+                <div className="rank-position">{index + 1}등</div>
+                <div className="vertical1"></div>
+                <div className="rank-major" style={{ position: "absolute", marginLeft: "25%", marginTop: "-6%" }}>{item.major}</div>
+                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitRate}%</div>
+            </div>
+        ) : (
+            <div className="fourth">
+                <div className="rank-position">{index + 1}등</div>
+                <div className="vertical2"></div>
+                <div className="rank-major" style={{ position: "absolute", marginLeft: "25%", marginTop: "-6%" }}>{item.major}</div>
+                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitRate}%</div>
+            </div>
+        )}
     </div>
+))}
 
-    <div className="two-text">경영학과</div>
-    <div className="two" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"7%"}}>
-    
-        <img style={{width:"35px", height:"39px"}} src="../../../img/1.png"></img>
-    </div>
-
-    <div className="three-text">패션산업학과</div>
-    <div className="three" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop:"18%"}}>
-        <img style={{width:"35px", height:"39px"}} src="../../../img/3.png"></img>
-    </div>
-</div>
-
-        <p style={{color:"#7E7F82"}}>학과별 방문율 등수</p>
-        
-            <div className="first">1등
-            <div className="vertical1"> </div>
-            <div style={{position:"absolute", marginLeft:"25%", marginTop:"-6%"}}>경영학과</div>
-            <div className="ratio">28%</div>
-            </div>
-
-
-            <div className="second">2등
-            <div className="vertical1"> </div>
-            <div style={{position:"absolute", marginLeft:"25%", marginTop:"-6%"}}>데이터사이언스학과</div>
-            <div className="ratio">27%</div>
-            </div>
-
-
-            <div className="third">3등
-            <div className="vertical1"> </div>
-            <div style={{position:"absolute", marginLeft:"25%", marginTop:"-6%"}}>패션산업학과</div>
-            <div className="ratio">25%</div>
-            </div>
-
-
-            <div className="fourth">4등
-            <div className="vertical2"> </div>
-            <div style={{position:"absolute", marginLeft:"25%", marginTop:"-6%"}}>소프트웨어융합학과</div>
-            <div className="ratio">23%</div>
-            </div>
-
-
-            <div className="fifth">5등
-            <div className="vertical2"> </div>
-            <div style={{position:"absolute", marginLeft:"25%", marginTop:"-6%"}}>정보보호학과</div>
-            <div className="ratio">19%</div>
-            </div>
-        
-    </div>
-
-)
+        </div>
+    );
 }
 
 export default VisitorRanking;
