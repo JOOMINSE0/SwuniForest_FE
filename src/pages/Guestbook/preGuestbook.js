@@ -50,6 +50,21 @@ function PreGuestbook() {
         }
     };
 
+    const fetchGuestbookEntries = async () => {
+        try {
+            const response = await axios.get('https://e4ee-118-218-144-103.ngrok-free.app/api/guestbook/', {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': '69420',
+                }
+            });
+            console.log(response.data);  // 응답 데이터 로깅
+            setGuestbookEntries(response.data);
+        } catch (error) {
+            console.error("에러:", error);
+        }
+    };
+
     const handleVisit = async () => {
         if (!isLoggedIn) {
             navigate('/login1');

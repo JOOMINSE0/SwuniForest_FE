@@ -112,7 +112,7 @@ function Signup2() {
       <div className="intro-box">
         <p>회원가입을 위해 서울여자대학교 도서관 앱 내<br />‘모바일 열람증’ 캡쳐본을 첨부해주세요.</p>
       </div>
-      <label style={{ position:"relative", marginTop:"10%" }} className="label-mobile">모바일 열람증 첨부</label>
+      <label style={{ position: "relative", marginTop: "10%" }} className="label-mobile">모바일 열람증 첨부</label>
       <input
         ref={fileInputRef}
         type="file"
@@ -123,10 +123,10 @@ function Signup2() {
         <Gallery style={{ marginTop: "-5%", marginLeft: "-50%", width: "25px", height: "25px" }} />
       </button>
       {imagePreview && (
-        <img src={imagePreview} alt="Preview" style={{ width: '30%', marginTop: '10%', marginLeft: "-0%", position:"relative" }} />
+        <img src={imagePreview} alt="Preview" style={{ width: '30%', marginTop: '10%', marginLeft: "-0%", position: "relative" }} />
       )}
       <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginTop: "5%", marginBottom: "15%" }}></div>
-      <p style={{ color: '#898A8D', position:"relative" }}>이름, 학과, 학번이 올바르게 기입되었는지<br /> 다시 한번 확인해주세요</p>
+      <p style={{ color: '#898A8D', position: "relative" }}>이름, 학과, 학번이 올바르게 기입되었는지<br /> 다시 한번 확인해주세요</p>
       <label className="label-name">이름</label>
       <input
         style={{ height: "50px" }}
