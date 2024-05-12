@@ -17,14 +17,14 @@ return(
         onClick={() => navigate(-1)}
       />
 
-        <div className="divform1">
+        {/* <div className="divform1">
         <img src="../../../img/Circle.png"
         style={{width:"106px", position:"relative", marginTop:"15px", marginLeft:"10px"}}></img>
-          <b style={{marginTop:"40px", marginLeft:"40px", color:"#898A8D", position:"absolute"}}>우리 학과는 지금 방문율 몇 위?</b>
-          <p style={{marginTop:"-63px", marginLeft:"43%", fontSize:"10px", color:"#898A8D", position:"absolute"}}>학과를 인증하면 방문율을 높을 수 있어요</p>
-          <button className="guestbookBtn"
-          >방문하기</button>
-        </div>
+        <b style={{marginTop:"35px", marginLeft:"75px", color:"#9D9FA4", position:"absolute", fontSize:"14px"}}>{username}의 학과</b>
+          <b style={{marginTop:"60px", marginLeft:"40px", color:"#898A8D", position:"absolute", fontSize:"16px"}}>{major}<span style={{color:"#9D9FA4"}}>의</span>방문율</b>
+          <p style={{marginTop:"-43px", marginLeft:"50%", fontSize:"24px", color:"#898A8D", position:"absolute"}}>{visitRate}%</p>
+          <p style={{marginTop:"-43px", marginLeft:"70%", fontSize:"24px", color:"#898A8D", position:"absolute"}}>{rank}위</p>
+        </div> */}
 
         <a onClick={()=>{navigate('/visitorRanking')}}
         className="rankingcheck">
