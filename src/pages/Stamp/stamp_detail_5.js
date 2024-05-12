@@ -1,13 +1,61 @@
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
+import axios from "axios";
 import './stamp_detail.css';
 import './stamp.css';
 
 function StampDetail5() {
     let navigate = useNavigate();
     const location = useLocation();
-    const score = location.state.score;
+    const [score, setScore] = useState(location.state.score);
     const total = 1;
+    const [departments, setDepartments] = useState([
+        { name: "자율전공학부", checked: false }
+    ]);
+
+    const fetchStampStatus = async () => {
+        const token = sessionStorage.getItem('token');
+        const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+        if (!token) {
+            alert('로그인이 필요합니다.');
+            navigate('/login1');
+            return;
+        }
+
+        try {
+            const response = await axios.get(`${fetchURL}api/stamp/all`, {
+                headers: {
+                    'Authorization': `Bearer ${token}`,
+                    'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': '69420',
+
+                }
+            });
+
+
+            const updatedDepartments = departments.map((dept, index) => {
+                const depKey = `dep${index + 27}Checked`;
+                return { ...dept, checked: response.data[depKey] };
+            });
+
+            setDepartments(updatedDepartments);
+
+            const newScore = updatedDepartments.filter(dept => dept.checked).length;
+            setScore(newScore);
+            sessionStorage.setItem('score5s', newScore);
+
+        } catch (error) {
+            console.error('Error fetching stamp status:', error);
+            alert('스탬프 상태를 가져오는 중 오류가 발생했습니다.');
+        }
+    };
+
+    useEffect(() => {
+        fetchStampStatus();
+    }, []);
+
     const passed = score >= total / 2;
+
     return (
         <div className="iphone-frame">
             <img
@@ -45,11 +93,16 @@ function StampDetail5() {
             </div>
 
             <div className="departments">
-                <div className="department">
-                    <div className="circle">
-                    </div>
-                    <p>경제학과</p>
-                </div>
+                {
+                    departments.map((dept, index) => (
+                        <div className="department" key={index}>
+                            <div className="circle">
+                                {dept.checked && <img src="../../../img/cat_5.png" alt="고양이 5" className="cat-stamp" />}
+                            </div>
+                            <p>{dept.name}</p>
+                        </div>
+                    ))
+                }
             </div>
         </div>
     );

@@ -25,6 +25,7 @@ function LostWrite() {
         setSelectedFile(null);
         setPreview(null);
     };
+    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/"
     const handleSubmit = async () => {
         if (!selectedFile || !itemTitle || !findPoint || !putPoint) {
             alert('모든 필드를 채워주세요.');
@@ -40,7 +41,7 @@ function LostWrite() {
         formData.append('imageFile', selectedFile);
 
         try {
-            const response = await axios.post('https://5a86-114-70-38-149.ngrok-free.app/api/lostitem/post', formData, {
+            const response = await axios.post(fetchURL + 'api/lostitem/post', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

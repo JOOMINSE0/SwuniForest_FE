@@ -66,18 +66,18 @@
     margin-bottom: 20px;
     overflow-y: scroll;
     height: 500px;
+    padding-left: 15px;
+
 }
 
 .lost-grid-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-color: #fff;
     padding: 11px;
     border-radius: 40px;
     width: 150px;
     height: 250px;
-    margin-left: 22px;
     border: 1px solid #E8E8E8;
 }
 
@@ -126,7 +126,7 @@
     gap: 10px;
     align-items: center;
     justify-content: flex-end;
-    margin: -25px 0px 10px 270px
+    margin: 25px 0px 10px 270px
 }
 
 .grid-show,
@@ -143,10 +143,4 @@
 .grid-show.active,
 .list-show.active {
     background-color: #F3F3F3;
-}
-
-/* 최신순, 오래된순 */
-.sort-select {
-    border: none;
-    margin: 20px 280px 0px 0px
 }
