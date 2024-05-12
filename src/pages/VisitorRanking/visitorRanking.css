@@ -93,3 +93,31 @@
     margin-left:17%;
 }
 
+.one-text{
+    position: absolute;
+    margin-top: -13%;
+    margin-left: -60%;
+    font-size: 13px;
+    color: #7E7F82;
+}
+
+.two-text{
+    position: absolute;
+    margin-top: -26%;
+    font-size: 13px;
+    color: #7E7F82;
+}
+
+.three-text{
+    position: absolute;
+    margin-top: -4%;
+    margin-right: -56%;
+    font-size: 13px;
+    color: #7E7F82;
+}
+
+.ratio{
+    position: absolute;
+    margin-left: 65%;
+    margin-top: -5.5%;
+}

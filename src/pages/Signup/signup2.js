@@ -19,12 +19,15 @@ function Signup2() {
 
   const [isChecked, setIsChecked] = useState(false);
   const fetchURL = "https://db30-221-140-29-184.ngrok-free.app/"
+<<<<<<< HEAD
   // 체크박스 상태 변경 함수
+=======
+
+>>>>>>> origin/main
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);
   };
 
-  // 확인 버튼 클릭 이벤트 핸들러
   const handleConfirmClick = async () => {
     if (!isChecked) {
       alert('개인정보 수집 이용에 동의해주세요.');
@@ -37,14 +40,18 @@ function Signup2() {
     }
 
     const data = {
-      studentNum: studentNum,
-      username: username,
-      major: major,
-      password: password
+      studentNum,
+      username,
+      major,
+      password
     };
 
     try {
+<<<<<<< HEAD
       const response = await axios.post(fetchURL + 'api/signup', JSON.stringify(data), {
+=======
+      const response = await axios.post(fetchURL + 'api/signup', data, {
+>>>>>>> origin/main
         headers: {
           'Content-Type': 'application/json'
         }
@@ -56,12 +63,8 @@ function Signup2() {
         navigate('/login1');
       }
     } catch (error) {
-      if (error.response && error.response.status === 500) {
-        alert("이미 존재하는 회원입니다.");
-      } else {
-        console.error('Error:', error);
-        alert('서버와의 통신 중 오류가 발생했습니다.');
-      }
+      console.error('Error:', error);
+      alert('서버와의 통신 중 오류가 발생했습니다.');
     }
   };
 
@@ -76,6 +79,30 @@ function Signup2() {
     const file = event.target.files[0];
     if (file) {
       setImagePreview(URL.createObjectURL(file));
+      handleOCRSubmit(file);
+    }
+  };
+
+  const handleOCRSubmit = async (file) => {
+    const formData = new FormData();
+    formData.append('imageFile', file);
+  
+    try {
+      const ocrResponse = await axios.post(fetchURL + 'api/naverOcrPost', formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+  
+      if (ocrResponse.status === 200) {
+        console.log("OCR 결과:", ocrResponse.data);
+        // OCR 처리 후의 로직
+      } else {
+        throw new Error('OCR 처리 실패');
+      }
+    } catch (error) {
+      console.error('OCR 요청 실패:', error);
+      alert('OCR 처리 중 오류가 발생했습니다. 다시 시도해 주세요.');
     }
   };
 
@@ -94,7 +121,7 @@ function Signup2() {
         <p>회원가입을 위해 서울여자대학교 도서관 앱 내<br />‘모바일 열람증’ 캡쳐본을 첨부해주세요.</p>
       </div>
 
-      <label style={{ marginTop: "30%" }} className="label-mobile">모바일 열람증 첨부</label>
+      <label style={{ position:"relative", marginTop:"5%" }} className="label-mobile">모바일 열람증 첨부</label>
       <input
         ref={fileInputRef}
         type="file"
@@ -105,11 +132,11 @@ function Signup2() {
         <Gallery style={{ marginTop: "-5%", marginLeft: "-50%", width: "25px", height: "25px" }} />
       </button>
       {imagePreview && (
-        <img src={imagePreview} alt="Preview" style={{ width: '30%', marginTop: '10%', marginLeft: "-0%" }} />
+        <img src={imagePreview} alt="Preview" style={{ width: '30%', marginTop: '10%', marginLeft: "-0%", position:"relative" }} />
       )}
       <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginTop: "5%", marginBottom: "15%" }}></div>
 
-      <p style={{ color: '#898A8D' }}>이름, 학과, 학번이 올바르게 기입되었는지<br /> 다시 한번 확인해주세요</p>
+      <p style={{ color: '#898A8D', position:"relative" }}>이름, 학과, 학번이 올바르게 기입되었는지<br /> 다시 한번 확인해주세요</p>
 
       <label className="label-name">이름</label>
       <input
@@ -127,6 +154,7 @@ function Signup2() {
         style={{ height: "50px" }}
         className="input2"
       >
+<<<<<<< HEAD
         <option value="">학과를 선택하세요</option>
         <option value="자율전공학부">자율전공학부</option>
         <option value="글로벌ICT인문융합부">글로벌ICT인문융합부</option>
@@ -162,6 +190,43 @@ function Signup2() {
         <option value="공예전공">공예전공</option>
         <option value="시각디자인전공">시각디자인전공</option>
         <option value="첨단미디어디자인전공">첨단미디어디자인전공</option>
+=======
+    <option value="">학과를 선택하세요</option>
+    <option value="자율전공학부">자율전공학부</option>
+    <option value="글로벌ICT인문융합부">글로벌ICT인문융합부</option>
+    <option value="국어국문학과">국어국문학과</option>
+    <option value="영어영문학과">영어영문학과</option>
+    <option value="중어중문학과">중어중문학과</option>
+    <option value="일어일문학과">일어일문학과</option>
+    <option value="사학과">사학과</option>
+    <option value="기독교학과">기독교학과</option>
+    <option value="경제학과">경제학과</option>
+    <option value="문헌정보학과">문헌정보학과</option>
+    <option value="사회복지학과">사회복지학과</option>
+    <option value="아동학과">아동학과</option>
+    <option value="행정학과">행정학과</option>
+    <option value="언론영상학부">언론영상학부</option>
+    <option value="교육심리학과">교육심리학과</option>
+    <option value="스포츠운동과학과">스포츠운동과학과</option>
+    <option value="수학과">수학과</option>
+    <option value="화학과">화학과</option>
+    <option value="생명환경공학과">생명환경공학과</option>
+    <option value="바이오헬스융합학과">바이오헬스융합학과</option>
+    <option value="원예생명조경학과">원예생명조경학과</option>
+    <option value="식품공학과">식품공학과</option>
+    <option value="식품영양학과">식품영양학과</option>
+    <option value="경영학과">경영학과</option>
+    <option value="패션산업학과">패션산업학과</option>
+    <option value="디지털미디어학과">디지털미디어학과</option>
+    <option value="정보보호학부">정보보호학부</option>
+    <option value="소프트웨어융합학과">소프트웨어융합학과</option>
+    <option value="데이터사이언스학과">데이터사이언스학과</option>
+    <option value="산업디자인학과">산업디자인학과</option>
+    <option value="현대미술전공">현대미술전공</option>
+    <option value="공예전공">공예전공</option>
+    <option value="시각디자인전공">시각디자인전공</option>
+    <option value="첨단미디어디자인전공">첨단미디어디자인전공</option>
+>>>>>>> origin/main
 
       </select>
       <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginBottom: "10px" }}></div>
