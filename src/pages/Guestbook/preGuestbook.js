@@ -29,7 +29,6 @@ function PreGuestbook() {
                 }
             });
             console.log(response.data);  // 응답 데이터 로깅
-            setVisitData(response.data);
         } catch (error) {
             console.error("에러:", error);
         }

@@ -50,26 +50,45 @@ function VisitorRanking() {
                 }}
                 className="divform1"
             >
-                {rankingData.slice(0, 3).map((item, index) => (
-                    <div key={index} className={`rank-${index + 1}`} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <div className={`rank-text-${index + 1}`}>{item.major}</div>
+            {rankingData.slice(0, 3).map((item, index) => (
+                <div key={index} className={`rank-${index + 1}`} style={{ display: 'flex', flexDirection: 'column'}}>
+                    <div style={{fontSize: "13px", textAlign:"center", color:"#7E7F82"}} className={`rank-text-${index + 1}`}>{item.major}</div>
+                    
+                    <div className={index === 0 ? "one" : index === 1 ? "two" : "three"}>
                         <div className={`rank-icon-${index + 1}`} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            <img style={{ width: "35px", height: "39px" }} src={`../../../img/${index + 1}.png`} alt={`${index + 1} rank icon`} />
+                            <img style={{ width: "35px", height: "39px"}} 
+                                src={`../../../img/${index === 0 ? 2 : index === 1 ? 1 : index + 1}.png`} 
+                                alt={`${index + 1} rank icon`} />
                         </div>
                     </div>
-                ))}
+                </div>
+            ))}
+
+
             </div>
 
             <p style={{ color: "#7E7F82", marginTop: "20px" }}>학과별 방문율 등수</p>
 
             {rankingData.slice(0, 5).map((item, index) => (
-                <div key={index} className={`rank-item rank-${index + 1}`}>
-                    <div className="rank-position">{index + 1}등</div>
-                    <div className="vertical-line"></div>
-                    <div className="rank-major" style={{ position: "absolute", marginLeft: "25%", marginTop: "-6%" }}>{item.major}</div>
-                    <div className="rank-ratio">{item.visitRate}%</div>
-                </div>
-            ))}
+    <div key={index} className={`rank-item rank-${index + 1}`}>
+        {index < 3 ? (
+            <div className="first">
+                <div className="rank-position">{index + 1}등</div>
+                <div className="vertical1"></div>
+                <div className="rank-major" style={{ position: "absolute", marginLeft: "25%", marginTop: "-6%" }}>{item.major}</div>
+                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitRate}%</div>
+            </div>
+        ) : (
+            <div className="fourth">
+                <div className="rank-position">{index + 1}등</div>
+                <div className="vertical2"></div>
+                <div className="rank-major" style={{ position: "absolute", marginLeft: "25%", marginTop: "-6%" }}>{item.major}</div>
+                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitRate}%</div>
+            </div>
+        )}
+    </div>
+))}
+
         </div>
     );
 }
