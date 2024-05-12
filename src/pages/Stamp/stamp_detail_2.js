@@ -35,7 +35,6 @@ function StampDetail2() {
                 }
             });
 
-            console.log('Stamp Status:', response.data);
 
             const updatedDepartments = departments.map((dept, index) => {
                 const depKey = `dep${index + 9}Checked`;

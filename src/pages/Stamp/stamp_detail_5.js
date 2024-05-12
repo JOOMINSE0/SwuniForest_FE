@@ -32,7 +32,6 @@ function StampDetail5() {
                 }
             });
 
-            console.log('Stamp Status:', response.data);
 
             const updatedDepartments = departments.map((dept, index) => {
                 const depKey = `dep${index + 27}Checked`;
@@ -43,7 +42,7 @@ function StampDetail5() {
 
             const newScore = updatedDepartments.filter(dept => dept.checked).length;
             setScore(newScore);
-            sessionStorage.setItem('score5', newScore);
+            sessionStorage.setItem('score5s', newScore);
 
         } catch (error) {
             console.error('Error fetching stamp status:', error);

@@ -26,8 +26,7 @@ function StampList() {
 
       console.log('Response:', response.data);
     } catch (error) {
-      console.error('Error submitting code:', error);
-      alert('코드를 제출하는 중 오류가 발생했습니다.');
+      alert('올바른 인증번호를 입력하세요.');
     }
   };
 

@@ -34,10 +34,11 @@ function StampDetail1() {
                 headers: {
                     'Authorization': `Bearer ${token}`,
                     'Content-Type': 'application/json',
+                    'ngrok-skip-browser-warning': '69420',
+
                 }
             });
 
-            console.log('Stamp Status:', response.data);
 
             const updatedDepartments = departments.map((dept, index) => {
                 const depKey = `dep${index + 1}Checked`;

@@ -96,10 +96,7 @@ function LostList() {
                 />
             </div>
             <div className="line"></div>
-            <select className="sort-select">
-                <option>최신순</option>
-                <option>오래된순</option>
-            </select>
+
             <div className="icon-list">
                 <img
                     src="../../../img/grid.png"

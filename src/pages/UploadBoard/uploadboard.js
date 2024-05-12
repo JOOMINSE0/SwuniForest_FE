@@ -10,8 +10,9 @@ function UploadBoard() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState(null);
     const [guestContent, setGuestContent] = useState('');
-    const [isAnonymous, setIsAnonymous] = useState(false);
+    // const [anonymous, setIsAnonymous] = useState(false);
     const fileInputRef = useRef(null);
+    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -30,9 +31,9 @@ function UploadBoard() {
         setPreview(null);
     };
 
-    const toggleAnonymous = () => {
-        setIsAnonymous(!isAnonymous);
-    };
+    // const toggleAnonymous = () => {
+    //     setIsAnonymous(!anonymous);
+    // };
 
     const handleSubmit = async () => {
         if (!selectedFile || !guestContent) {
@@ -43,12 +44,12 @@ function UploadBoard() {
         const formData = new FormData();
         formData.append('guestbookDto', new Blob([JSON.stringify({
             guestContent,
-            isAnonymous
+            // anonymous
         })], { type: 'application/json' }));
         formData.append('imageFile', selectedFile);
 
         try {
-            const response = await axios.post('https://5a86-114-70-38-149.ngrok-free.app/api/guestbook/post', formData, {
+            const response = await axios.post(fetchURL + 'api/guestbook/post', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -101,15 +102,15 @@ function UploadBoard() {
                         value={guestContent}
                         onChange={(e) => setGuestContent(e.target.value)}
                     />
-                    <div style={{width:"300px", height:"0.6px", background:"#fff", marginLeft:"30px"}}></div>
+                    <div style={{ width: "300px", height: "0.6px", background: "#fff", marginLeft: "30px" }}></div>
                 </div>
-                <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
+                {/* <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
                     <div style={{ color: "#ffffff", marginLeft: "5%", fontWeight: 'bolder' }}>익명여부</div>
                     <div className="toggle-switch">
-                        <input type="checkbox" id="toggle-anonymous" checked={isAnonymous} onChange={toggleAnonymous} />
+                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} />
                         <label htmlFor="toggle-anonymous" style={{ cursor: 'pointer' }}></label>
                     </div>
-                </div>
+                </div> */}
             </div>
         </div>
     );
