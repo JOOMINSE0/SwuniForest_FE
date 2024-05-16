@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ReactComponent as Gallery } from '../../assets/Gallery.svg';
@@ -10,9 +10,17 @@ function UploadBoard() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState(null);
     const [guestContent, setGuestContent] = useState('');
-    // const [anonymous, setIsAnonymous] = useState(false);
+    const [anonymous, setIsAnonymous] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);  // 로그인 상태 추적
     const fileInputRef = useRef(null);
-    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+    const fetchURL = "https://e148-221-140-29-184.ngrok-free.app/";
+
+    useEffect(() => {
+        // 로그인 상태 확인 (세션스토리지에서 토큰 확인)
+        const token = sessionStorage.getItem('token');
+        setIsLoggedIn(!!token); // 토큰 유무에 따라 로그인 상태 설정
+        setIsAnonymous(!token); // 로그인 상태에 따라 익명 상태 설정 (로그인 시 익명 비활성화)
+    }, []);
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -31,9 +39,9 @@ function UploadBoard() {
         setPreview(null);
     };
 
-    // const toggleAnonymous = () => {
-    //     setIsAnonymous(!anonymous);
-    // };
+    const toggleAnonymous = () => {
+        setIsAnonymous(!anonymous); // 로그인 상태와 관계없이 토글 가능하도록 변경
+    };
 
     const handleSubmit = async () => {
         if (!selectedFile || !guestContent) {
@@ -44,7 +52,7 @@ function UploadBoard() {
         const formData = new FormData();
         formData.append('guestbookDto', new Blob([JSON.stringify({
             guestContent,
-            // anonymous
+            anonymous
         })], { type: 'application/json' }));
         formData.append('imageFile', selectedFile);
 
@@ -104,13 +112,13 @@ function UploadBoard() {
                     />
                     <div style={{ width: "300px", height: "0.6px", background: "#fff", marginLeft: "30px" }}></div>
                 </div>
-                {/* <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
+                <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
                     <div style={{ color: "#ffffff", marginLeft: "5%", fontWeight: 'bolder' }}>익명여부</div>
                     <div className="toggle-switch">
-                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} />
+                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} disabled={!isLoggedIn} />
                         <label htmlFor="toggle-anonymous" style={{ cursor: 'pointer' }}></label>
                     </div>
-                </div> */}
+                </div>
             </div>
         </div>
     );

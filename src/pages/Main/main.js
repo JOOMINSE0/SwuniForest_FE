@@ -16,7 +16,7 @@ function Main() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        axios.get('https://2529-114-70-38-148.ngrok-free.app', {
+        axios.get('https://e148-221-140-29-184.ngrok-free.app/', {
             headers: {
                 'Content-Type': 'application/json',
                 'ngrok-skip-browser-warning': '69420',
@@ -50,7 +50,8 @@ function Main() {
         '학과부스': {
           img: 'box1icon.png',
           title: '학과부스',
-          description: '학과별 부스의 위치를 확인할 수 있으며 고양이 스템프를 모으는 데에 유용해요'
+          description: '학과별 부스의 위치를 확인할 수 있으며 '+ 
+          '고양이 스템프를 모으는 데에 유용해요'
         },
         '푸드트럭': {
           img: 'box2icon.png',
@@ -109,8 +110,8 @@ function Main() {
 
             {error && <div className="error-message">{error}</div>}
             <div className='visitor-layout'>
-                <div style={{fontSize:"12px"}}>오늘 &nbsp;&nbsp;&nbsp;&nbsp; {todayVisitCount} 명 &nbsp;&nbsp;&nbsp;&nbsp; • 
-                &nbsp;&nbsp;&nbsp;&nbsp; 누적 &nbsp;&nbsp;&nbsp;&nbsp; {totalVisitCount}명</div>
+                <div style={{fontSize:"12px"}}>오늘 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {todayVisitCount} 명 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; • 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 누적 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {totalVisitCount}명</div>
             </div>
             <div className='madeby'>
                 <p>서울여자대학교 멋쟁이사자처럼 12TH</p>

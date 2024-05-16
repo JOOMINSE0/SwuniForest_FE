@@ -6,7 +6,7 @@ import "./visitorRanking.css";
 function VisitorRanking() {
     let navigate = useNavigate();
     const [rankingData, setRankingData] = useState([]);
-    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+    const fetchURL = "https://e148-221-140-29-184.ngrok-free.app/";
 
     useEffect(() => {
         const fetchData = async () => {

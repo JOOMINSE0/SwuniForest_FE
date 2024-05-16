@@ -17,7 +17,7 @@ function Signup2() {
   };
 
   const [isChecked, setIsChecked] = useState(false);
-  const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/"
+  const fetchURL = "https://e148-221-140-29-184.ngrok-free.app/"
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);

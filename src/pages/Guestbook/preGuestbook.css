@@ -17,6 +17,10 @@
     border: 1px solid #8D8D8D;
     overflow-y: scroll;
     position: relative;
+    margin: 0 auto; 
+    max-width: 960px; 
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .rankingcheck {
@@ -41,8 +45,22 @@
 
 }
 
+.guestbook-entry {
+    flex: 0 0 48%;
+    margin: 1%; 
+    background: #fff; 
+    padding: 3px; 
+    box-sizing: border-box; 
+}
+
 .guestbook-img {
-    width: 172px;
-    height: 172px;
-    border-radius: 30px;
+    width: 100%;
+    height: auto;
+    border-radius: 4px; 
+}
+
+.guestbook-content {
+    padding: 2px;
+    font-size: 14px; 
+    color: #333; 
 }

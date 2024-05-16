@@ -21,7 +21,7 @@ function PreGuestbook() {
 
     const fetchVisitData = async () => {
         try {
-            const response = await axios.get('https://e4ee-118-218-144-103.ngrok-free.app/api/visit/info', {
+            const response = await axios.get('https://e148-221-140-29-184.ngrok-free.app/api/visit/info', {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('token')}`,
                     'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ function PreGuestbook() {
 
     const fetchGuestbookEntries = async () => {
         try {
-            const response = await axios.get('https://e4ee-118-218-144-103.ngrok-free.app/api/guestbook/', {
+            const response = await axios.get('https://e148-221-140-29-184.ngrok-free.app/api/guestbook/', {
                 headers: {
                     'Content-Type': 'application/json',
                     'ngrok-skip-browser-warning': '69420',
@@ -57,7 +57,7 @@ function PreGuestbook() {
         }
 
         try {
-            const response = await axios.post('https://e4ee-118-218-144-103.ngrok-free.app/api/visit/change', {}, {
+            const response = await axios.post('https://e148-221-140-29-184.ngrok-free.app/api/visit/change', {}, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('token')}`
                 }
@@ -100,7 +100,7 @@ function PreGuestbook() {
                             <>
                                 <b style={{ marginTop: "35px", marginLeft: "75px", color: "#9D9FA4", position: "absolute", fontSize: "14px" }}>{visitData.username}의 학과</b>
                                 <b style={{ marginTop: "60px", marginLeft: "40px", color: "#898A8D", position: "absolute", fontSize: "16px" }}>{visitData.major}<span style={{ color: "#9D9FA4" }}>의</span> 방문율</b>
-                                <p style={{ marginTop: "-43px", marginLeft: "80%", fontSize: "24px", color: "#898A8D", position: "absolute" }}>{visitData.rank}위</p>
+                                <p style={{ marginTop: "-43px", marginLeft: "70%", fontSize: "24px", color: "#898A8D", position: "absolute" }}>{visitData.rank}위</p>
                                 <p style={{ marginTop: "-43px", marginLeft: "50%", fontSize: "24px", color: "#898A8D", position: "absolute" }}>{visitData.visitRate}%</p>
                             </>
                         ) : (
@@ -130,15 +130,16 @@ function PreGuestbook() {
                 방문율랭킹 확인하기
                 <img style={{ width: "14px", height: "15px" }} src="../../../img/arrow.png"></img>
             </a>
-
+            
             <div className="divform2">
-                {guestbookEntries.map((entry, index) => (
-                    <div key={index} className="guestbook-entry">
-                        <img src={entry.fileName} alt="방명록" className="guestbook-img" />
-                        <p className="guestbook-content">{entry.guestContent}</p>
-                    </div>
-                ))}
-            </div>
+            {guestbookEntries.map((entry, index) => (
+                <div key={index} className="guestbook-entry">
+                    <img src={entry.fileName} alt="방명록" className="guestbook-img" />
+                    <p className="guestbook-content">{entry.guestContent}</p>
+                </div>
+            ))}
+        </div>
+
 
             <button
                 onClick={() => { navigate('/uploadboard') }}
