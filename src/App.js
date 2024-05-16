@@ -2,10 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import { Routes, Route } from "react-router-dom";
 import Main from './pages/Main/main.js';
-import MainBtn1 from './Components/MainBtn/mainBtn1.js';
-import MainBtn2 from './Components/MainBtn/mainBtn2.js';
-import MainBtn3 from './Components/MainBtn/mainBtn3.js';
-import MainBtn4 from './Components/MainBtn/mainBtn4.js';
 import Login1 from './pages/Login/login1.js';
 import Login2 from './pages/Login/login2.js';
 import Signup1 from './pages/Signup/signup1.js';
@@ -41,10 +37,6 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Main />} /> {/*메인페이지*/}
-      <Route path='/mainBtn1' element={<MainBtn1 />} /> {/*mainBtn1Component*/}
-      <Route path='/mainBtn2' element={<MainBtn2 />} /> {/*mainBtn2Component*/}
-      <Route path='/mainBtn3' element={<MainBtn3 />} /> {/*mainBtn3Component*/}
-      <Route path='/mainBtn4' element={<MainBtn4 />} /> {/*mainBtn4Component*/}
       <Route path='/sidebar' element={<Sidebar />} /> {/*sidebarComponent*/}
       <Route path="/login1" element={<Login1 />} /> {/*로그인1*/}
       <Route path="/login2" element={<Login2 />} /> {/*로그인2*/}

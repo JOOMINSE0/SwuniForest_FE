@@ -3,6 +3,7 @@ import { ReactComponent as Boothicon } from '../../assets/Boothicon.svg';
 import { ReactComponent as Lineupicon } from '../../assets/Lineupicon.svg';
 import { ReactComponent as Guestbookicon } from '../../assets/Guestbookicon.svg';
 import { ReactComponent as Boardicon } from '../../assets/Boardicon.svg';
+import { ReactComponent as Stampicon } from '../../assets/Stampicon.svg';
 import './sidebar.css'
 
 function Sidebar({ onToggle }) {
@@ -14,6 +15,8 @@ function Sidebar({ onToggle }) {
             <div className="sidebar-layout">
                 <Boothicon style={{ marginTop: "60%", cursor: "pointer" }} onClick={() => { navigate('/booth') }} />
                 <p className="sidebar-text">부스 배치도</p>
+                <Stampicon style={{ cursor: "pointer" }} onClick={() => { navigate('/stamp') }} />
+                <p className="sidebar-text">도장판</p>
                 <Lineupicon style={{ cursor: "pointer" }} onClick={() => { navigate('/Lineup') }} />
                 <p className="sidebar-text">공연 라인업</p>
                 <Guestbookicon style={{ cursor: "pointer" }} onClick={() => { navigate('/preGuestbook') }} />

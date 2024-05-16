@@ -8,7 +8,7 @@ function Login2() {
   const [studentNum, setStudentNum] = useState('');
   const [password, setPassword] = useState('');
 
-  const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+  const fetchURL = " https://2529-114-70-38-148.ngrok-free.app";
 
   const handleLoginClick = async () => {
     const data = {
