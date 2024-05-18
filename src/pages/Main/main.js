@@ -89,7 +89,7 @@ function Main() {
                 <b key={booth} onClick={() => setSelectedBooth(booth) } 
                 style={{ 
                     cursor: 'pointer', 
-                    marginRight: index !== array.length - 1 ? '15px' : '0px'  // 마지막 항목이 아닐 때만 오른쪽 여백 추가
+                    marginRight: index !== array.length - 1 ? '15px' : '0px'
                 }}>
                 {booth}
                 </b>

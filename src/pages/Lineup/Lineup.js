@@ -5,7 +5,7 @@ import { ReactComponent as Locate } from '../../assets/locate.svg';
 import "./Lineup.css";
 
 function Lineup() {
-    const [selectedDay, setSelectedDay] = useState(null);
+    const [selectedDay, setSelectedDay] = useState('Wed 22');
     let navigate = useNavigate();
 
 
@@ -28,7 +28,7 @@ function Lineup() {
                     <>
                         <div className="content1">
 
-                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>가수</div>
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" , fontWeight:"bolder"}}>플리마켓</div>
                             <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                             <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
@@ -36,7 +36,7 @@ function Lineup() {
 
                         <div className="content2">
 
-                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder"}}>푸드트럭</div>
                             <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                             <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
@@ -44,8 +44,8 @@ function Lineup() {
 
                         <div className="content2">
 
-                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
-                        <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
+                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder"}}>토크 콘서트</div>
+                        <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                         <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
                         </div>
@@ -54,29 +54,34 @@ function Lineup() {
             case 'Thu 23':
                 return (
                     <>
+
+
+
+
                         <div className="content1">
 
-                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>가수</div>
+                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" , fontWeight:"bolder"}}>플리마켓</div>
+                        <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
+                        <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder"}}>푸드트럭</div>
+                        <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
+                        <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
+
+                        </div>
+
+                        <div className="content2">
+
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder" }}>거미</div>
                             <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                             <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
                         </div>
 
-                        <div className="content2">
-
-                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
-                            <Locate style={{ marginTop: "10%",marginLeft: "5%" }} />
-                            <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
-
-                        </div>
-
-                        <div className="content2">
-
-                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
-                        <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
-                        <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
-
-                        </div>
                     </>
                 );
             case 'Fri 24':
@@ -84,7 +89,7 @@ function Lineup() {
                     <>
                         <div className="content1">
 
-                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%" }}>가수</div>
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder" }}>플리마켓</div>
                             <Locate style={{ marginTop: "10%", marginLeft: "5%" }} />
                             <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
@@ -92,7 +97,7 @@ function Lineup() {
 
                         <div className="content2">
 
-                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder"}}>푸드트럭</div>
                             <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                             <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
@@ -100,7 +105,7 @@ function Lineup() {
 
                         <div className="content2">
 
-                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%"}}>가수</div>
+                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder"}}>이하이</div>
                         <Locate style={{ marginTop: "10%", marginLeft: "5%"  }} />
                         <div style={{ color: "#ffffff", marginTop: "-8%", marginLeft: "15%" }}>만주벌판</div>
 
