@@ -17,7 +17,7 @@ function Signup2() {
   };
 
   const [isChecked, setIsChecked] = useState(false);
-  const fetchURL = "https://e148-221-140-29-184.ngrok-free.app/"
+  const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/"
 
   const handleCheckboxChange = (event) => {
     setIsChecked(event.target.checked);

@@ -25,7 +25,7 @@ function LostWrite() {
         setSelectedFile(null);
         setPreview(null);
     };
-    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/"
+    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/"
     const handleSubmit = async () => {
         if (!selectedFile || !itemTitle || !findPoint || !putPoint) {
             alert('모든 필드를 채워주세요.');

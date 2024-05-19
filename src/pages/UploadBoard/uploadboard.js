@@ -13,7 +13,7 @@ function UploadBoard() {
     const [anonymous, setIsAnonymous] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);  // 로그인 상태 추적
     const fileInputRef = useRef(null);
-    const fetchURL = "https://e148-221-140-29-184.ngrok-free.app/";
+    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     useEffect(() => {
         // 로그인 상태 확인 (세션스토리지에서 토큰 확인)

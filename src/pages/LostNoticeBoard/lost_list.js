@@ -11,7 +11,7 @@ function LostList() {
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
-    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     useEffect(() => {
         const fetchData = async () => {

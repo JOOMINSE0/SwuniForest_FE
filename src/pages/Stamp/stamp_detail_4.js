@@ -21,7 +21,7 @@ function StampDetail4() {
 
     const fetchStampStatus = async () => {
         const token = sessionStorage.getItem('token');
-        const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+        const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
         if (!token) {
             alert('로그인이 필요합니다.');
             navigate('/login1');

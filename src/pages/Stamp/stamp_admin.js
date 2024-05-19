@@ -9,7 +9,7 @@ function StampAdmin() {
     const [code, setCode] = useState('');
     const [expirationTime, setExpirationTime] = useState('');
     const [progress, setProgress] = useState(100); // Initialize progress at 100%
-    const fetchURL = "https://e4ee-118-218-144-103.ngrok-free.app/";
+    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     const departmentMapping = {
         "Department1": "경제학과",

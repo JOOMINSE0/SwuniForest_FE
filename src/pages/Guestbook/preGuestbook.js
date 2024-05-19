@@ -21,7 +21,7 @@ function PreGuestbook() {
 
     const fetchVisitData = async () => {
         try {
-            const response = await axios.get('https://e148-221-140-29-184.ngrok-free.app/api/visit/info', {
+            const response = await axios.get('https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/api/visit/info', {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('token')}`,
                     'Content-Type': 'application/json',
@@ -37,7 +37,7 @@ function PreGuestbook() {
 
     const fetchGuestbookEntries = async () => {
         try {
-            const response = await axios.get('https://e148-221-140-29-184.ngrok-free.app/api/guestbook/', {
+            const response = await axios.get('https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/api/guestbook/', {
                 headers: {
                     'Content-Type': 'application/json',
                     'ngrok-skip-browser-warning': '69420',
@@ -57,7 +57,7 @@ function PreGuestbook() {
         }
 
         try {
-            const response = await axios.post('https://e148-221-140-29-184.ngrok-free.app/api/visit/change', {}, {
+            const response = await axios.post('https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/api/visit/change', {}, {
                 headers: {
                     Authorization: `Bearer ${sessionStorage.getItem('token')}`
                 }
