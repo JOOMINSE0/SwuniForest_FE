@@ -50,10 +50,18 @@ function VisitorRanking() {
                 }}
                 className="divform1"
             >
-            {rankingData.slice(0, 3).map((item, index) => (
+        {(() => {
+            const modifiedData = rankingData.slice(0, 3);
+            if (modifiedData.length >= 2) {
+                [modifiedData[0], modifiedData[1]] = [modifiedData[1], modifiedData[0]];
+            }
+
+            return modifiedData.map((item, index) => (
                 <div key={index} className={`rank-${index + 1}`} style={{ display: 'flex', flexDirection: 'column'}}>
-                    <div style={{fontSize: "13px", textAlign:"center", color:"#7E7F82"}} className={`rank-text-${index + 1}`}>{item.major}</div>
-                    
+                    <div style={{fontSize: "13px", textAlign: "center", color: "#7E7F82"}} className={`rank-text-${index + 1}`}>
+                        {item.major}
+                    </div>
+
                     <div className={index === 0 ? "one" : index === 1 ? "two" : "three"}>
                         <div className={`rank-icon-${index + 1}`} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                             <img style={{ width: "35px", height: "39px"}} 
@@ -62,7 +70,8 @@ function VisitorRanking() {
                         </div>
                     </div>
                 </div>
-            ))}
+            ));
+        })()}
 
 
             </div>
