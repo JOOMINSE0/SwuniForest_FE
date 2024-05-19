@@ -8,7 +8,6 @@ function StampAdmin() {
     const [department, setDepartment] = useState('');
     const [code, setCode] = useState('');
     const [expirationTime, setExpirationTime] = useState('');
-    const [progress, setProgress] = useState(100); // Initialize progress at 100%
     const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     const departmentMapping = {
@@ -79,37 +78,14 @@ function StampAdmin() {
             }
         };
 
-        const initializeProgress = () => {
-            const startTime = localStorage.getItem('startTime');
-            if (startTime) {
-                const elapsedTime = Math.floor((Date.now() - parseInt(startTime)) / 1000);
-                const remainingTime = 300 - elapsedTime;
-                if (remainingTime > 0) {
-                    setProgress((remainingTime / 300) * 100);
-                } else {
-                    setProgress(0);
-                }
-            }
-        };
+
+
 
         fetchCodeData();
-        initializeProgress();
 
-        const interval = setInterval(() => {
-            const startTime = localStorage.getItem('startTime');
-            if (startTime) {
-                const elapsedTime = Math.floor((Date.now() - parseInt(startTime)) / 1000);
-                const remainingTime = 300 - elapsedTime;
-                if (remainingTime > 0) {
-                    setProgress((remainingTime / 300) * 100);
-                } else {
-                    setProgress(0);
-                    clearInterval(interval);
-                }
-            }
-        }, 1000);
 
-        return () => clearInterval(interval);
+
+
     }, [navigate]);
 
     const departmentName = departmentMapping[department] || '학과 정보 없음';
@@ -130,9 +106,7 @@ function StampAdmin() {
                 <p className="stamp-department">{departmentName}</p>
                 <div className="code-box">
                     <p className="code">{code}</p>
-                    <div className="progress-bar">
-                        <div className="progress" style={{ width: `${progress}%` }}></div>
-                    </div>
+
                     <p className="valid-time">유효시간 {expirationTime}</p>
                 </div>
                 <p className="instruction">

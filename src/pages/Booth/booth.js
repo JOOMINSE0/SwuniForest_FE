@@ -73,7 +73,7 @@ function Booth() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Booth;

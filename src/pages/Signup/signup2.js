@@ -47,14 +47,16 @@ function Signup2() {
         }
       });
 
-      if (response.data.visited === true) {
+      if (response.data.visited === false) {
         alert("이미 존재하는 회원입니다.");
       } else {
         navigate('/login1');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('서버와의 통신 중 오류가 발생했습니다.');
+      alert('회원가입된 사용자입니다.');
+      navigate('/login2');
+
     }
   };
 
