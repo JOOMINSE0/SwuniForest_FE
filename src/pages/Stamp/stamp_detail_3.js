@@ -48,7 +48,6 @@ function StampDetail3() {
 
             const newScore = updatedDepartments.filter(dept => dept.checked).length;
             setScore(newScore);
-            sessionStorage.setItem('score3', newScore);
 
         } catch (error) {
             console.error('Error fetching stamp status:', error);
@@ -68,7 +67,7 @@ function StampDetail3() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate('/stamp')}
+                onClick={() => navigate('/stamp_list')}
             />
             <p className="stamp-title">도장판</p>
 

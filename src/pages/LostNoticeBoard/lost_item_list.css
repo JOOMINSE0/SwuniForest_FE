@@ -38,6 +38,7 @@
     color: #575757;
     z-index: 2;
     margin-left: 5px;
+
 }
 
 .lost-item-place-list-1,
@@ -62,12 +63,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    justify-content: flex-start;
     margin-bottom: 20px;
     overflow-y: scroll;
     height: 500px;
     padding-left: 15px;
-
 }
 
 .lost-grid-item {
@@ -79,6 +78,7 @@
     width: 150px;
     height: 250px;
     border: 1px solid #E8E8E8;
+
 }
 
 .lost-item-img-grid {
