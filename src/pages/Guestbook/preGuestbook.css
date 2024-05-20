@@ -28,7 +28,7 @@
     height: 622px;
     border-radius: 40px;
     background-color: #FFFCFC;
-    border: 1px solid #8D8D8D;
+    border: 1px solid #000000;
     overflow-y: scroll;
     position: relative;
     margin: 0 auto; 
@@ -62,9 +62,11 @@
 .guestbook-entry {
     flex: 0 0 48%;
     margin: 1%; 
-    background: #fff; 
+    background: #ffffff;
     padding: 10px; 
     box-sizing: border-box; 
+    border-radius: 10%;
+    height: 32%;
 }
 
 .guestbook-img {
@@ -76,5 +78,6 @@
 .guestbook-content {
     padding: 2px;
     font-size: 14px; 
-    color: #333; 
+    color: #333;
+    margin-top: -6%;
 }

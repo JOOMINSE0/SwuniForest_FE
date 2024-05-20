@@ -101,11 +101,11 @@ function PreGuestbook() {
                             <div style={{ textAlign: 'center'}}> 
                                 <b style={{ color: "#9D9FA4", fontSize: "18px"}}>{visitData.username} 님의 학과</b> <br/>
                                 <b style={{ color: "#898A8D", fontSize: "19px" }}>{visitData.major}<span style={{ color: "#9D9FA4" }}>의</span> 방문율</b><br/>
-                                <b style={{fontSize: "24px", color: "#898A8D", marginRight:"10%"}}>{visitData.rank}위</b>
+                                <b style={{fontSize: "24px", color: "#898A8D", marginRight:"10%"}}>{visitData.visitRate}% </b>
                                 <svg xmlns="http://www.w3.org/2000/svg" width="1" height="22" viewBox="0 0 1 21" fill="none">
                                 <path d="M0.5 1L0.5 20" stroke="#C1C2C5" stroke-linecap="round"/>
                                 </svg>
-                                <b style={{ fontSize: "24px", color: "#898A8D", marginLeft:"10%"}}>{visitData.visitRate}%</b>
+                                <b style={{ fontSize: "24px", color: "#898A8D", marginLeft:"10%"}}>{visitData.rank}위</b>
                             </div>
 
                             </div>
