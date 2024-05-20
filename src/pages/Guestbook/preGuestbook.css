@@ -5,7 +5,7 @@
     background-color: #FFFCFC;
     border: 1px solid #8D8D8D;
     position: relative;
-    margin-top: -1px;
+    margin-top: 15%;
     display: flex;          
     flex-direction: column;  
     align-items: center;     
@@ -19,7 +19,7 @@
     background-color: #FFFCFC;
     border: 1px solid #8D8D8D;
     position: relative;
-    margin-top: 80px;
+    margin-top: 15%;
 }
 
 

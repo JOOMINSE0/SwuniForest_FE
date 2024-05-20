@@ -11,16 +11,31 @@ function UploadBoard() {
     const [preview, setPreview] = useState(null);
     const [guestContent, setGuestContent] = useState('');
     const [anonymous, setIsAnonymous] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);  // 로그인 상태 추적
+    const [username, setUsername] = useState(""); // 로그인한 사용자 이름
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const fileInputRef = useRef(null);
     const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     useEffect(() => {
-        // 로그인 상태 확인 (세션스토리지에서 토큰 확인)
         const token = sessionStorage.getItem('token');
-        setIsLoggedIn(!!token); // 토큰 유무에 따라 로그인 상태 설정
-        setIsAnonymous(!token); // 로그인 상태에 따라 익명 상태 설정 (로그인 시 익명 비활성화)
+        setIsLoggedIn(!!token);
+        if (token) {
+            fetchUserData();
+        }
     }, []);
+
+    const fetchUserData = async () => {
+        try {
+            const response = await axios.get(fetchURL + 'api/user/info', {
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.getItem('token')}`
+                }
+            });
+            setUsername(response.data.username);
+        } catch (error) {
+            console.error('사용자 정보 가져오기 실패:', error);
+        }
+    };
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -40,7 +55,7 @@ function UploadBoard() {
     };
 
     const toggleAnonymous = () => {
-        setIsAnonymous(!anonymous); // 로그인 상태와 관계없이 토글 가능하도록 변경
+        setIsAnonymous(!anonymous);
     };
 
     const handleSubmit = async () => {
@@ -52,7 +67,8 @@ function UploadBoard() {
         const formData = new FormData();
         formData.append('guestbookDto', new Blob([JSON.stringify({
             guestContent,
-            anonymous
+            anonymous,
+            username: anonymous ? undefined : username
         })], { type: 'application/json' }));
         formData.append('imageFile', selectedFile);
 
@@ -62,8 +78,11 @@ function UploadBoard() {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            console.log(response.data);
-            alert('업로드 성공!');
+            if (!anonymous) {
+                alert(`업로드 성공! 게시자: ${username}`);
+            } else {
+                alert('업로드 성공!');
+            }
             navigate(-1);
         } catch (error) {
             console.error('Error:', error);
