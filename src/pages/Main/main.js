@@ -122,8 +122,9 @@ function Main() {
             </div>
             <div className='madeby'>
                 <p style={{fontSize:"10px", color:"#C1C2C5"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
-                <a href=''></a>
-                <img className='insta' src='../../../img/insta.png'/>
+                <a href='https://www.instagram.com/likelion_swu?igsh=MTBzenlyanhrOWc2Yg=='>
+                    <img className='insta' src='../../../img/insta.png'/></a>
+                
                 <p style={{fontSize:"10px", color:"#C1C2C5"}}>Copyright ⓒ 2024 likelion_swu. All rights reserved.</p>
             </div>
         </div>
