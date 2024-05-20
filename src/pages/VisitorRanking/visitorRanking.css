@@ -1,3 +1,12 @@
+.divform1 {
+    width: 380px;
+    height: 136px;
+    border-radius: 40px;
+    background-color: #FFFCFC;
+    border: 1px solid #8D8D8D;
+    position: relative;
+    margin-top: 80px;
+}
 .first {
     width: 380px;
     height: 51px;
