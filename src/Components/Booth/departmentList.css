@@ -3,7 +3,7 @@
     flex-direction: column;
     padding: 20px;
     overflow-y: scroll;
-    height: 137px;
+    height: 136px;
     margin-top: -20px;
 }
 
@@ -40,6 +40,7 @@
 
 .date-buttons button.selected {
     color: #6EA693;
+    font-weight: 700;
 }
 
 

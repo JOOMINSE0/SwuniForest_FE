@@ -60,6 +60,7 @@ function Main() {
             title: '푸드트럭',
             description: ['축제 기간 동안 진행되는 푸드트럭의', <br key="2" />, '위치와 메뉴, 운영 시간을 알려드려요']
         },
+
         '포토부스': {
             img: 'box3icon.png',
             title: '포토부스',
