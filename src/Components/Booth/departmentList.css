@@ -1,0 +1,51 @@
+.tap-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: scroll;
+    height: 137px;
+    margin-top: -20px;
+}
+
+.booth-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.booth-item p {
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+
+.date-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.date-buttons button {
+    margin: 10px 15px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.date-buttons button.selected {
+    color: #6EA693;
+}
+
+
+.depart-title {
+    color: #575757;
+    font-size: 16px;
+    margin: 30px 0px 0px 18px;
+    font-weight: 600;
+}

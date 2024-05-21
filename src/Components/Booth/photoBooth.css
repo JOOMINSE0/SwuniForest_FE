@@ -1,0 +1,78 @@
+.booth-container {
+    background-color: #DAF1E9;
+    padding: 20px;
+    border-radius: 20px;
+    width: 330px;
+    height: 282px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #7E7F82;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+.photo-booth-1,
+.photo-booth-4 {
+    background-color: white;
+    margin: 5px 20px;
+    padding: 10px;
+    border-radius: 20px;
+    text-align: center;
+    width: 155px;
+    height: 32px;
+    line-height: 30px;
+}
+
+.sub {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 10px;
+    margin-left: 70px;
+}
+
+.photo-booth-3,
+.photo-booth-2 {
+    background-color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.photo-booth-3 {
+    line-height: 100px;
+    margin-right: -30px;
+}
+
+.long {
+    margin-left: 20px;
+}
+
+.photo-booth-2 {
+    border-radius: 30px;
+    background-color: #6EA693;
+    height: 100px;
+    width: 17px;
+    writing-mode: vertical-rl;
+    color: #fff;
+    margin-top: -15px;
+    margin-left: -10px;
+}
+
+.plus {
+    background-color: #fff;
+    width: 56px;
+    height: 170px;
+    border-radius: 20px;
+    left: 67px;
+    margin-top: 20px;
+    position: absolute;
+}
+
+.photowall,
+.receipt {
+    color: #575757;
+    font-size: 22px;
+    font-weight: 700;
+}
