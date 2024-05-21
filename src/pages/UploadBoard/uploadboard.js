@@ -10,17 +10,37 @@ function UploadBoard() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState(null);
     const [guestContent, setGuestContent] = useState('');
-    const [anonymous, setIsAnonymous] = useState(false);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);  // 로그인 상태 추적
+    const [anonymous, setIsAnonymous] = useState(true); // 기본값을 true로 설정
+    const [username, setUsername] = useState("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     const fileInputRef = useRef(null);
     const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     useEffect(() => {
-        // 로그인 상태 확인 (세션스토리지에서 토큰 확인)
         const token = sessionStorage.getItem('token');
-        setIsLoggedIn(!!token); // 토큰 유무에 따라 로그인 상태 설정
-        setIsAnonymous(!token); // 로그인 상태에 따라 익명 상태 설정 (로그인 시 익명 비활성화)
+        if (token) {
+            setIsLoggedIn(true);
+            fetchUserData(token);
+        } else {
+            setIsLoggedIn(false);
+            setIsAnonymous(true); // 로그인하지 않은 경우 기본적으로 익명 설정
+        }
     }, []);
+
+    const fetchUserData = async (token) => {
+        try {
+            const response = await axios.get(fetchURL + 'api/user/info', {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            setUsername(response.data.username);
+            setIsAnonymous(true); // 사용자가 로그인한 경우에도 익명 설정
+        } catch (error) {
+            console.error('사용자 정보 가져오기 실패:', error);
+            setIsLoggedIn(false);
+        }
+    };
 
     const handleFileChange = (event) => {
         const file = event.target.files[0];
@@ -40,7 +60,17 @@ function UploadBoard() {
     };
 
     const toggleAnonymous = () => {
-        setIsAnonymous(!anonymous); // 로그인 상태와 관계없이 토글 가능하도록 변경
+        setIsAnonymous(!anonymous);
+    };
+
+    const handleGuestContentChange = (event) => {
+        const inputContent = event.target.value;
+        if (inputContent.length > 50) {
+            alert('방명록 내용은 50자 이내로 작성해주세요.');
+            setGuestContent(inputContent.slice(0, 50)); // 입력된 내용을 50자로 자릅니다.
+        } else {
+            setGuestContent(inputContent);
+        }
     };
 
     const handleSubmit = async () => {
@@ -52,7 +82,8 @@ function UploadBoard() {
         const formData = new FormData();
         formData.append('guestbookDto', new Blob([JSON.stringify({
             guestContent,
-            anonymous
+            anonymous,
+            username: anonymous ? undefined : username
         })], { type: 'application/json' }));
         formData.append('imageFile', selectedFile);
 
@@ -62,8 +93,11 @@ function UploadBoard() {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            console.log(response.data);
-            alert('업로드 성공!');
+            if (!anonymous) {
+                alert(`업로드 성공! 게시자: ${username}`);
+            } else {
+                alert('업로드 성공!');
+            }
             navigate(-1);
         } catch (error) {
             console.error('Error:', error);
@@ -108,14 +142,14 @@ function UploadBoard() {
                         className="uploadcontent"
                         placeholder="내용을 작성해주세요"
                         value={guestContent}
-                        onChange={(e) => setGuestContent(e.target.value)}
+                        onChange={handleGuestContentChange} 
                     />
                     <div style={{ width: "300px", height: "0.6px", background: "#fff", marginLeft: "30px" }}></div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
                     <div style={{ color: "#ffffff", marginLeft: "5%", fontWeight: 'bolder' }}>익명여부</div>
                     <div className="toggle-switch">
-                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} disabled={!isLoggedIn} />
+                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} disabled={true}  />
                         <label htmlFor="toggle-anonymous" style={{ cursor: 'pointer' }}></label>
                     </div>
                 </div>
