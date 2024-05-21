@@ -61,6 +61,7 @@ function Login2() {
           className="input"
           value={studentNum}
           onChange={(e) => setStudentNum(e.target.value)}
+          style={{fontSize:"20px"}}
         />
         <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginTop: "0px" }}></div>
 
@@ -69,6 +70,7 @@ function Login2() {
           className="input"
           type="password"
           value={password}
+          style={{fontSize:"20px"}}
           onChange={(e) => setPassword(e.target.value)}
         />
         <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginTop: "0px" }}></div>
