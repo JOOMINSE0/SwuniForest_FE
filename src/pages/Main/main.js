@@ -53,7 +53,7 @@ function Main() {
         '학과부스': {
             img: 'box1icon.png',
             title: '학과부스',
-            description: ['학과별 부스의 위치를 확인할 수 있으며', <br key="1" />, '고양이 스템프를 모으는 데에 유용해요']
+            description: ['학과별 부스의 위치를 확인할 수 있으며', <br key="1" />, '슈냥이 스탬프를 모으는 데에 유용해요']
         },
         '푸드트럭': {
             img: 'box2icon.png',
