@@ -42,6 +42,7 @@ function DepartmentList() {
 
     return (
         <div>
+            <p className="depart-title">부스 정보</p>
             <div className="date-buttons">
                 {content.map((item, index) => (
                     <button key={index}

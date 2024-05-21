@@ -52,10 +52,41 @@
     margin: 3px 0px 10px -110px;
     color: #7E7F82;
     font-size: 14px;
+
 }
 
 .select-time {
+    position: relative;
+    padding-left: 55px;
     margin: 5px 0px 5px -80px;
     color: #7E7F82;
     font-size: 14px;
+}
+
+.select-place::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #6EA693;
+    border-radius: 50%;
+    margin-left: 37.5px;
+}
+
+
+.select-time::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #6EA693;
+    border-radius: 50%;
+    margin-left: 32px;
+
 }

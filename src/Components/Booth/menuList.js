@@ -7,7 +7,7 @@ function menuList() {
         <div>
 
             <div className="list-container">
-                <p>메뉴 목록</p>
+                <p className="list-title">메뉴 목록</p>
                 <ul className="list" >
                     <li>타코야끼</li>
                     <li>소떡소떡</li>

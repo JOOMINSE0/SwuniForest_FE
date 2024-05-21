@@ -6,7 +6,6 @@ import OtherBooth from '../../Components/Booth/otherBooth.js';
 import DepartmentList from '../../Components/Booth/departmentList.js';
 import FleaList from '../../Components/Booth/fleaList.js';
 import MenuList from '../../Components/Booth/menuList.js';
-
 function Booth() {
     let navigate = useNavigate();
     const location = useLocation();
@@ -39,13 +38,13 @@ function Booth() {
                 Component = () => (
                     <div style={{ marginLeft: "30px" }}>
                         <OtherBooth selectedCategory={selectedCategory} />
-                        <FleaList />
+                        {/* <FleaList /> */}
                     </div>
                 );
                 break;
             case "푸드트럭":
                 Component = () => (
-                    <div style={{ marginLeft: "30px" }}>
+                    <div style={{ marginLeft: "26.5px" }}>
                         <OtherBooth selectedCategory={selectedCategory} style={{ marginLeft: "30px" }} />
                         <MenuList />
                     </div>
@@ -70,7 +69,7 @@ function Booth() {
                     break;
                 case "푸드트럭":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 21:00");
-                    setPlace("서울여자대학교 제1과학관 앞 도로");
+                    setPlace(`서울여자대학교 제1과학관 앞 도로${"       "}   `);
                     break;
                 case "학과부스":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 16:30");
@@ -107,9 +106,12 @@ function Booth() {
                     ))}
                 </div>
             </div>
-            <p className="select-category" style={{ textAlign: "left" }}> {selectedCategory}  </p>
-            <p className="select-time">{time}</p>
-            <p className="select-place"> {place}</p>
+            <p className="select-category">{selectedCategory}</p>
+            <p className="select-time" style={{
+                marginLeft: selectedCategory === "포토부스" ? "-164.5px" : ""
+            }}
+            >{time}</p>
+            <p className="select-place" style={{ marginLeft: selectedCategory === "포토부스" ? "-30px" : "-50px" }}>{place}</p>
 
 
             {renderBoothComponent()}

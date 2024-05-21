@@ -3,6 +3,7 @@
     justify-content: space-between;
     flex-wrap: wrap;
     list-style: none;
+    margin-left: -40px;
 
 }
 
@@ -16,6 +17,21 @@
     margin: 6px 20px;
     box-sizing: border-box;
     color: #5A776D;
-    font-size: 18px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: scroll;
+
+}
+
+.list-title {
+    color: #575757;
+    font-size: 16px;
+    margin: 12px 0px 0px 1px;
     font-weight: 600;
 }

@@ -3,7 +3,8 @@
     flex-direction: column;
     padding: 20px;
     overflow-y: scroll;
-    height: 60px;
+    height: 137px;
+    margin-top: -20px;
 }
 
 .booth-item {
@@ -39,4 +40,12 @@
 
 .date-buttons button.selected {
     color: #6EA693;
+}
+
+
+.depart-title {
+    color: #575757;
+    font-size: 16px;
+    margin: 30px 0px 0px 18px;
+    font-weight: 600;
 }
