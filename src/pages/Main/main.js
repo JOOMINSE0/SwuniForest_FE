@@ -57,15 +57,15 @@ function Main() {
             title: '푸드트럭',
             description: '축제 기간 동안 진행되는 푸드트럭의 위치와 메뉴, 운영 시간을 알려드려요'
         },
-        '포토부스': {
-            img: 'box3icon.png',
-            title: '포토부스',
-            description: '교내에 설치되어 있는 포토부스의 위치와 갯수를 확인할 수 있어요'
-        },
+
         '플리마켓': {
             img: 'box4icon.png',
             title: '플리마켓',
             description: '올해 서랑제에서 진행되는 플리마켓의 위치와 정보를 제공해드려요'
+        }, '포토부스': {
+            img: 'box3icon.png',
+            title: '포토부스',
+            description: '교내에 설치되어 있는 포토부스의 위치와 갯수를 확인할 수 있어요'
         }
     };
 
