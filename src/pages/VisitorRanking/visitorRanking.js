@@ -84,14 +84,14 @@ function VisitorRanking() {
                 <div className="rank-position">{index + 1}등</div>
                 <div className="vertical1"></div>
                 <div className="rank-major" style={{ position: "absolute", marginLeft: "25%", marginTop: "-6%" }}>{item.major}</div>
-                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitRate}%</div>
+                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitCount}명</div>
             </div>
         ) : (
             <div className="fourth">
                 <div className="rank-position">{index + 1}등</div>
                 <div className="vertical2"></div>
                 <div className="rank-major" style={{ position: "absolute", marginLeft: "25%", marginTop: "-6%" }}>{item.major}</div>
-                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitRate}%</div>
+                <div className="rank-ratio" style={{ position: "absolute", marginLeft: "65%", marginTop: "-6%" }}>{item.visitCount}명</div>
             </div>
         )}
     </div>

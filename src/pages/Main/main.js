@@ -92,7 +92,7 @@ function Main() {
             <img className='cat4' src='../../../img/cat4.png'/>
             <img className='cat5' src='../../../img/cat5.png'/>
             <img className='cat6' src='../../../img/cat6.png'/>
-            <div className='swuni-text'>고양이 스탬프를<br/>모아 보아요</div>
+            <div className='swuni-text'>슈냥이를<br/>모아 보아요</div>
 
             <div className='btn-list'>
                 {Object.keys(booths).map((booth, index, array) => (

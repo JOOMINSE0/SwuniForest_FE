@@ -80,7 +80,8 @@ function LostList() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate('/')}
+                style={{position:"absolute", marginTop:"4%"}}
+                onClick={() => navigate(-1)}
             />
             <div className="search-container">
                 <input
