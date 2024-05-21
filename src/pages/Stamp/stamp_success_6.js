@@ -18,7 +18,7 @@ function StampSuccess6() {
             />
             <div className='text'>
 
-                <span style={{ color: "#B2E0D0" }}>과학기술융합대학</span>의 스탬프 7개 중<br />
+                <span style={{ color: "#B2E0D0" }}>과학기술융합대학</span>의 스탬프 7개 중 <br />
                 절반 이상인 4개를 획득하여 보상으로<br /><br />
                 <span className='cat-name'>그림자</span>가 찾아왔어요!
 
