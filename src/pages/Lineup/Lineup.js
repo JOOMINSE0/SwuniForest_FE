@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as Line } from '../../assets/line.svg';
 import { ReactComponent as Locate } from '../../assets/locate.svg';
 import "./Lineup.css";
 
@@ -26,42 +25,124 @@ function Lineup() {
             case 'Wed 22':
                 return (
                     <>
+                        <div className="scrollY">
+                            <p className="section">• 토크 콘서트</p>
+                            
+                            <div className="location-content">
+                                <Locate/>
+                                <span>학생누리관 114호 소극장</span>
+                            </div>
+                            <div className="blur">
+                            <img style={{width:"323px", height:"400px"}} src="../../../img/이호연.png"/>
+                            </div>
 
-                        <div className="content2">
-
-                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder"}}>토크 콘서트</div>
-                        <div>하다필름, 이호연</div>
-                        <img src='../../../img/22.png'/>
-                        <Locate style={{ marginBottom: "-98%", marginLeft: "5%"  }} />
-                        <div style={{ color: "#ffffff", marginTop: "90%", marginLeft: "20%" }}>만주벌판</div>
+                            <div style={{textAlign:"center"}}>
+                                <p>하다필름</p>
+                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"600"}}>이호연</p>
+                            </div>
                         </div>
                     </>
                 );
             case 'Thu 23':
                 return (
                     <>
+                        <div className="scrollY">
+                            <p className="section">• 아티스트 공연</p>
+                            
+                            <div className="location-content2">
+                                <Locate/>
+                                <span>만주벌판</span>
+                            </div>
+                            <div className="blur">
+                            <img style={{width:"323px", height:"400px"}} src="../../../img/거미.png"/>
+                            </div>
 
-                        <div className="content2">
+                           
+                            <p className="section">• 동아리 공연</p>
+                            
+                            <div className="location-content2">
+                                <Locate/>
+                                <span>만주벌판</span>
+                            </div>
 
-                            <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder" }}>거미</div>
-                            <img src='../../../img/23.png'/>
-                            <Locate style={{ marginBottom: "-98%", marginLeft: "5%"  }} />
-                        <div style={{ color: "#ffffff", marginTop: "90%", marginLeft: "20%" }}>만주벌판</div>
+                            
+                            <div className="clubs-container">
+                            <div className="club" style={{position: "relative", color: "#fff"}}>
+                            <svg style={{position: "absolute", marginLeft:"-80%"}} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <circle cx="7" cy="7" r="7" fill="white"/>
+                            </svg>
+                            <p style={{marginBottom: "5px"}}>서울여대 중앙 락밴드</p>
+                            <p style={{fontSize:"24px", marginTop: "10px", fontWeight:"bolder"}}>S.E.L.</p>
+                        </div>
+
+
+                            <div className="club" style={{position: "relative"}}>
+                                <p style={{marginBottom: "5px", color:"#fff"}}>서울여대 중앙 노래패</p>
+                                <svg style={{position: "absolute", marginLeft:"-80%"}} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <circle cx="7" cy="7" r="7" fill="white"/>
+                            </svg>
+                                <p style={{fontSize:"24px", marginTop: "10px", color:"#fff", fontWeight:"bolder"}}>소리마당</p>
+                            </div>
+                        </div>
+
+                      
+
 
                         </div>
+                     
 
                     </>
                 );
             case 'Fri 24':
                 return (
                     <>
+                        <div className="scrollY">
+                            <p className="section">• 아티스트 공연</p>
+                            
+                            <div className="location-content2">
+                                <Locate/>
+                                <span>만주벌판</span>
+                            </div>
+                            <div className="blur">
+                            <img style={{width:"323px", height:"400px"}} src="../../../img/이하이.png"/>
+                            </div>
 
-                        <div className="content2">
 
-                        <div style={{ color: "#ffffff", marginBottom: "1px", marginTop: "10px", marginLeft: "15%", fontWeight:"bolder"}}>이하이</div>
-                        <img src='../../../img/24.png'/>
-                        <Locate style={{ marginBottom: "-98%", marginLeft: "5%"  }} />
-                        <div style={{ color: "#ffffff", marginTop: "90%", marginLeft: "20%" }}>만주벌판</div>
+                            <p className="section">• 동아리 공연</p>
+                            
+                            <div className="location-content2">
+                                <Locate/>
+                                <span>만주벌판</span>
+                            </div>
+
+
+                            <div className="clubs-container">
+                            <div className="club" style={{position: "relative", color: "#fff"}}>
+                            <svg style={{position: "absolute", marginLeft:"-80%"}} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <circle cx="7" cy="7" r="7" fill="white"/>
+                            </svg>
+                            <p style={{marginBottom: "5px", color:"#fff"}}>서울여대 중앙 풍물패</p>
+                            <p style={{fontSize:"24px", marginTop: "10px", color:"#fff", fontWeight:"bolder"}}>청천벽력</p>
+                             </div>
+
+                            <div className="club" style={{position: "relative", color: "#fff"}}>
+                            <svg style={{position: "absolute", marginLeft:"-80%"}} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <circle cx="7" cy="7" r="7" fill="white"/>
+                            </svg>
+                                <p style={{marginBottom: "5px", color:"#fff"}}>스트릿 댄스 동아리</p>
+                                <p style={{fontSize:"24px", marginTop: "10px", color:"#fff", fontWeight:"bolder"}}>TIPSSY</p>
+                            </div>
+
+                            <div className="club" style={{position: "relative", color: "#fff"}}>
+                            <svg style={{position: "absolute", marginLeft:"-80%"}} xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                                <circle cx="7" cy="7" r="7" fill="white"/>
+                            </svg>
+                                <p style={{marginBottom: "5px", color:"#fff"}}>재즈 퍼포먼스 동아리</p>
+                                <p style={{fontSize:"24px", marginTop: "10px", color:"#fff", fontWeight:"bolder"}}>S.A.K.E.</p>
+                            </div>
+                        </div>
+
+
 
                         </div>
                     </>
@@ -81,7 +162,6 @@ function Lineup() {
                 style={{ marginTop: "9%" }}
                 onClick={() => navigate(-1)}
             />
-            <Line style={{ marginLeft: "-85%", marginTop: "40%", position:"absolute" }} />
             <div style={{ display: 'flex', alignItems: 'center', position: "absolute", marginTop: "-140%" }}>
                 <div className="month" style={{ marginRight: '20px', fontWeight: 'bold', fontSize: '24px' }}>May</div>
                 {['Wed 22', 'Thu 23', 'Fri 24'].map((day, index) => (

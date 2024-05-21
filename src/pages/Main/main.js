@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import axios from 'axios';
 import { ReactComponent as SidebarIcon } from '../../assets/Sidebar.svg';
 import { ReactComponent as Myinfo } from '../../assets/Myinfo.svg';
-import { ReactComponent as Insta } from '../../assets/insta.svg';
 import Sidebar from '../../Components/Sidebar/sidebar.js';
 import "./main.css";
 
@@ -78,7 +77,7 @@ function Main() {
         <div className="iphone-frame1">
             <img style={{ position: "absolute", marginTop: "-180%", width:"144px", height:"15px"}} src='../../img/swuniforest.png' />
             <button className='StampBtn' onClick={() => navigate('/stamp')}>
-                <img style={{ width: "55px", height: "55px", cursor: "pointer" }} src='../../../img/StampBtn.png' alt="Stamp Button"></img>
+                <img style={{ width: "55px", height: "55px", cursor: "pointer" }} src='../../../img/StampBtn1.png' alt="Stamp Button"></img>
             </button>
             <button className="sidebar-button" onClick={toggleSidebar}><SidebarIcon /></button>
             {isSidebarVisible && <Sidebar style={{ zIndex: "10" }} onToggle={toggleSidebar} />}
@@ -121,11 +120,10 @@ function Main() {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 누적 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {totalVisitCount}명</div>
             </div>
             <div className='madeby'>
-                <p style={{fontSize:"10px", color:"#C1C2C5"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
+                <p style={{fontSize:"10px", color:"#FFFFFF"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
                 <a href='https://www.instagram.com/likelion_swu?igsh=MTBzenlyanhrOWc2Yg=='>
-                    <img className='insta' src='../../../img/insta.png'/></a>
-                
-                <p style={{fontSize:"10px", color:"#C1C2C5"}}>Copyright ⓒ 2024 likelion_swu. All rights reserved.</p>
+                    <img style={{width:"17px"}} className='insta' src='../../../img/insta1.png'/></a>
+                <p style={{fontSize:"10px", color:"#FFFFFF"}}>Copyright ⓒ 2024 likelion_swu. All rights reserved.</p>
             </div>
         </div>
     );
