@@ -1,0 +1,21 @@
+.list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    list-style: none;
+
+}
+
+.list li {
+    width: calc(50% - 40px);
+    padding-left: 20px;
+    background-image: url('/public/img/star.png');
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    background-size: 16px 16px;
+    margin: 6px 20px;
+    box-sizing: border-box;
+    color: #5A776D;
+    font-size: 18px;
+    font-weight: 600;
+}
