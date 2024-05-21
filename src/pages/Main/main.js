@@ -75,7 +75,7 @@ function Main() {
 
     return (
         <div className="iphone-frame1">
-            <img style={{ position: "absolute", marginTop: "-180%", width:"144px", height:"15px"}} src='../../img/swuniforest.png' />
+            <img style={{ position: "absolute", marginTop: "-180%", width:"91px", height:"34px"}} src='../../img/swuniforest.png' />
             <button className='StampBtn' onClick={() => navigate('/stamp')}>
                 <img style={{ width: "55px", height: "55px", cursor: "pointer" }} src='../../../img/StampBtn1.png' alt="Stamp Button"></img>
             </button>
@@ -85,7 +85,6 @@ function Main() {
                 <button onClick={() => navigate('/login1')} className="myinfo-button"><Myinfo /></button>
             )}
             <div className='background-circle'></div>
-            <div className='small-circle'></div>
             <img className='cat1' src='../../../img/cat1.png'/>
             <img className='cat2' src='../../../img/cat2.png'/>
             <img className='cat3' src='../../../img/cat3.png'/>

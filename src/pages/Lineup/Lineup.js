@@ -26,18 +26,18 @@ function Lineup() {
                 return (
                     <>
                         <div className="scrollY">
-                            <p className="section">• 토크 콘서트</p>
+                            <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>토크 콘서트</span></p>
                             
                             <div className="location-content">
                                 <Locate/>
-                                <span>학생누리관 114호 소극장</span>
+                                <span style={{color:"#575757"}}>학생누리관 114호 소극장</span>
                             </div>
                             <div className="blur">
                             <img style={{width:"323px", height:"400px"}} src="../../../img/이호연.png"/>
                             </div>
 
                             <div style={{textAlign:"center"}}>
-                                <p>하다필름</p>
+                                <p style={{color:"#575757"}}>하다필름</p>
                                 <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"600"}}>이호연</p>
                             </div>
                         </div>

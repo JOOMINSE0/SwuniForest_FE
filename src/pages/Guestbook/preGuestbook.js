@@ -126,8 +126,11 @@ function PreGuestbook() {
             <div className="divform2">
                 {guestbookEntries.map((entry, index) => (
                     <div key={index} className="guestbook-entry">
-                        <p className="username">{entry.guestName}</p>
-                        <img src={entry.fileName} alt="방명록" className="guestbook-img" />
+                        <p style={{backgroundColor:"#89CBB5", width:"55px", height:"20px", borderRadius:"30px", textAlign:"center", color:"#fff"}} className="username">
+                            {entry.guestName}</p>
+                        <img 
+                         style={{ width: "150px", height: "150px", objectFit: "cover" }}
+                        src={entry.fileName} alt="방명록" className="guestbook-img" />
                         <p className="guestbook-content">{entry.guestContent}</p>
                     </div>
                 ))}

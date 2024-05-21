@@ -10,32 +10,35 @@ function UploadBoard() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState(null);
     const [guestContent, setGuestContent] = useState('');
-    const [anonymous, setIsAnonymous] = useState(false);
-    const [username, setUsername] = useState(""); 
+    const [anonymous, setIsAnonymous] = useState(true); // 기본값을 true로 설정
+    const [username, setUsername] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const fileInputRef = useRef(null);
     const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
-        const loggedIn = !!token;
-        setIsLoggedIn(loggedIn);
-        setIsAnonymous(!loggedIn); // Set anonymous based on login status
-        if (loggedIn) {
-            fetchUserData();
+        if (token) {
+            setIsLoggedIn(true);
+            fetchUserData(token);
+        } else {
+            setIsLoggedIn(false);
+            setIsAnonymous(true); // 로그인하지 않은 경우 기본적으로 익명 설정
         }
     }, []);
 
-    const fetchUserData = async () => {
+    const fetchUserData = async (token) => {
         try {
             const response = await axios.get(fetchURL + 'api/user/info', {
                 headers: {
-                    Authorization: `Bearer ${sessionStorage.getItem('token')}`
+                    Authorization: `Bearer ${token}`
                 }
             });
             setUsername(response.data.username);
+            setIsAnonymous(true); // 사용자가 로그인한 경우에도 익명 설정
         } catch (error) {
             console.error('사용자 정보 가져오기 실패:', error);
+            setIsLoggedIn(false);
         }
     };
 
@@ -146,7 +149,7 @@ function UploadBoard() {
                 <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
                     <div style={{ color: "#ffffff", marginLeft: "5%", fontWeight: 'bolder' }}>익명여부</div>
                     <div className="toggle-switch">
-                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} disabled={!isLoggedIn} />
+                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} disabled={true}  />
                         <label htmlFor="toggle-anonymous" style={{ cursor: 'pointer' }}></label>
                     </div>
                 </div>
