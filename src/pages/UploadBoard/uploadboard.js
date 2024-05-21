@@ -11,15 +11,17 @@ function UploadBoard() {
     const [preview, setPreview] = useState(null);
     const [guestContent, setGuestContent] = useState('');
     const [anonymous, setIsAnonymous] = useState(false);
-    const [username, setUsername] = useState(""); // 로그인한 사용자 이름
+    const [username, setUsername] = useState(""); 
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const fileInputRef = useRef(null);
     const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
-        setIsLoggedIn(!!token);
-        if (token) {
+        const loggedIn = !!token;
+        setIsLoggedIn(loggedIn);
+        setIsAnonymous(!loggedIn); // Set anonymous based on login status
+        if (loggedIn) {
             fetchUserData();
         }
     }, []);
@@ -56,6 +58,16 @@ function UploadBoard() {
 
     const toggleAnonymous = () => {
         setIsAnonymous(!anonymous);
+    };
+
+    const handleGuestContentChange = (event) => {
+        const inputContent = event.target.value;
+        if (inputContent.length > 50) {
+            alert('방명록 내용은 50자 이내로 작성해주세요.');
+            setGuestContent(inputContent.slice(0, 50)); // 입력된 내용을 50자로 자릅니다.
+        } else {
+            setGuestContent(inputContent);
+        }
     };
 
     const handleSubmit = async () => {
@@ -127,7 +139,7 @@ function UploadBoard() {
                         className="uploadcontent"
                         placeholder="내용을 작성해주세요"
                         value={guestContent}
-                        onChange={(e) => setGuestContent(e.target.value)}
+                        onChange={handleGuestContentChange} 
                     />
                     <div style={{ width: "300px", height: "0.6px", background: "#fff", marginLeft: "30px" }}></div>
                 </div>

@@ -13,9 +13,9 @@ function PreGuestbook() {
     useEffect(() => {
         const token = sessionStorage.getItem('token');
         setIsLoggedIn(!!token);
+        fetchGuestbookEntries(); // 로그인 여부와 상관없이 실행
         if (token) {
             fetchVisitData();
-            fetchGuestbookEntries();
         }
     }, []);
 
@@ -44,6 +44,7 @@ function PreGuestbook() {
             setGuestbookEntries(response.data);
         } catch (error) {
             console.error("에러:", error);
+            setError("방명록 데이터를 불러오는 데 실패했습니다.");
         }
     };
 
