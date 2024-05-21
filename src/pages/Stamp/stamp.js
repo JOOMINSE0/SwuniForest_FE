@@ -42,9 +42,9 @@ function Stamp() {
         </div>
       </div>
       <div className='text'>
-        <p className='text-1'>고양이를 모아보세요!</p>
+        <p className='text-1'>슈냥이를 모아보세요!</p>
         <p className='text-2'>축제 기간 동안 여러 부스를 체험하면<br />
-          특별한 고양이 스템프를 받을 수 있어요.<br /><br />
+          특별한 고양이 스탬프를 받을 수 있어요.<br /><br />
           모여라 슈니의 숲과 함께 고양이 스탬프를 모아 보아요.</p>
       </div>
       <button className="stamp-btn" onClick={() => navigate("/stamp_list")}>
