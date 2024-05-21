@@ -12,6 +12,7 @@ function Booth() {
     const [selectedCategory, setSelectedCategory] = useState(location.state?.selectedCategory || "학과부스");
     const [time, setTime] = useState('');
     const [place, setPlace] = useState('');
+    const [marginLeft, setMarginLeft] = useState('-50px'); // Default marginLeft
     useEffect(() => {
         if (location.state?.selectedCategory) {
             setSelectedCategory(location.state.selectedCategory);
@@ -28,7 +29,7 @@ function Booth() {
                 break;
             case "학과부스":
                 Component = () => (
-                    <div>
+                    <div >
                         <OtherBooth selectedCategory={selectedCategory} />
                         <DepartmentList />
                     </div>
@@ -36,16 +37,16 @@ function Booth() {
                 break;
             case "플리마켓":
                 Component = () => (
-                    <div style={{ marginLeft: "30px" }}>
+                    <div style={{ marginLeft: "26px" }}>
                         <OtherBooth selectedCategory={selectedCategory} />
-                        {/* <FleaList /> */}
+                        <FleaList />
                     </div>
                 );
                 break;
             case "푸드트럭":
                 Component = () => (
                     <div style={{ marginLeft: "26.5px" }}>
-                        <OtherBooth selectedCategory={selectedCategory} style={{ marginLeft: "30px" }} />
+                        <OtherBooth selectedCategory={selectedCategory} />
                         <MenuList />
                     </div>
                 );
@@ -60,24 +61,33 @@ function Booth() {
         if (selectedCategory) {
             switch (selectedCategory) {
                 case "포토부스":
+                    setMarginLeft('-35px');
+
                     setTime("5월 20일(월) ~ 5월 28일(화)");
                     setPlace("제2과학관 ~ 고명우 기념관 사이 주차장");
                     break;
                 case "플리마켓":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 17:00");
                     setPlace("학생누리관 지하 1층 앞");
+                    setMarginLeft('-140px');
+
                     break;
                 case "푸드트럭":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 21:00");
-                    setPlace(`서울여자대학교 제1과학관 앞 도로${"       "}   `);
+                    setPlace(`서울여자대학교 제1과학관 앞 도로`);
+                    setMarginLeft('-70px');
+
                     break;
                 case "학과부스":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 16:30");
                     setPlace("서울여자대학교 잔디광장 및 만주대로");
+                    setMarginLeft('-50px');
+
                     break;
                 default:
                     setTime('');
-                    setPlace('');
+                    setPlace(''); setMarginLeft('-50px');
+
             }
         }
     }, [selectedCategory]);
@@ -111,7 +121,7 @@ function Booth() {
                 marginLeft: selectedCategory === "포토부스" ? "-164.5px" : ""
             }}
             >{time}</p>
-            <p className="select-place" style={{ marginLeft: selectedCategory === "포토부스" ? "-30px" : "-50px" }}>{place}</p>
+            <p className="select-place" style={{ marginLeft }}>{place}</p>
 
 
             {renderBoothComponent()}

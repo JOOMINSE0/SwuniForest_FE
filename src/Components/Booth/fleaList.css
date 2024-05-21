@@ -1,0 +1,38 @@
+.flea-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: scroll;
+    height: 208px;
+    margin-top: -19px;
+}
+
+.title {
+    color: #5A776D;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.detail {
+    font-size: 14px;
+    color: #9D9FA4;
+}
+
+.title::before {
+    content: '';
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+    background-image: url('/public/img/star.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-right: 10px;
+}
+
+.flea-title {
+    color: #575757;
+    font-size: 16px;
+    margin: 30px 0px 0px 20px;
+    font-weight: 600;
+}
