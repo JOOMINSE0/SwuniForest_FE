@@ -69,9 +69,7 @@ function StampAdmin() {
                 setCode(code);
                 setExpirationTime(expirationTime);
 
-                const startTime = Date.now();
-                localStorage.setItem('startTime', startTime);
-                localStorage.setItem('expirationTime', expirationTime);
+
             } catch (error) {
                 console.error('Error fetching code data:', error);
                 alert('데이터를 가져오는 중 오류가 발생했습니다.');

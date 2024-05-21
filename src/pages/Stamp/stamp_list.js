@@ -80,7 +80,7 @@ function StampList() {
         className="close-btn"
         onClick={() => navigate('/')}
       />
-      <p className="description">부스 체험 후 학과별 인증번호를 입력하면 고양이 스탬프를 드려요.</p>
+      <p className="description">부스 체험 후 <span style={{ color: "#B2E0D0" }}>학과별 인증번호</span>를 입력하면 학과별 스탬프를 드려요.</p>
       <div className="certification">
         <input
           placeholder="인증번호를 입력하세요"
@@ -89,6 +89,7 @@ function StampList() {
         />
         <button onClick={handleCodeSubmit}>확인</button>
       </div>
+      <p className="description" style={{ marginTop: "-20px", marginBottom: "15px" }}>인증번호는 부스 관리자에게 문의해주세요.</p>
       <div className="cat-items">
         {
           catStamps.map((stamp, index) => {
