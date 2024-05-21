@@ -38,7 +38,7 @@ function Lineup() {
 
                             <div style={{textAlign:"center"}}>
                                 <p style={{color:"#575757"}}>하다필름</p>
-                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"600"}}>이호연</p>
+                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"bolder"}}>이호연</p>
                             </div>
                         </div>
                     </>
