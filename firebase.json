@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site":"swuniforest-tkdlxm",
+    "site":"swuni-tkdlxm",
     "public": "build",
     "ignore": [
       "firebase.json",

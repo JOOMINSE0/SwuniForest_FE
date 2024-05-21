@@ -77,7 +77,6 @@ function VisitorRanking() {
             </div>
 
             <p style={{ color: "#7E7F82", marginTop: "20px" }}>학과별 방문율 등수</p>
-
             {rankingData.slice(0, 5).map((item, index) => (
     <div key={index} className={`rank-item rank-${index + 1}`}>
         {index < 3 ? (
@@ -97,7 +96,6 @@ function VisitorRanking() {
         )}
     </div>
 ))}
-
         </div>
     );
 }

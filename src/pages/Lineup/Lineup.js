@@ -47,22 +47,22 @@ function Lineup() {
                 return (
                     <>
                         <div className="scrollY">
-                            <p className="section">• 아티스트 공연</p>
+                            <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>아티스트 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}>만주벌판</span>
                             </div>
                             <div className="blur">
                             <img style={{width:"323px", height:"400px"}} src="../../../img/거미.png"/>
                             </div>
 
                            
-                            <p className="section">• 동아리 공연</p>
+                            <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>동아리 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}>만주벌판</span>
                             </div>
 
                             
@@ -97,22 +97,22 @@ function Lineup() {
                 return (
                     <>
                         <div className="scrollY">
-                            <p className="section">• 아티스트 공연</p>
+                        <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>아티스트 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}>만주벌판</span>
                             </div>
                             <div className="blur">
                             <img style={{width:"323px", height:"400px"}} src="../../../img/이하이.png"/>
                             </div>
 
 
-                            <p className="section">• 동아리 공연</p>
+                            <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>동아리 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}>만주벌판</span>
                             </div>
 
 
