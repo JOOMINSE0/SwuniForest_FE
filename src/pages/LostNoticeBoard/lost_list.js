@@ -58,7 +58,7 @@ function LostList() {
     );
 
     const LostItemGrid = ({ items }) => (
-        <div className="lost-item-grid">
+        <div className="lost-item-grid" style={{ marginLeft: "-13px" }}>
             {items.map((item, index) => (
                 <div className="lost-grid-item" key={index}>
                     <img src={item.fileName} alt="분실물" className="lost-item-img-grid" />

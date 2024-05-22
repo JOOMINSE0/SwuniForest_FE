@@ -93,7 +93,7 @@ function StampList() {
       <div className="cat-items">
         {
           catStamps.map((stamp, index) => {
-            const isMajority = stamp.score >= stamp.total / 2;
+            const isMajority = scores[index] >= stamp.total / 2;
             const route = isMajority ? `/stamp_success_${index + 1}` : `/stamp_detail_${index + 1}`;
             return (
               <div
