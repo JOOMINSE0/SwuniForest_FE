@@ -17,7 +17,7 @@ function StampSuccess3() {
             />
             <div className='text'>
 
-                <span style={{ color: "#B2E0D0" }}>미래산업융합대학</span>의 도장 4개 중<br />
+                <span style={{ color: "#B2E0D0" }}>미래산업융합대학</span>의 스탬프 4개 중<br />
                 절반 이상인 2개를 획득하여 보상으로<br /><br />
                 <span className='cat-name'>그루밍 마스터</span>가 찾아왔어요!
 

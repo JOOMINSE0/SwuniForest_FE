@@ -12,7 +12,7 @@ function Booth() {
     const [selectedCategory, setSelectedCategory] = useState(location.state?.selectedCategory || "학과부스");
     const [time, setTime] = useState('');
     const [place, setPlace] = useState('');
-    const [marginLeft, setMarginLeft] = useState('-50px'); // Default marginLeft
+    const [marginLeft, setMarginLeft] = useState('-50px');
     useEffect(() => {
         if (location.state?.selectedCategory) {
             setSelectedCategory(location.state.selectedCategory);

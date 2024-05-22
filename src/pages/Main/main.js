@@ -23,14 +23,14 @@ function Main() {
                 'ngrok-skip-browser-warning': '69420',
             }
         })
-        .then(response => {
-            setTodayVisitCount(response.data.todayVisitCount);
-            setTotalVisitCount(response.data.totalVisitCount);
-        })
-        .catch(error => {
-            console.error('접속자 수 에러:', error);
-            setError('접속자 수를 불러오는데 실패했습니다.');
-        });
+            .then(response => {
+                setTodayVisitCount(response.data.todayVisitCount);
+                setTotalVisitCount(response.data.totalVisitCount);
+            })
+            .catch(error => {
+                console.error('접속자 수 에러:', error);
+                setError('접속자 수를 불러오는데 실패했습니다.');
+            });
 
         const token = sessionStorage.getItem('token');
         setLoggedIn(!!token);
@@ -48,7 +48,7 @@ function Main() {
         setSelectedBooth(boothName);
         navigate('/booth', { state: { selectedCategory: boothName } });
     };
-    
+
     const booths = {
         '학과부스': {
             img: 'box1icon.png',
@@ -72,11 +72,11 @@ function Main() {
             description: ['올해 서랑제에서 진행되는 플리마켓의', <br key="4" />, '위치와 정보를 제공해드려요']
         }
     };
-    
+
 
     return (
         <div className="iphone-frame1">
-            <img style={{ position: "absolute", marginTop: "-180%", width:"91px", height:"34px"}} src='../../img/swuniforest.png' />
+            <img style={{ position: "absolute", marginTop: "-180%", width: "91px", height: "34px" }} src='../../img/swuniforest.png' />
             <button className='StampBtn' onClick={() => navigate('/stamp')}>
                 <img style={{ width: "55px", height: "55px", cursor: "pointer" }} src='../../../img/StampBtn1.png' alt="Stamp Button"></img>
             </button>
@@ -86,6 +86,7 @@ function Main() {
                 <button onClick={() => navigate('/login1')} className="myinfo-button"><Myinfo /></button>
             )}
             <div className='background-circle'></div>
+
             <img className='cat1' src='../../../img/cat1.png'/>
             <img className='cat2' src='../../../img/cat2.png'/>
             <img className='cat3' src='../../../img/cat3.png'/>
@@ -93,6 +94,7 @@ function Main() {
             <img className='cat5' src='../../../img/cat5.png'/>
             <img className='cat6' src='../../../img/cat6.png'/>
             <div className='swuni-text'>슈냥이를<br/>모아 보아요</div>
+
 
             <div className='btn-list'>
                 {Object.keys(booths).map((booth, index, array) => (
@@ -120,10 +122,10 @@ function Main() {
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 누적 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {totalVisitCount}명</div>
             </div>
             <div className='madeby'>
-                <p style={{fontSize:"10px", color:"#FFFFFF"}}>서울여자대학교 멋쟁이사자처럼 12TH</p>
+                <p style={{ fontSize: "10px", color: "#FFFFFF" }}>서울여자대학교 멋쟁이사자처럼 12TH</p>
                 <a href='https://www.instagram.com/likelion_swu?igsh=MTBzenlyanhrOWc2Yg=='>
-                    <img style={{width:"17px"}} className='insta' src='../../../img/insta1.png'/></a>
-                <p style={{fontSize:"10px", color:"#FFFFFF"}}>Copyright ⓒ 2024 likelion_swu. All rights reserved.</p>
+                    <img style={{ width: "17px" }} className='insta' src='../../../img/insta1.png' /></a>
+                <p style={{ fontSize: "10px", color: "#FFFFFF" }}>Copyright ⓒ 2024 likelion_swu. All rights reserved.</p>
             </div>
         </div>
     );
