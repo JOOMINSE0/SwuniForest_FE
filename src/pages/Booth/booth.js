@@ -96,7 +96,8 @@ function Booth() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate('/')}
+                style={{position:"absolute", marginTop:"4%"}}
+                onClick={() => navigate(-1)}
             />
             <p className="booth-title">부스배치도</p>
             <div className="booth-layout">

@@ -36,7 +36,8 @@ function LostBoard() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                onClick={() => navigate('/')}
+                style={{position:"absolute", marginTop:"4%"}}
+                onClick={() => navigate(-1)}
             />
             <p className="lost-text-1">
                 <span style={{ color: "#B2E0D0" }}>잃어버린 물건</span>은<br />없으신가요?
