@@ -30,7 +30,7 @@ function Lineup() {
                             
                             <div className="location-content">
                                 <Locate/>
-                                <span style={{color:"#575757"}}>학생누리관 114호 소극장</span>
+                                <span style={{color:"#575757"}}> 학생누리관 114호 소극장</span>
                             </div>
                             <div className="blur">
                             <img style={{width:"323px", height:"400px"}} src="../../../img/이호연.png"/>
@@ -38,7 +38,7 @@ function Lineup() {
 
                             <div style={{textAlign:"center"}}>
                                 <p style={{color:"#575757"}}>하다필름</p>
-                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"600"}}>이호연</p>
+                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"bolder"}}>이호연</p>
                             </div>
                         </div>
                     </>
@@ -47,22 +47,26 @@ function Lineup() {
                 return (
                     <>
                         <div className="scrollY">
-                            <p className="section">• 아티스트 공연</p>
+                            <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>아티스트 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}> 만주벌판</span>
                             </div>
                             <div className="blur">
                             <img style={{width:"323px", height:"400px"}} src="../../../img/거미.png"/>
                             </div>
 
+                            <div style={{textAlign:"center"}}>
+                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"bolder"}}>거미</p>
+                            </div>
+
                            
-                            <p className="section">• 동아리 공연</p>
+                            <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>동아리 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}> 만주벌판</span>
                             </div>
 
                             
@@ -97,22 +101,26 @@ function Lineup() {
                 return (
                     <>
                         <div className="scrollY">
-                            <p className="section">• 아티스트 공연</p>
+                        <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>아티스트 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}> 만주벌판</span>
                             </div>
                             <div className="blur">
                             <img style={{width:"323px", height:"400px"}} src="../../../img/이하이.png"/>
                             </div>
 
+                            <div style={{textAlign:"center"}}>
+                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"bolder"}}>이하이</p>
+                            </div>
 
-                            <p className="section">• 동아리 공연</p>
+
+                            <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>동아리 공연</span></p>
                             
                             <div className="location-content2">
                                 <Locate/>
-                                <span>만주벌판</span>
+                                <span style={{color:"#575757"}}> 만주벌판</span>
                             </div>
 
 
@@ -159,7 +167,7 @@ function Lineup() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                style={{ marginTop: "9%" }}
+                style={{ marginTop: "7%" }}
                 onClick={() => navigate(-1)}
             />
             <div style={{ display: 'flex', alignItems: 'center', position: "absolute", marginTop: "-140%" }}>

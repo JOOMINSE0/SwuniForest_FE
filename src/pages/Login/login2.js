@@ -15,32 +15,43 @@ function Login2() {
       studentNum,
       password
     };
-
+  
     try {
       const response = await axios.post(fetchURL + 'api/login', data, {
         headers: {
           'Content-Type': 'application/json',
         }
       });
-      // token, role 저장
+      // 토큰과 역할(role) 저장
       const token = response.data.token;
       const role = response.data.role;
       sessionStorage.setItem('token', token);
       sessionStorage.setItem('role', role);
-      console.log('로그인 성공')
-
-      // role에 따라서 페이지 이동 결정
+      console.log('로그인 성공');
+  
+      // 역할에 따라 페이지 이동
       if (role === 'ROLE_MANAGER') {
         navigate('/stamp_admin');
       } else {
         navigate('/');
       }
-
+  
     } catch (error) {
-      if (error.response && error.response.status === 500) {
-
+      if (error.response) {
         console.error('Error:', error);
-        alert('로그인 중 오류가 발생했습니다.');
+        if (error.response.status === 400) {
+          // 비밀번호 불일치
+          alert('비밀번호가 일치하지 않습니다.');
+        } else if (error.response.status === 404) {
+          // 존재하지 않는 회원
+          alert('존재하지 않는 회원입니다.');
+        } else if (error.response.status === 500) {
+          // 서버 오류
+          alert('로그인 중 오류가 발생했습니다.');
+        }
+      } else {
+        console.error('Error:', error);
+        alert('네트워크 오류가 발생했습니다. 나중에 다시 시도해 주세요.');
       }
     }
   };

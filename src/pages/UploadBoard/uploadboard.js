@@ -10,7 +10,6 @@ function UploadBoard() {
     const [selectedFile, setSelectedFile] = useState(null);
     const [preview, setPreview] = useState(null);
     const [guestContent, setGuestContent] = useState('');
-    const [anonymous, setIsAnonymous] = useState(true); // 기본값을 true로 설정
     const [username, setUsername] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const fileInputRef = useRef(null);
@@ -23,7 +22,6 @@ function UploadBoard() {
             fetchUserData(token);
         } else {
             setIsLoggedIn(false);
-            setIsAnonymous(true); // 로그인하지 않은 경우 기본적으로 익명 설정
         }
     }, []);
 
@@ -35,7 +33,6 @@ function UploadBoard() {
                 }
             });
             setUsername(response.data.username);
-            setIsAnonymous(true); // 사용자가 로그인한 경우에도 익명 설정
         } catch (error) {
             console.error('사용자 정보 가져오기 실패:', error);
             setIsLoggedIn(false);
@@ -59,15 +56,11 @@ function UploadBoard() {
         setPreview(null);
     };
 
-    const toggleAnonymous = () => {
-        setIsAnonymous(!anonymous);
-    };
-
     const handleGuestContentChange = (event) => {
         const inputContent = event.target.value;
         if (inputContent.length > 50) {
             alert('방명록 내용은 50자 이내로 작성해주세요.');
-            setGuestContent(inputContent.slice(0, 50)); // 입력된 내용을 50자로 자릅니다.
+            setGuestContent(inputContent.slice(0, 50));
         } else {
             setGuestContent(inputContent);
         }
@@ -82,8 +75,8 @@ function UploadBoard() {
         const formData = new FormData();
         formData.append('guestbookDto', new Blob([JSON.stringify({
             guestContent,
-            anonymous,
-            username: anonymous ? undefined : username
+            anonymous: true, // Always true
+            username // Send username normally
         })], { type: 'application/json' }));
         formData.append('imageFile', selectedFile);
 
@@ -93,11 +86,7 @@ function UploadBoard() {
                     'Content-Type': 'multipart/form-data'
                 }
             });
-            if (!anonymous) {
-                alert(`업로드 성공! 게시자: ${username}`);
-            } else {
-                alert('업로드 성공!');
-            }
+            alert('업로드 성공!');
             navigate(-1);
         } catch (error) {
             console.error('Error:', error);
@@ -142,16 +131,9 @@ function UploadBoard() {
                         className="uploadcontent"
                         placeholder="내용을 작성해주세요"
                         value={guestContent}
-                        onChange={handleGuestContentChange} 
+                        onChange={handleGuestContentChange}
                     />
                     <div style={{ width: "300px", height: "0.6px", background: "#fff", marginLeft: "30px" }}></div>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', marginTop: '35%' }}>
-                    <div style={{ color: "#ffffff", marginLeft: "5%", fontWeight: 'bolder' }}>익명여부</div>
-                    <div className="toggle-switch">
-                        <input type="checkbox" id="toggle-anonymous" checked={anonymous} onChange={toggleAnonymous} disabled={true}  />
-                        <label htmlFor="toggle-anonymous" style={{ cursor: 'pointer' }}></label>
-                    </div>
                 </div>
             </div>
         </div>
