@@ -57,6 +57,10 @@ function Lineup() {
                             <img style={{width:"323px", height:"400px"}} src="../../../img/거미.png"/>
                             </div>
 
+                            <div style={{textAlign:"center"}}>
+                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"bolder"}}>거미</p>
+                            </div>
+
                            
                             <p className="section"><span style={{color:"#5A776D"}}>•</span> <span style={{color:"#575757"}}>동아리 공연</span></p>
                             
@@ -105,6 +109,10 @@ function Lineup() {
                             </div>
                             <div className="blur">
                             <img style={{width:"323px", height:"400px"}} src="../../../img/이하이.png"/>
+                            </div>
+
+                            <div style={{textAlign:"center"}}>
+                                <p style={{fontSize:"26px", color:"#5A776D", fontWeight:"bolder"}}>이하이</p>
                             </div>
 
 
