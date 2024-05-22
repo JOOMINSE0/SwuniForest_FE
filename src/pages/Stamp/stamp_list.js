@@ -6,7 +6,7 @@ import './stamp_list.css';
 function StampList() {
   const navigate = useNavigate();
   const [inputCode, setInputCode] = useState('');
-  const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
+  const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/";
 
   const [scores, setScores] = useState([0, 0, 0, 0, 0, 0]);
   const catStamps = [

@@ -17,7 +17,7 @@ function Main() {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        axios.get('https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/', {
+        axios.get('https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/', {
             headers: {
                 'Content-Type': 'application/json',
                 'ngrok-skip-browser-warning': '69420',

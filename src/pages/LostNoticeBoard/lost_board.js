@@ -6,7 +6,7 @@ import './lost_board.css';
 function LostBoard() {
     const navigate = useNavigate();
     const [lostItems, setLostItems] = useState([]);
-    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/"
+    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/"
 
     useEffect(() => {
         const fetchData = async () => {

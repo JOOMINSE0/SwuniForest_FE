@@ -8,7 +8,7 @@ function Login2() {
   const [studentNum, setStudentNum] = useState('');
   const [password, setPassword] = useState('');
 
-  const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
+  const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/";
 
   const handleLoginClick = async () => {
     const data = {

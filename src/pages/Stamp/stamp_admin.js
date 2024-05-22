@@ -8,7 +8,7 @@ function StampAdmin() {
     const [department, setDepartment] = useState('');
     const [code, setCode] = useState('');
     const [expirationTime, setExpirationTime] = useState('');
-    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
+    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/";
 
     const departmentMapping = {
         "Department1": "경제학과",
