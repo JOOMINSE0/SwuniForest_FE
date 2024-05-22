@@ -37,7 +37,7 @@ function Booth() {
                 break;
             case "플리마켓":
                 Component = () => (
-                    <div style={{ marginLeft: "26px" }}>
+                    <div style={{ marginLeft: "18px" }}>
                         <OtherBooth selectedCategory={selectedCategory} />
                         <FleaList />
                     </div>
@@ -96,8 +96,10 @@ function Booth() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                style={{ position: "absolute", marginTop: "4%" }}
-                onClick={() => navigate(-1)}
+                style={{ position: "absolute", marginTop: "4%", zIndex: "3" }}
+                onClick={() => navigate(-1)
+
+                }
             />
             <p className="booth-title">부스배치도</p>
             <div className="booth-layout">
@@ -129,5 +131,4 @@ function Booth() {
 }
 
 export default Booth;
-
 
