@@ -61,27 +61,26 @@ function Booth() {
         if (selectedCategory) {
             switch (selectedCategory) {
                 case "포토부스":
-                    setMarginLeft('-35px');
-
+                    setMarginLeft('-87px');
                     setTime("5월 20일(월) ~ 5월 28일(화)");
                     setPlace("제2과학관 ~ 고명우 기념관 사이 주차장");
                     break;
                 case "플리마켓":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 17:00");
                     setPlace("학생누리관 지하 1층 앞");
-                    setMarginLeft('-140px');
+                    setMarginLeft('-192px');
 
                     break;
                 case "푸드트럭":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 21:00");
                     setPlace(`서울여자대학교 제1과학관 앞 도로`);
-                    setMarginLeft('-70px');
+                    setMarginLeft('-122px');
 
                     break;
                 case "학과부스":
                     setTime("5월 22일(수) ~ 5월 24일(금) 11:00 ~ 16:30");
                     setPlace("서울여자대학교 잔디광장 및 만주대로");
-                    setMarginLeft('-50px');
+                    setMarginLeft('-101px');
 
                     break;
                 default:
@@ -121,7 +120,7 @@ function Booth() {
                 marginLeft: selectedCategory === "포토부스" ? "-164.5px" : ""
             }}
             >{time}</p>
-            <p className="select-place" style={{ marginLeft }}>{place}</p>
+            <p className="select-time" style={{ marginLeft }}>{place}</p>
 
 
             {renderBoothComponent()}
