@@ -96,7 +96,7 @@ function Booth() {
                 src="../../../img/close.png"
                 alt="취소버튼"
                 className="close-btn"
-                style={{position:"absolute", marginTop:"4%"}}
+                style={{ position: "absolute", marginTop: "4%" }}
                 onClick={() => navigate(-1)}
             />
             <p className="booth-title">부스배치도</p>
@@ -122,7 +122,6 @@ function Booth() {
             }}
             >{time}</p>
             <p className="select-time" style={{ marginLeft }}>{place}</p>
-
 
             {renderBoothComponent()}
         </div>
