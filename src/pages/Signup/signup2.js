@@ -48,7 +48,7 @@ function Signup2() {
       });
 
       if (response.data.visited === false) {
-        alert("이미 존재하는 회원입니다.");
+        navigate('/login2');
       } else {
         navigate('/login1');
       }
