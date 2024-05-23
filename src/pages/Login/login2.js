@@ -43,9 +43,13 @@ function Login2() {
           // 비밀번호 불일치
           alert('비밀번호가 일치하지 않습니다.');
         } else if (error.response.status === 404) {
-          // 존재하지 않는 회원
+          // 비밀번호 불일치
           alert('존재하지 않는 회원입니다.');
-        } else if (error.response.status === 500) {
+        }else if (error.response.status === 401) {
+          // 존재하지 않는 회원
+          alert('비밀번호가 일치하지 않습니다.');
+        }  
+        else if (error.response.status === 500) {
           // 서버 오류
           alert('로그인 중 오류가 발생했습니다.');
         }
@@ -82,7 +86,10 @@ function Login2() {
           type="password"
           value={password}
           style={{fontSize:"20px"}}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            console.log("Password input:", e.target.value);  // 로그를 통해 입력 값 확인
+            setPassword(e.target.value);
+          }}
         />
         <div style={{ width: "360px", height: "0.6px", background: "#E3E3E3", marginTop: "0px" }}></div>
       </div>
