@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import heic2any from "heic2any";
 import { ReactComponent as Gallery } from '../../assets/Gallery.svg';
 import { ReactComponent as Pen } from '../../assets/pen.svg';
 import "./uploadboard.css";
+
 
 function UploadBoard() {
     let navigate = useNavigate();
@@ -13,7 +15,7 @@ function UploadBoard() {
     const [username, setUsername] = useState("");
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const fileInputRef = useRef(null);
-    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwd799yh.sel5.cloudtype.app/";
+    const fetchURL = "https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/";
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
@@ -42,9 +44,58 @@ function UploadBoard() {
     const handleFileChange = (event) => {
         const file = event.target.files[0];
         if (file) {
-            setSelectedFile(file);
-            setPreview(URL.createObjectURL(file));
+            if (file.type === "image/heic") {
+                heic2any({
+                    blob: file,
+                    toType: "image/jpeg"
+                }).then(function (resultBlob) {
+                    resizeImage(resultBlob).then(resizedBlob => {
+                        const convertedFile = new File([resizedBlob], file.name.replace(/\.heic$/, '.jpg'), { type: "image/jpeg", lastModified: new Date() });
+                        setSelectedFile(convertedFile);
+                        setPreview(URL.createObjectURL(convertedFile));
+                    });
+                }).catch(function (error) {
+                    console.error('HEIC to JPEG conversion failed:', error);
+                });
+            } else {
+                resizeImage(file).then(resizedBlob => {
+                    const resizedFile = new File([resizedBlob], file.name, { type: file.type, lastModified: new Date() });
+                    setSelectedFile(resizedFile);
+                    setPreview(URL.createObjectURL(resizedFile));
+                });
+            }
         }
+    };
+    
+    const resizeImage = (blob) => {
+        return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.src = URL.createObjectURL(blob);
+            img.onload = () => {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const maxW = 1024; 
+                const maxH = 1024;
+                let width = img.width;
+                let height = img.height;
+    
+                if (width > height && width > maxW) {
+                    height *= maxW / width;
+                    width = maxW;
+                } else if (height > maxH) {
+                    width *= maxH / height;
+                    height = maxH;
+                }
+    
+                canvas.width = width;
+                canvas.height = height;
+                ctx.drawImage(img, 0, 0, width, height);
+                canvas.toBlob(resolve, 'image/jpeg', 0.7);
+            };
+            img.onerror = (error) => {
+                reject(error);
+            };
+        });
     };
 
     const handleUpload = () => {
@@ -75,8 +126,8 @@ function UploadBoard() {
         const formData = new FormData();
         formData.append('guestbookDto', new Blob([JSON.stringify({
             guestContent,
-            anonymous: true, // Always true
-            username // Send username normally
+            anonymous: true,
+            username
         })], { type: 'application/json' }));
         formData.append('imageFile', selectedFile);
 
