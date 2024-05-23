@@ -9,31 +9,7 @@ function PreGuestbook() {
     const [visitData, setVisitData] = useState(null);
     const [guestbookEntries, setGuestbookEntries] = useState([]);
     const [error, setError] = useState("");
-    const [hasVisited, setHasVisited] = useState(false);  // 방문을 기록하는 상태
-
-    const handleVisit = async () => {
-        if (!isLoggedIn) {
-            navigate('/login1');
-            return;
-        }
-
-        try {
-            const response = await axios.post('https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/api/visit/change', {}, {
-                headers: {
-                    Authorization: `Bearer ${sessionStorage.getItem('token')}`
-                }
-            });
-            setVisitData(response.data);
-            setHasVisited(true);  // 방문을 기록했다는 상태를 true로 설정
-        } catch (error) {
-            console.error("방문 업데이트 에러:", error);
-            if (error.response) {
-                setError(`서버 에러: ${error.response.data}`);
-            } else {
-                setError("네트워크 연결을 확인해주세요.");
-            }
-        }
-    };
+    const [hasVisited, setHasVisited] = useState(sessionStorage.getItem("hasVisited") === "true");
 
     useEffect(() => {
         const token = sessionStorage.getItem('token');
@@ -41,8 +17,34 @@ function PreGuestbook() {
         if (token) {
             fetchVisitData();
         }
-        fetchGuestbookEntries(); 
+        fetchGuestbookEntries();
     }, []);
+
+    useEffect(() => {
+        if (error) {
+            alert(error);
+        }
+    }, [error]); 
+
+    const handleVisit = async () => {
+        if (!isLoggedIn) {
+            navigate('/login1');
+            return;
+        }
+        try {
+            const response = await axios.post('https://port-0-swuniforest-be-1mrfs72llwh5tfst.sel5.cloudtype.app/api/visit/change', {}, {
+                headers: {
+                    Authorization: `Bearer ${sessionStorage.getItem('token')}`
+                }
+            });
+            setVisitData(response.data);
+            setHasVisited(true);
+            sessionStorage.setItem("hasVisited", "true");
+        } catch (error) {
+            console.error("방문 업데이트 에러:", error);
+            setError(`${error.response ? error.response.data : "네트워크 연결을 확인해주세요."}`);
+        }
+    };
 
     const fetchVisitData = async () => {
         try {
@@ -53,9 +55,13 @@ function PreGuestbook() {
                 }
             });
             setVisitData(response.data);
+            if (response.data && response.data.hasVisited) {
+                setHasVisited(true);
+                sessionStorage.setItem("hasVisited", "true");
+            }
         } catch (error) {
-            console.error("에러:", error);
-            setError("데이터를 불러오는 데 실패했습니다."); 
+            console.error("Error fetching data:", error);
+            setError("Failed to load data.");
         }
     };
 
@@ -68,8 +74,8 @@ function PreGuestbook() {
             });
             setGuestbookEntries(response.data);
         } catch (error) {
-            console.error("에러:", error);
-            setError("방명록 데이터를 불러오는 데 실패했습니다.");
+            console.error("Error fetching guestbook data:", error);
+            setError("Failed to load guestbook data.");
         }
     };
 
@@ -78,13 +84,23 @@ function PreGuestbook() {
             <p className="login-title">방명록</p>
             <img
                 src="../../../img/close.png"
-                alt="취소버튼"
+                alt="Close button"
                 className="close-btn"
                 onClick={() => navigate(-1)}
                 style={{ marginTop: "7%" }}
             />
             <div>
-                {isLoggedIn && !hasVisited ? (
+                {!isLoggedIn ? (
+                    <div className="divform1">
+                        <img src="../../../img/Circle.png"
+                            style={{ width: "106px", position: "relative", marginTop: "15px", marginLeft: "20px" }} />
+                        <b style={{ marginTop: "40px", marginLeft: "28px", color: "#898A8D", position: "absolute" }}>우리 학과는 지금 방문율 몇 위?</b>
+                        <p style={{ marginTop: "-63px", marginLeft: "43%", fontSize: "10px", color: "#898A8D", position: "absolute" }}>학과를 인증하면 방문율을 높일 수 있어요</p>
+                        <button className="guestbookBtn" onClick={() => navigate('/login1')}>
+                            로그인하기
+                        </button>
+                    </div>
+                ) : !hasVisited ? (
                     <div className="divform1">
                         <img src="../../../img/Circle.png"
                             style={{ width: "106px", position: "relative", marginTop: "15px", marginLeft: "20px" }} />
@@ -94,20 +110,22 @@ function PreGuestbook() {
                             방문하기
                         </button>
                     </div>
-                ) : hasVisited && visitData ? (
+                ) : (
                     <div className="divform1-1">
-                        <div style={{ textAlign: 'center' }}>
-                            <b style={{ color: "#9D9FA4", fontSize: "18px" }}>{visitData.username} 님의 학과</b> <br/>
-                            <b style={{ color: "#898A8D", fontSize: "19px" }}>{visitData.major}<span style={{ color: "#9D9FA4" }}>의</span> 방문율</b><br/>
-                            <b style={{ fontSize: "24px", marginRight: "10%", color:"#6EA693" }}>{visitData.visitCount}명 </b>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="1" height="22" viewBox="0 0 1 21" fill="none">
-                                <path d="M0.5 1L0.5 20" stroke="#C1C2C5" strokeLinecap="round" />
-                            </svg>
-                            <b style={{ fontSize: "24px", marginLeft: "10%", color:"#6EA693" }}>{visitData.rank}위</b>
-                        </div>
+                        {visitData && (
+                            <div style={{ textAlign: 'center' }}>
+                                <b style={{ color: "#9D9FA4", fontSize: "18px" }}>{visitData.username} 님의 학과</b> <br/>
+                                <b style={{ color: "#898A8D", fontSize: "19px" }}>{visitData.major}<span style={{ color: "#9D9FA4" }}>의</span> 방문율</b><br/>
+                                <b style={{ fontSize: "24px", marginRight: "10%", color:"#6EA693" }}>{visitData.visitCount}명 </b>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1" height="22" viewBox="0 0 1 21" fill="none">
+                                    <path d="M0.5 1L0.5 20" stroke="#C1C2C5" strokeLinecap="round" />
+                                </svg>
+                                <b style={{ fontSize: "24px", marginLeft: "10%", color:"#6EA693" }}>{visitData.rank}위</b>
+                            </div>
+                        )}
                     </div>
-                ) : null}
-                {error && <p style={{ color: 'red', position: "absolute", marginLeft: "10px" }}>{error}</p>}
+
+                )}
             </div>
 
             <a onClick={() => navigate('/visitorRanking')}
@@ -121,7 +139,7 @@ function PreGuestbook() {
                     <div key={index} className="guestbook-entry">
                         <img
                             style={{ width: "150px", height: "150px", objectFit: "cover" }}
-                            src={entry.fileName} alt="방명록" className="guestbook-img" />
+                            src={entry.fileName} alt="Guestbook" className="guestbook-img" />
                         <p className="guestbook-content">{entry.guestContent}</p>
                     </div>
                 ))}
